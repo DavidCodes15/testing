@@ -2,26 +2,183 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.slider-wrapper{
+  transition: transform 0.3s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.slide {
+  flex: 0 0 100%;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.slide img {
+  width: 100%;
+  height: 500px; /* Default height for larger screens */
+  object-fit: cover;
+}
+
+.pagination{
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.dot{
+  width: 25%; /* 1/4 width for each dot */
+  padding: 3rem 2rem; /* Add padding to the dots */
+  border-radius: 1rem; /* Add rounded corners */
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.2rem;
+  /* background-color: #013678; */
+  background-color: rgba(1, 54, 120, 0.5);
+  border: 0.8px solid white;
+}
+.mob-dot{
+  display: none;
+}
+.mob-pagination{
+  display: none;
+}
+.mob-dot.active{
+  display: block;
+  background-color: #1A3DA7;
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius:1.5rem;
+  color:white;
+  font-size:12px;
+  padding: 1rem 3rem;
+}
+.grid-fix{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.25rem;
+}
+.fix-blog-text{
+  font-size: 1.875rem; /* 30px */
+line-height: 2.25rem; /* 36px */
+}
+
+
+ @media (max-width: 768px) {
+  .grid-fix{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.25rem;
+    padding: 0 1rem;
+  }
+  .mob-pagination{
+    display: block;
+  }
+  .slide img{
+    padding: 0 5px;
+    border-radius: 15px;
+    height: 300px;
+  }
+  .pagination{
+    display: none;
+  }
+  .fix-blog-text{
+    font-size: 1.25rem; /* 20px */
+line-height: 1.75rem; /* 28px */
+  }
+  .fix-carousel-image{
+    width: 300px;
+    height: 250px;
+  }
+
+}
+@media (max-width: 425px){
+  .slide img{
+    height: 200px;
+  }
+  .grid-fix{
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 2.25rem;
+  }
+  .fix-blog-text{
+    font-size: 1.125rem; /* 18px */
+  line-height: 1.75rem; /* 28px */
+  }
+  .fix-carousel-image{
+    width: 200px;
+    height: 150px;
+  }
+  .fix-carousel-button{
+    font-size: 14px;
+    position: absolute;
+    left: 20%;
+  }
+  .fix-carousel-text{
+    font-size: 14px;
+  }
+}
+@media (max-width: 374px){
+  .fix-blog-text{
+    font-size: 1rem; /* 16px */
+line-height: 1.5rem; /* 24px */
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.language-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1; /* Ensure the dropdown appears above other elements */
+  transition: transform 1.3s ease;
 }
+.product-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #F6FAFF;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+/* Show the dropdown when the parent li is hovered */
+li:hover .product-dropdown {
+  display: block;
+}
+.card{
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  transition: all 0.2s ease-in-out;
+}
+
+.card::after{
+  opacity: 0;
+   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: opacity 0.2s ease-in-out;
+}
+
+.card:hover{
+    
+  transform: scale(1.1,1.1);
+}
+.card:hover::after{
+ opacity:1;
+}
+#specificBlog a {
+  color:#1A3DA7;
+}
+
+
+

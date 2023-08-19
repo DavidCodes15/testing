@@ -1,9 +1,15 @@
 
-
+import ImageSlider from "@/components/user/ImageSlider";
+import Carousel from "@/components/user/Carousel";
+import MainCertificates from "@/components/user/MainCertificates";
+import MainBlogComponent from "@/components/user/MainComponent";
 export default function Home() {
   return (
     <>
-      this is a test webiste for vercel to understand if vercel is giving me a free or purchased domain accessability    
+  <ImageSlider />
+  <Carousel />
+  <MainCertificates />
+  <MainBlogComponent />
     </>
 
   )

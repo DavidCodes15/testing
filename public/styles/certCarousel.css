@@ -1,0 +1,44 @@
+/* certCarousel.css */
+.carousel-container {
+    overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  white-space: nowrap;
+    width: 100%; 
+    /* Other styles... */
+  }
+  .carousel-container::-webkit-scrollbar {
+    width: 12px; /* Adjust the width as needed */
+  }
+  
+  .carousel-container::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+  
+  .carousel-wrapper {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .carousel-item {
+    flex: 0 0 calc(100% / 4); /* Change the denominator as needed */
+    background-color: #ECF5FF;
+    padding: 1rem 1rem;
+    border-radius: 10px;
+  }
+  
+  /* Media queries for responsive layout */
+  @media (max-width: 1024px) {
+    .carousel-item {
+      flex: 0 0 calc(100% / 3); /* Change the denominator as needed */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .carousel-item {
+      flex: 0 0 calc(100% / 2);
+    }
+  }
+  @media (max-width: 425px){
+    .carousel-item {
+        flex: 0 0 100%;
+    }
+  }

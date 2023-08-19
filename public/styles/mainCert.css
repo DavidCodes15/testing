@@ -1,0 +1,17 @@
+.cert-width{
+  width: 182px;
+  height: 280px;
+}
+
+
+@media (max-width: 768px) {
+  .cert{
+    height: 45vh;
+  }
+}
+
+@media (max-width: 425px){
+  .cert-width{
+    width: 182px;
+  }
+}

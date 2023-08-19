@@ -1,0 +1,37 @@
+.fix-first-about{
+     margin-right: 16rem/* 256px */;
+}
+.fix-third-about{
+  margin-left: 16rem/* 256px */;
+}
+
+@media (max-width: 1024px){
+  .fix-first-about{
+    margin-right: 0/* 256px */;
+}
+.fix-third-about{
+ margin-left: 0/* 256px */;
+}
+}
+
+@media (max-width: 425px){
+  .fix-first-about{
+    padding: 0 1rem;
+  }
+  .fix-first-about p {
+    font-size: 14px;
+  }
+  .fix-second-about{
+    padding: 0 1rem;
+  }
+  .fix-second-about p{
+    font-size: 14px;
+  }
+  .fix-third-about{
+    padding: 0 1rem;
+  }
+  .fix-third-about p{
+    font-size: 14px;
+  }
+
+}
