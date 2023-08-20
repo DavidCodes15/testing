@@ -1,5 +1,5 @@
 import { connectToDB } from "@/utils/database";
-import emails from "@/models/emails";
+import { emails }  from "@/models/emails";
 
 export const GET = async (req) => {
     try{ 

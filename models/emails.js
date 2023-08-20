@@ -23,6 +23,6 @@ const emailSchema = new Schema({
       },
 });
 
-const emails = models.emails || model("email", emailSchema);
+const emails = models.emails || model("emails", emailSchema);
 
 export {emails};

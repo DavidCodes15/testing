@@ -16,13 +16,13 @@ const AdminPage = () => {
     <>
     {session?.user ? (
       <>
-      მოგესალმები ადმინზე
-      </>
+           <h1 className="mt-[100px]">you are signed in</h1>
+           <button onClick={signOut} className="border-black border-[1px] border-solid">sign out</button>
+           </>
     ): (
-      <>
-      არახარ წევრი არა
-      </>
+      <button onClick={signIn} className="mt-[200px] border-black border-solid border-[1px]">sign in </button>
     )}
+     
     </>
   )
 }

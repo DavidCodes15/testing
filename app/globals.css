@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.no-scroll {
+  overflow: hidden;
+}
 .slider-wrapper{
   transition: transform 0.3s ease;
 }
@@ -62,14 +65,11 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2.25rem;
 }
-<<<<<<< HEAD
-=======
 .fix-fitting-grid{
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 2.25rem/* 36px */;
 }
->>>>>>> fca531a (mongodb connection fix)
 .fix-blog-text{
   font-size: 1.875rem; /* 30px */
 line-height: 2.25rem; /* 36px */
@@ -79,6 +79,14 @@ line-height: 2.25rem; /* 36px */
   width: 100%; /* Make the container full width */
   display: flex;
   justify-content: center; /* Center the content horizontally */
+}
+@media (max-width: 1024px){
+  #navigation li{
+    font-size: 12px;
+  }
+  .fix-image{
+    width: 150px;
+  }
 }
  @media (max-width: 768px) {
   .grid-fix{
@@ -119,6 +127,9 @@ line-height: 1.75rem; /* 28px */
     width: 500px;
     height: 300px;
   }
+  .fix-accordion-text{
+    font-size: 16px;
+  }
 }
 @media (max-width: 425px){
   .slide img{
@@ -157,6 +168,10 @@ line-height: 1.75rem; /* 28px */
   .fix-sizing{
     width: 300px;
     height: 200px;
+  }
+  .fix-accordion-text{
+    font-size: 13px;
+    width: 100%;
   }
 }
 @media (max-width: 374px){
