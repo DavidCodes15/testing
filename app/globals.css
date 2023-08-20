@@ -62,18 +62,36 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2.25rem;
 }
+<<<<<<< HEAD
+=======
+.fix-fitting-grid{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2.25rem/* 36px */;
+}
+>>>>>>> fca531a (mongodb connection fix)
 .fix-blog-text{
   font-size: 1.875rem; /* 30px */
 line-height: 2.25rem; /* 36px */
 }
 
-
+.fix-contact-div-size {
+  width: 100%; /* Make the container full width */
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+}
  @media (max-width: 768px) {
   .grid-fix{
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2.25rem;
     padding: 0 1rem;
+  }
+  .fix-fitting-grid{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.25rem/* 36px */;
+    padding: 0 2.25rem;
   }
   .mob-pagination{
     display: block;
@@ -94,7 +112,13 @@ line-height: 1.75rem; /* 28px */
     width: 300px;
     height: 250px;
   }
-
+  .fix-contact-div-size {
+    margin: 0 16px; /* Add margins for better spacing on mobile */
+  }
+  .fix-sizing{
+    width: 500px;
+    height: 300px;
+  }
 }
 @media (max-width: 425px){
   .slide img{
@@ -104,6 +128,12 @@ line-height: 1.75rem; /* 28px */
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 2.25rem;
+  }
+  .fix-fitting-grid{
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 2.25rem/* 36px */;
+    padding: 0 3.25rem;
   }
   .fix-blog-text{
     font-size: 1.125rem; /* 18px */
@@ -120,6 +150,13 @@ line-height: 1.75rem; /* 28px */
   }
   .fix-carousel-text{
     font-size: 14px;
+  }
+  .fix-contact-size{
+    width: 50%;
+  }
+  .fix-sizing{
+    width: 300px;
+    height: 200px;
   }
 }
 @media (max-width: 374px){
@@ -178,6 +215,19 @@ li:hover .product-dropdown {
 }
 #specificBlog a {
   color:#1A3DA7;
+}
+.custom-button{
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid #1A3DA7;
+  border-radius: 0.70rem;
+  padding: 0.5rem 1rem;
+  
+  
+}
+.custom-button.selected{
+  background-color: #1a3da7;
+  color: white;
 }
 
 

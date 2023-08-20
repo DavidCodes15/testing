@@ -7,11 +7,6 @@ import Link from "next/link";
 const Nav = () => {
   const { data: session } = useSession();
   const { selectedLanguage, setSelectedLanguage } = useLanguage();
-  // const defaultLanguage = "GEO"; 
-  // const [selectedItem, setSelectedItem] = useState({
-  //   imageUrl: "/assets/icons/georgia.svg",
-  //   name: defaultLanguage,
-  // });
   const [isVisible, setIsVisible] = useState(false);
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const [isArrowRotated, setIsArrowRotated] = useState(false);
@@ -163,7 +158,7 @@ const Nav = () => {
                     <img src="/assets/icons/Settings.png" alt="product list image"/>
                     </span>
                     <span>
-                    <Link href="/fittings">
+                    <Link href="/products/fittings">
                           {selectedLanguage === "GEO" && "ფიტინგები"}
                           {selectedLanguage === "ENG" && "fittings"}
                           {selectedLanguage === "RUS" && "арматура"}
@@ -195,9 +190,6 @@ const Nav = () => {
             </li>
           <li className="cursor-pointer">
           <Link href="/contact">
-          {/* {selectedItem.name === "GEO" && "კონტაქტი"}
-            {selectedItem.name === "ENG" && "contact"}
-            {selectedItem.name === "RUS" && "Контакт"} */}
             {selectedLanguage === "GEO" && "კონტაქტი"}
             {selectedLanguage === "ENG" && "contact"}
             {selectedLanguage === "RUS" && "Контакт"}

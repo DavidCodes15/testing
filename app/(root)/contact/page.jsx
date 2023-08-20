@@ -148,14 +148,14 @@ const contactpage = () => {
   }
   return (
     <>
-      <section className="container mt-5">
+      <section className="container mt-[100px] px-24">
         <div
           id="navigation"
           className="hidden lg:flex justify-start items-start space-x-2"
         >
           <span className="flex justify-center items-center space-x-4">
             <span>მთავარი</span>
-            <img src="/assets/icons/nav-arrow.png" alt="navigation arrow" />
+            <img src="/assets/icons/Vector.png" alt="navigation arrow" />
           </span>
           <span className="text-[#1A3DA7]">კონტაქტი</span>
         </div>
@@ -167,35 +167,36 @@ const contactpage = () => {
               როგორ შევიძინოთ
             </h1>
           </div>
-          <div className="flex justify-center items-center space-x-0 lg:space-x-6">
-            <div className="fix-contact-div-size">
+          <div className="flex justify-center items-center space-x-0 flex-col lg:space-x-6 lg:flex-row">
+            <div className="w-full lg:w-1/2">
               <div className="hidden lg:flex flex-col space-y-6">
                 <div>
                   <h2 className=" text-xl">დაგვიკავშირდით</h2>
                 </div>
                 <div className="flex justify-start items-center space-x-4">
                   <span>
-                    <img src="assets/icons/email.png" alt="inbox" />
+                    <img src="/assets/icons/Group.png" alt="inbox" />
                   </span>
                   <span>Georgianpipe@gmail.com</span>
                 </div>
                 <div className="flex justify-start items-center space-x-4">
                   <span>
-                    <img src="assets/icons/phone.png" alt="telephone" />
+                    <img src="/assets/icons/phone.png" alt="telephone" />
                   </span>
                   <span>+1 &#40;555&#41; 000-0000</span>
                 </div>
                 <div className="flex justify-start items-center space-x-4">
                   <span>
-                    <img src="assets/icons/location.svg" alt="location" />
+                    <img src="/assets/icons/location.png" alt="location" />
                   </span>
                   <span>12 ქიზიყის, თბილისი, საქართველო</span>
                 </div>
               </div>
+              <div>
               <form
                 onSubmit={handleSubmit}
                 method="POST"
-                className="fix-contact-size flex flex-col mt-12 space-y-4"
+                className="flex flex-col mt-12 space-y-4 fix-contact-size"
               >
                 <label htmlFor="name" className="text-lg">
                   სახელი
@@ -296,16 +297,20 @@ const contactpage = () => {
                   className="max-w-[284px] px-4 py-2 text-white bg-[#1A3DA7] rounded cursor-pointer"
                 />
               </form>
+              </div>
             </div>
-            <div className="hidden lg:flex fix-contact-image">
+            <div className="hidden lg:flex w-1/2">
               <img src="/assets/icons/contact.png" alt="contact image" />
             </div>
           </div>
         </div>
       </section>
       <Popup trigger={submitted} setTrigger={setSubmitted}>
-            <div className="flex justify-center items-center"> 
-                  <span>გაგზავნილია გენაცვალე</span>
+            <div className="flex flex-col justify-center items-center space-y-6 py-12"> 
+                  <span className="text-2xl">გაგზავნილია</span>
+                  <span>
+                    <img src="assets/icons/sent.png" alt="email sent"/>
+                  </span>
             </div>
       </Popup>
     </>

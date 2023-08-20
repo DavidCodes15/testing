@@ -25,4 +25,4 @@ const emailSchema = new Schema({
 
 const emails = models.emails || model("email", emailSchema);
 
-export default emails;
+export {emails};

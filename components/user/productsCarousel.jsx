@@ -5,18 +5,21 @@ const ProductsCarousel = () => {
     const [products, setProducts] = useState([]);
     const carouselRef = useRef(null);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [fetched, setFetched] = useState(false);
     useEffect(() => {
-        fetchProducts();
-    }, []);
-    const fetchProducts = async () => {
+      const fetchProducts = async () => {
         try{
             const res = await fetch("/api/products");
             const data = res.json();
             setProducts(data);
         } catch (error) {
             console.log(error);
+        } finally{
+          setFetched(true);
         }
     }
+    fetchProducts();
+    }, []);
     const handlePrevious = () => {
         setCurrentIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : 0));
       };
@@ -27,24 +30,30 @@ const ProductsCarousel = () => {
       };
   return (
     <>
-    <div className="flex justify-end items-center space-x-4 px-12 ">
-       <button className="carousel-control" onClick={handlePrevious}>
-         Prev
-       </button>
-       <button className="carousel-control" onClick={handleNext}>
-         Next
-       </button>
-     </div>
-
-   <div className="carousel-container mt-5" ref={carouselRef}>
-     <div className="carousel-wrapper flex space-x-0" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-       {products.map((product, index) => (
-         <div key={index} className="carousel-item flex justify-center items-center">
-           <img className="w-[288px] h-[367px]" src={product.imageUrl} alt={product.imageAlt} />
-         </div>
-       ))}
-     </div>
-   </div>
+    {fetched === true ? (
+      <>
+        <div className="flex justify-end items-center space-x-4 px-12 ">
+        <button className="carousel-control" onClick={handlePrevious}>
+          Prev
+        </button>
+        <button className="carousel-control" onClick={handleNext}>
+          Next
+        </button>
+      </div>
+ 
+    <div className="carousel-container mt-5" ref={carouselRef}>
+      <div className="carousel-wrapper flex space-x-0" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+        {products.map((product, index) => (
+          <div key={index} className="carousel-item flex justify-center items-center">
+            <img className="w-[288px] h-[367px]" src={product.imageUrl} alt={product.imageAlt} />
+          </div>
+        ))}
+      </div>
+    </div>
+    </>
+    ): (
+      null
+    )}
    </>
   )
 }
