@@ -1,3 +1,7 @@
+This is my first ever real-world project. Everything you see on the website is dynamic and can be deleted, updated, and created from website's admin dashboard that is only accessible for company, it has fully secure authentication with the help of next-auth, fully optimized dynamic SEO, and incredible caching with the help of react redis. Open [https://www.geopipe.ge/] to explore the webiste.
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
