@@ -1,4 +1,4 @@
-
+"use client";
 import ImageSlider from "@/components/user/ImageSlider";
 import Carousel from "@/components/user/Carousel";
 import MainCertificates from "@/components/user/MainCertificates";

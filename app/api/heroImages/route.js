@@ -1,5 +1,5 @@
 import { connectToDB } from "@/utils/database";
-import {heroimages} from "@/models/heroImages";
+import heroimages from "@/models/heroImages";
 
 export const GET = async (req) => {
     try{

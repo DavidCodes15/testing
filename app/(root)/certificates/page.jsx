@@ -70,7 +70,7 @@ const certificatesPage = () => {
         <button className="carousel-control" onClick={handlePrevious}>
           <img src="/assets/icons/left-arrow.png" />
         </button>
-        <button className="carousel-control" onClick={handleNext}>
+        <button disabled={currentIndex === certs.length} className="carousel-control" onClick={handleNext}>
           <img src="/assets/icons/right-arrow.png" />
         </button>
       </div>

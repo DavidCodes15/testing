@@ -1,12 +1,12 @@
 import { connectToDB } from "@/utils/database";
-import  heroimages  from "@/models/heroImages";
 import cloudinary from "@/utils/cloudinary";
+import certificates from "@/models/certificates";
+
 
 export const DELETE = async (req, {params}) => {
-    const id = params.id;
     try{
         await connectToDB();
-        await heroimages.findByIdAndRemove(id);
+        await certificates.findByIdAndRemove(params.id);
         const {publicId} = await req.json();
         await cloudinary.v2.uploader.destroy(publicId, (error, result) => {
             if (error) {
@@ -15,9 +15,8 @@ export const DELETE = async (req, {params}) => {
               console.log("Image deleted from Cloudinary:", result);
             }
           });
-          return new Response("successfully deleted hero image", {status: 200});
-    
-    } catch (error) {
-        return new Response("failed to delete hero image", {status: 500});
+        return new Response("successfully deleted the certificate image", {status: 200});
+    } catch (error){
+        return new Response("failed to delete the certificate image", {status: 500});
     }
 }

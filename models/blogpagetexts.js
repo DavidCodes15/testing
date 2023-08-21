@@ -15,15 +15,13 @@ const blogPageTextSchema = new Schema({
     },
     secondBlogPageText: {
         type: String,
-        required: [true, "it is required"],
     },
     secondBlogPageTextEng: {
         type: String,
-        required: [true, "it is required"],
+        
     },
     secondBlogPageTextRus: {
         type: String,
-        required: [true, "it is required"],
     },
     id: {
         type: String,

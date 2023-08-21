@@ -195,7 +195,7 @@ line-height: 1.5rem; /* 24px */
 .product-dropdown {
   display: none;
   position: absolute;
-  top: 100%;
+  top: 80%;
   left: 0;
   background-color: #F6FAFF;
   color: black;
@@ -244,6 +244,11 @@ li:hover .product-dropdown {
   background-color: #1a3da7;
   color: white;
 }
-
+#addForm input {
+  border: black 1px solid;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
 
 

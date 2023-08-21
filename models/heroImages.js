@@ -16,4 +16,4 @@ const HeroImagesSchema = new Schema({
 });
 
 const heroimages = models.heroimages || model("heroimages", HeroImagesSchema);
-export {heroimages};
+export default heroimages;

@@ -37,20 +37,6 @@ const Nav = () => {
     const event = new CustomEvent("languageChange", { detail: item.name });
     window.dispatchEvent(event);
   };
-  // const handleLinkClick = (index) => {
-  //   const newLinkClickedStates = [...linkClickedStates];
-  //   newLinkClickedStates[index] = !newLinkClickedStates[index];
-  //   setLinkClickedStates(newLinkClickedStates);
-  // };
-  // const handleLinkClick = (index) => {
-  //   const newLinkClickedStates = [...linkClickedStates];
-  //   newLinkClickedStates[index] = !newLinkClickedStates[index];
-  //   setLinkClickedStates(newLinkClickedStates);
-  // };
-  // const handleLinkClick = (index) => {
-  //   const newLinkClickedStates = linkClickedStates.map((_, i) => i === index);
-  //   setLinkClickedStates(newLinkClickedStates);
-  // };
   const handleLinkClick = (index) => {
     setIsClicked(index);
   };
@@ -76,6 +62,31 @@ const Nav = () => {
                 </li>
                 <li>
                   <Link href="/admin/hero">მთავარი</Link>
+                </li>
+                <li>
+                  <Link href="/admin/production">
+                  პროდუქცია
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/admin/blogs">
+                    ბლოგი
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/admin/certificates">
+                    სერთიფიკატები
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/admin/about">
+                    ჩვენს შესახებ
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/admin/fittings">
+                    ფიტინგები
+                  </Link>
                 </li>
               </ul>
             </nav>

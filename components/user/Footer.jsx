@@ -1,6 +1,6 @@
 "use client";
 import { useSession } from "next-auth/react";
-
+import Link from "next/link";
 const Footer = () => {
   const {data: session} = useSession();
   return (
@@ -30,15 +30,39 @@ const Footer = () => {
         </div>
         <nav className="flex justify-center items-start space-x-12">
           <ul className="flex flex-col justify-center items-start space-y-4">
-            <li className="font-bold">ჩვენს შესახებ</li>
-            <li>პროდუქცია</li>
-            <li>სერტიფიკატები</li>
-            <li>ბლოგი</li>
+            <li className="font-bold">
+              <Link href="/about">
+              ჩვენს შესახებ
+              </Link>
+          
+            </li>
+            <li>
+              <Link href="/">
+              პროდუქცია
+              </Link>
+             
+              </li>
+            <li>
+              <Link href="/certificates">
+              სერტიფიკატები
+              </Link>
+             
+              </li>
+            <li>
+              <Link href="/blogs">
+              ბლოგი
+              </Link>
+             
+
+            </li>
           
           </ul>
           <ul className="flex flex-col justify-center items-start space-y-6">
             <li className="font-bold">
-                დაგვიკავშირდით
+              <Link href="/contact">
+              დაგვიკავშირდით
+              </Link>
+                
             </li>
             <li className="flex flex-col space-y-4 justify-center items-start">
               <span className="flex space-x-4 items-center">

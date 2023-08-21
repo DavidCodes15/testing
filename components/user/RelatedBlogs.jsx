@@ -6,10 +6,13 @@ const RelatedBlogs = ({ tag, id }) => {
   const [fetched, setFetched] = useState(false);
   const carouselRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const blogTag = tag;
+  
   useEffect(() => {
+    console.log(blogTag);
     const fetchBlogs = async () => {
       try {
-        const res = await fetch(`/api/blogs/related/${tag}`);
+        const res = await fetch(`/api/blogs/related/${blogTag}`);
         const data = await res.json();
         setBlogs(data);
       } catch (error) {
