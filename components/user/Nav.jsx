@@ -348,7 +348,7 @@ const Nav = () => {
                     />
                   </li>
                   <li>
-                    <img src="/assets/logo/logo.png" alt="company logo" />
+                    <img src="/assets/icons/logo.svg" alt="company logo" />
                   </li>
                 </ul>
               </nav>
