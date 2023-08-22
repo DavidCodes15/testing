@@ -22,11 +22,20 @@ const Nav = () => {
   const closeMenu = () => {
     setIsMenuVisible(false);
     document.body.classList.remove('no-scroll');
-
+    const menuElement = document.querySelector('.menu-content');
+  if (menuElement) {
+    menuElement.style.top = '0';
+  }
   };
   const handleMenu = () => {
     setIsMenuVisible(true);
     document.body.classList.add('no-scroll');
+    const currentScrollPosition = window.scrollY;
+
+    const menuElement = document.querySelector('.menu-content');
+  if (menuElement) {
+    menuElement.style.top = `${currentScrollPosition}px`;
+  }
   };
   const handleItemClick = (item) => {
     // setSelectedItem(item);
@@ -367,7 +376,7 @@ const Nav = () => {
           <div
             className={`${
               isMenuVisible ? "block" : "hidden"
-            } w-full h-full bg-[#DFEEFF] absolute top-0 overflow-y-auto left-0 z-10 rounded-r-[60px]`}
+            } menu-content w-full h-full bg-[#DFEEFF] absolute top-0 overflow-y-auto left-0 z-10 rounded-r-[60px]`}
           >
             <ul className="flex flex-col justify-center items-start space-y-4 py-4 px-2 text-[20px]">
               <li className="px-6 border-b-[0.5px] border-solid border-[#ABABAB] py-4 w-[90%]">

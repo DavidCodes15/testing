@@ -65,7 +65,7 @@ const ImageSlider = () => {
   return (
     <>
     <div
-            className="main w-full relative mt-[80px]"
+            className="main w-full relative mt-[90px] lg:mt-[85px]"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
