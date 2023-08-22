@@ -26,7 +26,7 @@ const Footer = () => {
       <div className="hidden lg:block">
       <div className="flex justify-between items-center foot-md px-24 py-12">
         <div>
-          <img className="w-[445px] h-[65px]" src="/assets/logo/logo.png" alt="company logo"/>
+          <img className="w-[445px] h-[65px]" src="/assets/icons/logo.svg" alt="company logo"/>
         </div>
         <nav className="flex justify-center items-start space-x-12">
           <ul className="flex flex-col justify-center items-start space-y-4">

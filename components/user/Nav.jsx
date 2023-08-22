@@ -102,7 +102,7 @@ const Nav = () => {
                     <Link href="/">
                       <img
                         className="fix-image"
-                        src="/assets/logo/logo.png"
+                        src="/assets/icons/logo.svg"
                         alt="company logo"
                       />
                     </Link>

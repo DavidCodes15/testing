@@ -80,6 +80,9 @@ line-height: 2.25rem; /* 36px */
   display: flex;
   justify-content: center; /* Center the content horizontally */
 }
+.fix-image{
+  width: 250px;
+}
 @media (max-width: 1024px){
   #navigation li{
     font-size: 12px;
