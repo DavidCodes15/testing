@@ -19,6 +19,7 @@ const page = () => {
                 console.log(error);
             } finally{
                 setFetched(true);
+                window.location.reload();
             }
         }
         fetchHero(); 
