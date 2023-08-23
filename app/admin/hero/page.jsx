@@ -74,23 +74,23 @@ const page = () => {
         } catch (error) {
             console.log(error);
         } finally{
-           window.location.reload();
+           
         }
     }
     const handleDelete = async (id, publicId) => {
         try{
             setIsDeleting(true);
-            await fetch(`/api/heroImages/delete/${id}`, {
+               await fetch(`/api/heroImages/delete/${id}`, {
                 method: "DELETE",
                 body: JSON.stringify({
                     publicId,
-                })
+                }),
             });
+
         } catch (error) {
             console.log(error);
         } finally {
             console.log("finally deleted");
-            window.location.reload();
          
         }
     }
