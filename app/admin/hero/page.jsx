@@ -19,7 +19,6 @@ const page = () => {
                 console.log(error);
             } finally{
                 setFetched(true);
-                window.location.reload();
             }
         }
         fetchHero(); 
@@ -75,7 +74,7 @@ const page = () => {
         } catch (error) {
             console.log(error);
         } finally{
-           
+            window.location.reload();
         }
     }
     const handleDelete = async (id, publicId) => {
@@ -92,7 +91,7 @@ const page = () => {
             console.log(error);
         } finally {
             console.log("finally deleted");
-         
+         window.location.reload();
         }
     }
   return (
