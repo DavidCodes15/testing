@@ -35,19 +35,19 @@ const MainCertificates = () => {
           </div>
           <div className="flex flex-col items-center lg:items-start justify-center lg:flex-row lg:space-x-4">
             <div className="w-full lg:w-1/2 relative cert mb-5">
-              <div className="absolute top-0 card">
+              <div className="absolute top-0 card rounded-3xl">
                 <img className="cert-width rounded-3xl" src={certs[0].imageUrl} alt={certs[0].imageAlt} />
               </div>
-              <div className="absolute top-0 card  z-1 left-[15%]">
+              <div className="absolute top-0 card  z-1 left-[15%] rounded-3xl">
                 <img className="cert-width rounded-3xl" src={certs[1].imageUrl} alt={certs[1].imageAlt} />
               </div>
-              <div className="absolute top-0 card  z-2 left-[30%]">
+              <div className="absolute top-0 card  z-2 left-[30%] rounded-3xl">
                 <img className="cert-width rounded-3xl" src={certs[2].imageUrl} alt={certs[2].imageAlt} />
               </div>
-              <div className="absolute top-0 card  z-3 left-[45%]">
+              <div className="absolute top-0 card  z-3 left-[45%] rounded-3xl">
                 <img className="cert-width rounded-3xl" src={certs[3].imageUrl} alt={certs[3].imageAlt} />
               </div>
-              <div className="absolute top-0 card  z-4 left-[60%]">
+              <div className="absolute top-0 card  z-4 left-[60%] rounded-3xl">
                 <img className="cert-width rounded-3xl" src={certs[4].imageUrl} alt={certs[4].imageAlt} />
               </div>
             </div>
