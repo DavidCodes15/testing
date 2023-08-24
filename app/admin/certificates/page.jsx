@@ -89,7 +89,8 @@ const page = () => {
             console.log(error);
         } finally{
             console.log("finally deleted the certificate image");
-            window.location.reload();
+           window.location.reload();
+           setDeleting(false);
         }
     }
       const handlePrevious = () => {

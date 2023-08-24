@@ -111,6 +111,7 @@ line-height: 2.25rem; /* 36px */
     padding: 0 5px;
     border-radius: 15px;
     height: 300px;
+    object-position: center center;
   }
   .pagination{
     display: none;
@@ -253,5 +254,4 @@ li:hover .product-dropdown {
   padding: 0.5rem 1rem;
   width: 100%;
 }
-
 
