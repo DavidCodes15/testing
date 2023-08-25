@@ -65,7 +65,7 @@ const ImageSlider = () => {
   return (
     <>
     <div
-            className="main w-full relative mt-[90px] lg:mt-[85px]"
+            className="main w-full relative"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
@@ -77,13 +77,13 @@ const ImageSlider = () => {
                     index === activeIndex ? "visible" : "hidden"
                   }`}
                 >
-                  <img
+                   <img
                     src={hero.imageUrl}
-                    alt={`Slide ${index + 1}`}
+                     alt={`Slide ${index + 1}`}
                     className={`img ${
-                      index === activeIndex ? "visible" : "hidden"
-                    }`}
-                  />
+                       index === activeIndex ? "visible" : "hidden"
+                     }`}
+                   />
                 </div>
               ))}
             </div>
