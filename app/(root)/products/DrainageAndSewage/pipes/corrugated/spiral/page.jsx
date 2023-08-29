@@ -35,24 +35,26 @@ const page = () => {
       setImageSource(pipeFirst);
     } else if (buttonId === 2) {
       setTableData([
+        { column1: 600, column2: "6-12" },
         { column1: 700, column2: "6-12" },
         { column1: 800, column2: "6-12" },
-        { column1: 900, column2: "6-12" },
-        { column1: 1100, column2: "6-12" },
-        { column1: 1300, column2: "6-12" },
-        { column1: 1500, column2: "6-12" },
-        { column1: 1700, column2: "6-12" },
+        { column1: 100, column2: "6-12" },
+        { column1: 1200, column2: "6-12" },
+        { column1: 1400, column2: "6-12" },
+        { column1: 1600, column2: "6-12" },
       ]);
       setImageSource(pipeSecond);
     } else if (buttonId === 3) {
       setTableData([
+        { column1: 600, column2: "6-12" },
+        { column1: 700, column2: "6-12" },
+        { column1: 800, column2: "6-12" },
         { column1: 900, column2: "6-12" },
         { column1: 1000, column2: "6-12" },
         { column1: 1200, column2: "6-12" },
         { column1: 1400, column2: "6-12" },
+        { column1: 1500, column2: "6-12" },
         { column1: 1600, column2: "6-12" },
-        { column1: 1800, column2: "6-12" },
-        { column1: 2000, column2: "6-12" },
       ]);
       setImageSource(pipeFirst);
     }
@@ -162,11 +164,6 @@ const page = () => {
               />
             </div>
             <div className="flex flex-col space-y-4 justify-center items-center lg:items-start">
-                <div>
-                  <h3>
-                  სანიაღვრე და საკანალიზაციო სპირალური გოფრირებული მილები
-                  </h3>
-                </div>
                 <table className="table-fixed">
                   <thead>
                     <tr>

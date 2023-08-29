@@ -179,11 +179,6 @@ const page = () => {
               />
             </div>
             <div className="flex flex-col space-y-4 justify-center items-center lg:items-start">
-                <div>
-                  <h3>
-                  სანიაღვრე და საკანალიზაციო გოფრირებული მილები
-                  </h3>
-                </div>
                 <table className="table-fixed">
                   <thead>
                     <tr>
