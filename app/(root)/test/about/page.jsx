@@ -1,115 +1,27 @@
 "use client";
-import { useEffect, useState } from "react";
-import { useSession } from "next-auth/react";
+import { useState } from "react";
 
 const page = () => {
-  const { data: session } = useSession();
-  const [fetched, setFetched] = useState(false);
-  const [texts, setTexts] = useState([]);
-  const [adding, setAdding] = useState(false);
-  const [deleting, setDeleting] = useState(false);
-  useEffect(() => {
-    const fetchTexts = async () => {
-      try {
-        const res = await fetch("/api/about");
-        const data = await res.json();
-        setTexts(data);
-      } catch (error) {
-        console.log(error);
-      } finally {
-        setFetched(true);
-      }
-    };
-    fetchTexts();
-  }, []);
-  async function handleSubmit(e) {
+  const [selectedLanguage, setSelectedLanguage] = useState("GEO");
+  async function handleSubmit(e){
     e.preventDefault();
-    setAdding(true);
     const form = e.currentTarget;
-    const generalText = form.elements.general.value;
-    const firstText = form.elements.first.value;
-    const secondText = form.elements.second.value;
-    const thirdText = form.elements.third.value;
-    const generalEngText = form.elements.generalEng.value;
-    const firstEngText = form.elements.firstEng.value;
-    const secondEngText = form.elements.secondEng.value;
-    const thirdEngText = form.elements.thirdEng.value;
-    const generalRusText = form.elements.generalRus.value;
-    const firstRusText = form.elements.firstRus.value;
-    const secondRusText = form.elements.secondRus.value;
-    const thirdRusText = form.elements.thirdRus.value;
-
-    sendToBackEnd(
-      generalText,
-      firstText,
-      secondText,
-      thirdText,
-      generalEngText,
-      firstEngText,
-      secondEngText,
-      thirdEngText,
-      generalRusText,
-      firstRusText,
-      secondRusText,
-      thirdRusText
-    );
+    console.log(form.elements.general.value);
+    console.log(form.elements.generalEng.value);
+    console.log(form.elements.generalRus.value);
+    console.log(form.elements.first.value);
+    console.log(form.elements.firstEng.value);
+    console.log(form.elements.firstRus.value);
+    console.log(form.elements.second.value);
+    console.log(form.elements.secondEng.value);
+    console.log(form.elements.secondRus.value);
+    console.log(form.elements.third.value);
+    console.log(form.elements.thirdEng.value);
+    console.log(form.elements.thirdRus.value);
   }
-  async function sendToBackEnd(
-    generalText,
-    firstText,
-    secondText,
-    thirdText,
-    generalEngText,
-    firstEngText,
-    secondEngText,
-    thirdEngText,
-    generalRusText,
-    firstRusText,
-    secondRusText,
-    thirdRusText
-  ) {
-    try {
-      await fetch("/api/about/new", {
-        method: "POST",
-        body: JSON.stringify({
-          generalText,
-          firstText,
-          secondText,
-          thirdText,
-          generalEngText,
-          firstEngText,
-          secondEngText,
-          thirdEngText,
-          generalRusText,
-          firstRusText,
-          secondRusText,
-          thirdRusText,
-        }),
-      });
-    } catch (error) {
-      console.log(error);
-    } finally {
-      console.log("finally added the text");
-      window.location.reload();
-    }
-  }
-  const handleDelete = async (id) => {
-    try {
-      await fetch(`/api/about/delete/${id}`, {
-        method: "DELETE",
-      });
-    } catch (error) {
-      console.log(error);
-    } finally {
-      console.log("finally deleted the text");
-      window.location.reload();
-    }
-  };
   return (
     <>
-      {session?.user ? (
-        <>
-                <div className="flex justify-between mt-[100px]">
+      <div className="flex justify-between mt-[100px]">
         <div className="flex space-x-4">
           <button onClick={() => setSelectedLanguage("GEO")}>GEO</button>
           <button onClick={() => setSelectedLanguage("ENG")}>ENG</button>
@@ -251,50 +163,9 @@ const page = () => {
               </p>
             </div>
           </div>
-          <button type="submit" className="border-black border-solid border-[1px] rounded px-4 py-2 text-white bg-black">
-            {adding ? "პროცესშია..." : "დაამატე"}
-          </button>
+          <button type="submit" className="border-black border-solid border-[1px] rounded px-4 py-2 text-white bg-black">დაამატე</button>
         </form>
       </section>
-          {fetched === true ? (
-            <>
-              <section className="container px-5 mt-[200px]">
-                <div className="flex justify-start items-center px-4">
-                  {texts.map((text, index) => (
-                    <div
-                      key={index}
-                      className="relative flex flex-col justify-center items-start py-6 px-4 space-y-6"
-                    >
-                      <div className="flex flex-col justify-center items-start space-y-4">
-                        <span>ზოგადი</span>
-                        <p>{text.generalText}</p>
-                      </div>
-                      <div className="flex flex-col justify-center items-start space-y-4">
-                        <span>პირველი ტექსტი</span>
-                        <p>{text.firstText}</p>
-                      </div>
-                      <div className="flex flex-col justify-center items-start space-y-4">
-                        <span>მეორე ტექსტი</span>
-                        <p>{text.secondText}</p>
-                      </div>
-                      <div className="flex flex-col justify-center items-start space-y-4">
-                        <span>მესამე ტექსტი</span>
-                        <p>{text.thirdText}</p>
-                      </div>
-                      <button
-                        onClick={() => handleDelete(text._id)}
-                        className="bg-black border-black border-solid border-[1px] rounded px-4 py-2 text-red-600 absolute top-0 right-0"
-                      >
-                        {deleting === true ? "იშლება..." : "წაშალე"}
-                      </button>
-                    </div>
-                  ))}
-                </div>
-              </section>
-            </>
-          ) : null}
-        </>
-      ) : null}
     </>
   );
 };

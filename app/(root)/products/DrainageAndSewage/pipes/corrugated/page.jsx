@@ -44,31 +44,31 @@ const page = () => {
       setImageSource(pipeFirst);
     } else if (buttonId === 2) {
       setTableData([
-        { column1: 200, column2: 218, column3: 6 },
-        { column1: 225, column2: 339, column3: 6 },
-        { column1: 250, column2: 474, column3: 6 },
-        { column1: 300, column2: 533, column3: 6 },
-        { column1: 350, column2: 791, column3: 6 },
-        { column1: 400, column2: 453, column3: 6 },
-        { column1: 500, column2: 368, column3: 6 },
-        { column1: 600, column2: 280, column3: 6 },
-        { column1: 700, column2: 100, column3: 6 },
-        { column1: 800, column2: 204, column3: 6 },
+        { column1: 200, column2: 118, column3: 6 },
+        { column1: 125, column2: 139, column3: 6 },
+        { column1: 150, column2: 174, column3: 6 },
+        { column1: 200, column2: 233, column3: 6 },
+        { column1: 250, column2: 291, column3: 6 },
+        { column1: 300, column2: 353, column3: 6 },
+        { column1: 400, column2: 468, column3: 6 },
+        { column1: 500, column2: 580, column3: 6 },
+        { column1: 600, column2: 700, column3: 6 },
+        { column1: 800, column2: 904, column3: 6 },
         { column1: 1000, column2: 1140, column3: 6 },
       ]);
       setImageSource(pipeSecond);
     } else if (buttonId === 3) {
       setTableData([
-        { column1: 200, column2: 118, column3: 6 },
-        { column1: 525, column2: 139, column3: 6 },
-        { column1: 350, column2: 274, column3: 6 },
-        { column1: 200, column2: 133, column3: 6 },
-        { column1: 250, column2: 391, column3: 6 },
-        { column1: 600, column2: 253, column3: 6 },
-        { column1: 400, column2: 568, column3: 6 },
-        { column1: 400, column2: 380, column3: 6 },
-        { column1: 500, column2: 600, column3: 6 },
-        { column1: 800, column2: 1004, column3: 6 },
+        { column1: 100, column2: 118, column3: 6 },
+        { column1: 125, column2: 139, column3: 6 },
+        { column1: 150, column2: 174, column3: 6 },
+        { column1: 200, column2: 233, column3: 6 },
+        { column1: 250, column2: 291, column3: 6 },
+        { column1: 300, column2: 353, column3: 6 },
+        { column1: 400, column2: 468, column3: 6 },
+        { column1: 500, column2: 580, column3: 6 },
+        { column1: 600, column2: 700, column3: 6 },
+        { column1: 800, column2: 904, column3: 6 },
         { column1: 100, column2: 1140, column3: 6 },
       ]);
       setImageSource(pipeFirst);

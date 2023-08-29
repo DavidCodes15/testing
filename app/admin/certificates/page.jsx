@@ -14,6 +14,28 @@ const page = () => {
     const [deleting, setDeleting] = useState(false);
     const carouselRef = useRef(null);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedLanguage, setSelectedLanguage] = useState("GEO");
+  function handleImageChange(event) {
+    const fileInput = event.target;
+
+    if (fileInput.files && fileInput.files[0]) {
+      const reader = new FileReader();
+
+      reader.onload = function (e) {
+        setSelectedImage(e.target.result);
+      };
+
+      reader.readAsDataURL(fileInput.files[0]);
+    }
+  }
+  useEffect(() => {
+    const fileInput = document.getElementById("certImage");
+    fileInput.addEventListener("change", handleImageChange);
+    return () => {
+      fileInput.removeEventListener("change", handleImageChange);
+    };
+  }, []);
     useEffect(() => {
         const fetchCerts = async () => {
           try {
@@ -35,7 +57,7 @@ const page = () => {
 
     // first one
     const fileInput = Array.from(form.elements).find(
-      ({ name }) => name === "cert"
+      ({ name }) => name === "certImage"
     );
     const formData = new FormData();
     for (const file of fileInput.files) {
@@ -53,12 +75,15 @@ const page = () => {
     const imageUrl = data.secure_url;
     const publicId = data.public_id;
     const imageAlt = form.elements.imageAlt.value;
+    const certName = form.elements.certName.value;
+    const certNameEng = form.elements.certNameEng.value;
+    const certNameRus = form.elements.certNameRus.value;
     const certId = form.elements.certId.value;
       
-      sendToBackEnd(imageName, imageUrl, publicId, imageAlt, certId);
+      sendToBackEnd(imageName, imageUrl, publicId, imageAlt, certId, certName, certNameEng, certNameRus);
       
     }
-    async function sendToBackEnd(imageName, imageUrl, publicId, imageAlt, certId){
+    async function sendToBackEnd(imageName, imageUrl, publicId, imageAlt, certId, certName, certNameEng, certNameRus){
         try{
             await fetch("/api/certificates/new", {
                 method: "POST",
@@ -68,6 +93,9 @@ const page = () => {
                     publicId,
                     imageAlt,
                     certId,
+                    certName,
+                    certNameEng,
+                    certNameRus,
                 }),
             }).then((r) => r.json());
         } catch (error){
@@ -114,7 +142,61 @@ const page = () => {
               </Link>
             </div>
           </section>
-          <section className="container mx-auto mt-12">
+          <div className="flex justify-between mt-[100px]">
+        <div className="flex space-x-4">
+          <button onClick={() => setSelectedLanguage("GEO")}>GEO</button>
+          <button onClick={() => setSelectedLanguage("ENG")}>ENG</button>
+          <button onClick={() => setSelectedLanguage("RUS")}>RUS</button>
+        </div>
+      </div>
+          <section className="container mx-auto mt-[50px]">
+        <div>
+          <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center">
+            <div
+              className="bg-[#ECF5FF] rounded px-4 py-2 relative flex flex-col justify-center items-center space-y-2"
+            >
+              <img
+                className="w-[288px] h-[367px] rounded"
+                src={selectedImage || "/assets/icons/certPlaceholder.svg"}
+              />
+              <div className="absolute top-0 right-5">
+                  <label
+                    htmlFor="certImage"
+                    className="border-1 border-black border-solid px-4 py-2 rounded"
+                  >
+                    <img
+                      className="cursor-pointer w-8 h-8"
+                      src="/assets/icons/add.svg"
+                    />
+                  </label>
+                  <input
+                    type="file"
+                    id="certImage"
+                    name="certImage"
+                    style={{ display: "none" }}
+                    onChange={handleImageChange}
+                  />
+                </div>
+                {selectedImage !== null ? (
+                    <input type="text" id="imageAlt" name="imageAlt" placeholder="ფოტოს ალტი" className="border-[1px] border-solid border-black rounded px-4 py-2" />
+                ): (
+                    null
+                )}
+              <span>
+                 <input className={`${selectedLanguage === "GEO" ? "visible" : "hidden"} bg-transparent`} type="text" id="certName" name="certName" placeholder="სერთიფიკატის სახელი" />
+                 <input className={`${selectedLanguage === "ENG" ? "visible" : "hidden"} bg-transparent`} type="text" id="certNameEng" name="certNameEng" placeholder="certificate Name" />
+                 <input className={`${selectedLanguage === "RUS" ? "visible" : "hidden"} bg-transparent`} type="text" id="certNameRus" name="certNameRus" placeholder="certificate name Rus" />
+              </span>
+              <span className="flex flex-col space-y-2">
+                <label className="flex justify-center items-center">id</label>
+                <input className="bg-transparent border-[1px] border-black border-solid px-4 py-2 rounded" type="text" id="certId" name="certId" placeholder="მთავარი -- გვერდის"/>
+              </span>
+            </div>
+            <button type="submit" className="text-white bg-black border-black border-[1px] border-solid rounded px-4 py-2">დაამატე</button>
+          </form>
+        </div>
+      </section>
+          {/* <section className="container mx-auto mt-12">
                 <div className="flex justify-center items-center">
                     <form
                     id="addForm"
@@ -132,7 +214,8 @@ const page = () => {
                         </button>
                     </form>
                 </div>
-          </section>    
+    </section>     */}
+
           {fetched === true ? (
           <section>
           <div className="flex justify-end items-center space-x-2 px-12 mt-24">

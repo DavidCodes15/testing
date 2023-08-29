@@ -21,6 +21,19 @@ const certificatesSchema = new Schema({
         type: String,
         required: [true, "it is required"],
     },
+    certName: {
+        type: String,
+        required: [true, "it is required"],
+    },
+    certNameEng: {
+        type: String,
+        required: [true, "it is required"],
+    },
+    certNameRus: {
+        type: String,
+        required: [true, "it is required"],
+    },
+
 });
 
 const certificates = models.certificates || model("certificates", certificatesSchema);
