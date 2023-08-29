@@ -44,7 +44,7 @@ const page = () => {
       setImageSource(pipeFirst);
     } else if (buttonId === 2) {
       setTableData([
-        { column1: 200, column2: 118, column3: 6 },
+        { column1: 100, column2: 118, column3: 6 },
         { column1: 125, column2: 139, column3: 6 },
         { column1: 150, column2: 174, column3: 6 },
         { column1: 200, column2: 233, column3: 6 },
@@ -188,7 +188,7 @@ const page = () => {
                   <thead>
                     <tr>
                       <th className="w-1/2 px-10 lg:px-14 py-2">ID &#40;mm&#41;</th>
-                      <th className="w-1/4 px-5 lg:px-10 py-2">ID &#40;mm&#41;</th>
+                      <th className="w-1/4 px-5 lg:px-10 py-2">OD &#40;mm&#41;</th>
                       <th className="w-1/4 px-5 lg:px-10 py-2">L &#40;mm&#41;</th>
                     </tr>
                   </thead>
