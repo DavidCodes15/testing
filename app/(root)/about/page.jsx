@@ -57,7 +57,7 @@ const AboutPage = () => {
                   {selectedLanguage === "ENG" && "About Us"}
                   {selectedLanguage === "RUS" && "о нас"}
               </h1>
-              <p className="max-w-[760px] text-center">
+              <p className="max-w-[760px] text-left">
                   {selectedLanguage === "GEO" && texts[0].generalText}
                   {selectedLanguage === "ENG" && texts[0].generalEngText}
                   {selectedLanguage === "RUS" && texts[0].generalRusText}
