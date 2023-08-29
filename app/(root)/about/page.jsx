@@ -76,7 +76,7 @@ const AboutPage = () => {
              
             
               <div className="flex justify-center items-center space-x-6 fix-second-about flex-col lg:flex-row lg:space-x-6 lg:space-y-0 lg:justify-center lg:items-center">
-                <img src="/assets/icons/about3.png" alt="second about us" />
+                <img src="/assets/icons/about2.png" alt="second about us" />
                 <p className="max-w-[717px] bg-[#ADD1FC] rounded-md px-8 py-12">
                 {selectedLanguage === "GEO" && texts[0].secondText}
                   {selectedLanguage === "ENG" && texts[0].secondEngText}
