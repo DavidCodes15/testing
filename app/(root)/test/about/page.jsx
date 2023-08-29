@@ -5,6 +5,7 @@ const page = () => {
   const [selectedLanguage, setSelectedLanguage] = useState("GEO");
   async function handleSubmit(e){
     e.preventDefault();
+    console.log("logged");
     const form = e.currentTarget;
     console.log(form.elements.general.value);
     console.log(form.elements.generalEng.value);
