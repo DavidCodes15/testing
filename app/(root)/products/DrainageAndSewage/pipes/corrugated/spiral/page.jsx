@@ -184,15 +184,15 @@ const page = () => {
                 <table className="table-fixed">
                   <thead>
                     <tr>
-                      <th className="w-1/2 px-10 lg:px-16 py-2">ID &#40;mm&#41;</th>
-                      <th className="w-1/2 px-10 lg:px-16 py-2">Length &#40;m&#41;</th>
+                      <th className="w-1/2 px-4 py-2">ID &#40;mm&#41;</th>
+                      <th className="w-1/2 px-6  py-2">L &#40;m&#41;</th>
                     </tr>
                   </thead>
                   <tbody>
                     {tableData.map((rowData, index) => (
                          <tr key={index} style={index % 2 === 0 ? { background: "#c6daf1" } : {}}>
-                         <td className="px-10 py-2 text-center">{rowData.column1}</td>
-                         <td className="px-10 py-2 text-center">{rowData.column2}</td>
+                         <td className="px-8 py-2 text-center">{rowData.column1}</td>
+                         <td className="px-8 py-2 text-center">{rowData.column2}</td>
                        </tr>
                     ))}
                   </tbody>
