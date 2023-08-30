@@ -147,26 +147,7 @@ const page = () => {
                       <td className="px-8 py-2 text-center">
                         {rowData.column2}
                       </td>
-                      {/* <td className="px-4 py-2 text-center">{rowData.column3}</td> */}
-                      <td className="px-10 py-2 text-left">
-                        {String(rowData.column3).includes("-") ? (
-                          <div className="flex">
-                            {String(rowData.column3)
-                              .split("-")
-                              .map((value, i) => (
-                                <span
-                                  key={i}
-                                  className="whitespace-nowrap" // Add this class for inline display
-                                >
-                                  {value}
-                                  {i === 0 && <span className="mx-1">-</span>}
-                                </span>
-                              ))}
-                          </div>
-                        ) : (
-                          rowData.column3
-                        )}
-                      </td>
+                      <td className="px-4 py-2 text-center">{rowData.column3}</td>
                     </tr>
                   ))}
                 </tbody>
