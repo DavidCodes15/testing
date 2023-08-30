@@ -11,31 +11,20 @@ const page = () => {
   const [selectedButton, setSelectedButton] = useState(1);
   const [product, setImageSource] = useState(pipeFirst);
   const [tableData, setTableData] = useState([
-    { column1: 50, column2: 1.8, column3: 1000 },
-    { column1: 50, column2: 1.8, column3: 2000 },
-    { column1: 50, column2: 2.2, column3: 1000 },
-    { column1: 50, column2: 2.2, column3: 2000 },
-    { column1: 50, column2: 1.8, column3: 3000 },
-    { column1: 50, column2: 1.8, column3: 1000 },
-    { column1: 50, column2: 2.2, column3: 2000 },
-    { column1: 75, column2: 2.2, column3: 3000 },
-    { column1: 75, column2: 2.2, column3: 3000 },
-    { column1: 75, column2: 2.2, column3: 3000 },
-    { column1: 75, column2: 2.2, column3: 3000 },
-    { column1: 75, column2: 2.2, column3: 3000 },
-    { column1: 75, column2: 2.2, column3: 3000 },
-    { column1: 75, column2: 2.2, column3: 3000 },
-    { column1: 75, column2: 2.2, column3: 3000 },
-    { column1: 75, column2: 2.2, column3: 3000 },
-    { column1: 75, column2: 2.2, column3: 3000 },
-    { column1: 75, column2: 2.2, column3: 3000 },
-    { column1: 75, column2: 2.2, column3: 3000 },
-    { column1: 75, column2: 2.2, column3: 3000 },
-    { column1: 75, column2: 2.2, column3: 3000 },
-    { column1: 75, column2: 2.2, column3: 3000 },
-    { column1: 75, column2: 2.2, column3: 3000 },
-    { column1: 75, column2: 2.2, column3: 3000 },
-    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 50, column2: 1.8, column3: "1000-2000" },
+    { column1: 50, column2: 2.2, column3: "1000-2000" },
+    { column1: 50, column2: 1.8, column3: "250-500" },
+    { column1: 75, column2: 2.2, column3: "1000-2000" },
+    { column1: 75, column2: 1.8, column3: 3000 },
+    { column1: 110, column2: 2.2, column3: "250-500" },
+    { column1: 110, column2: 2.2, column3: "1000-2000" },
+    { column1: 110, column2: 2.2, column3: 3000 },
+    { column1: 110, column2: 2.7, column3: "100-250" },
+    { column1: 110, column2: 2.7, column3: "500-1000" },
+    { column1: 110, column2: 2.7, column3: "2000-3000" },
+    { column1: 125, column2: 2.2, column3: "1000-2000" },
+    { column1: 125, column2: 2.2, column3: 3000 },
+    { column1: 160, column2: 3, column3: 3000 },
   ]);
   return (
     <>
@@ -111,17 +100,12 @@ const page = () => {
               </p>
             </div>
             <div className="flex flex-col space-y-4 justify-center items-center lg:items-start">
-                <div>
-                  <h3>
-                  პოლიპროპილენის საკანალიზაციო &#40;PPR&#41; მილები
-                  </h3>
-                </div>
                 <table className="table-fixed">
                   <thead>
                     <tr>
-                      <th className="w-1/4 px-8 lg:px-12 py-2">ID &#40;mm&#41;</th>
-                      <th className="w-1/4 px-8 lg:px-12 py-2">S</th>
-                      <th className="w-1/2 px-10 lg:px-16 py-2">L &#40;mm&#41;</th>
+                      <th className="w-1/6 px-4 py-2">ID &#40;mm&#41;</th>
+                      <th className="w-1/2 px-10 py-2">S &#40;mm&#41;</th>
+                      <th className="w-1/4 px-4 py-2">L &#40;m&#41;</th>
                     </tr>
                   </thead>
                   <tbody>
