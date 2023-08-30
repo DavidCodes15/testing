@@ -122,10 +122,10 @@ const page = () => {
             </div>
 
             <div className="hidden fix-sizing lg:grid grid-cols-2 gap-5">
-              <img src="/assets/icons/PPR1.png" alt="pipe first placeholder" />
-              <img src="/assets/icons/PPR2.png" alt="pipe second placeholder" />
-              <img src="/assets/icons/PPR3.png" alt="pipe third placeholder" />
-              <img src="/assets/icons/PPR4.png" alt="pipe fourth placeholder" />
+              <img className="rounded-xl" src="/assets/icons/PPR1.png" alt="pipe first placeholder" />
+              <img className="rounded-xl" src="/assets/icons/PPR2.png" alt="pipe second placeholder" />
+              <img className="rounded-xl" src="/assets/icons/PPR3.png" alt="pipe third placeholder" />
+              <img className="rounded-xl" src="/assets/icons/PPR4.png" alt="pipe fourth placeholder" />
             </div>
           </div>
           <div className="flex flex-col space-y-4 justify-center items-center pr-2 lg:items-start lg:pr-0">

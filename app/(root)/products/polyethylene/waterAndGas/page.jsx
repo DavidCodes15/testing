@@ -307,10 +307,10 @@ const toggleOptions = () => {
             </div>
 
             <div className="hidden fix-sizing lg:grid grid-cols-2 gap-5">
-              <img src="/assets/icons/PPR1.png" alt="pipe first placeholder" />
-              <img src="/assets/icons/PPR2.png" alt="pipe second placeholder" />
-              <img src="/assets/icons/PPR3.png" alt="pipe third placeholder" />
-              <img src="/assets/icons/PPR4.png" alt="pipe fourth placeholder" />
+              <img className="rounded-xl" src="/assets/icons/PPR1.png" alt="pipe first placeholder" />
+              <img className="rounded-xl" src="/assets/icons/PPR2.png" alt="pipe second placeholder" />
+              <img className="rounded-xl" src="/assets/icons/PPR3.png" alt="pipe third placeholder" />
+              <img className="rounded-xl" src="/assets/icons/PPR4.png" alt="pipe fourth placeholder" />
             </div>
           </div>
           <div className="flex flex-col space-y-4 justify-center items-center pr-2 lg:items-start lg:pr-0">
@@ -407,11 +407,13 @@ const toggleOptions = () => {
               <table className="table-fixed">
                 <thead>
                   <tr>
-                    <th className="w-1/4 px-8 lg:px-12 py-2">
+                    <th className="w-1/6 px-4 py-2">
                       ID &#40;mm&#41;
                     </th>
-                    <th className="w-1/4 px-8 lg:px-12 py-2">S &#40;mm&#41;</th>
-                    <th className="w-1/2 px-10 lg:px-16 py-2">
+                    <th className="w-1/2 px-10 py-2">
+                      S &#40;mm&#41;
+                      </th>
+                    <th className="w-1/4 px-4 py-2">
                       L &#40;mm&#41;
                     </th>
                   </tr>
