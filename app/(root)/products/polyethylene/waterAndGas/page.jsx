@@ -22,11 +22,10 @@ const page = () => {
   ]);
   const [optionsVisible, setOptionsVisible] = useState(false);
 
-const toggleOptions = () => {
-  setOptionsVisible(!optionsVisible);
-  setToggled(true);
-};
-
+  const toggleOptions = () => {
+    setOptionsVisible(!optionsVisible);
+    setToggled(true);
+  };
 
   const handleOptionChange = (selectedValue) => {
     setSelectedOption(selectedValue);
@@ -146,7 +145,7 @@ const toggleOptions = () => {
         { column1: 560, column2: 493.6, column3: 33.2 },
         { column1: 630, column2: 555.2, column3: 37.4 },
       ]);
-    } else if (selectedValue === "SDR13.6-PN12.5"){
+    } else if (selectedValue === "SDR13.6-PN12.5") {
       setTableData([
         { column1: 25, column2: 21, column3: 2 },
         { column1: 32, column2: 27.2, column3: 2.4 },
@@ -172,7 +171,7 @@ const toggleOptions = () => {
         { column1: 560, column2: 477.6, column3: 41.2 },
         { column1: 630, column2: 537.4, column3: 46.3 },
       ]);
-    } else if(selectedValue === "SDR11-PN16"){
+    } else if (selectedValue === "SDR11-PN16") {
       setTableData([
         { column1: 20, column2: 16, column3: 2 },
         { column1: 25, column2: 20.4, column3: 2.3 },
@@ -199,7 +198,7 @@ const toggleOptions = () => {
         { column1: 560, column2: 458.4, column3: 50.8 },
         { column1: 630, column2: 515.6, column3: 57.2 },
       ]);
-    } else if (selectedValue === "SDR9-PN20"){
+    } else if (selectedValue === "SDR9-PN20") {
       setTableData([
         { column1: 20, column2: 15.4, column3: 2.3 },
         { column1: 25, column2: 19, column3: 3 },
@@ -226,7 +225,7 @@ const toggleOptions = () => {
         { column1: 560, column2: 435, column3: 62.5 },
         { column1: 630, column2: 489.4, column3: 70.3 },
       ]);
-    } else if (selectedValue === "SDR7.4-PN25"){
+    } else if (selectedValue === "SDR7.4-PN25") {
       setTableData([
         { column1: 20, column2: 14, column3: 3 },
         { column1: 25, column2: 18, column3: 3.5 },
@@ -285,12 +284,13 @@ const toggleOptions = () => {
             </span>
           </div>
           <div className="text-[#1A3DA7]">
-            <Link href="/products/Polypropylene/sewage/pipes">
+            <Link href="/products/polyethylene/waterAndGas">
               {selectedLanguage === "GEO" &&
-                "პოლიპროპილენის საკანალიზაციო (PPR) მილები"}
-              {selectedLanguage === "ENG" && "Polypropylene sewage (PPR) pipes"}
+                "პოლიეთილენის სასმელი წყლის და გაზის მილები"}
+              {selectedLanguage === "ENG" &&
+                "Polyethylene drinking water and gas pipes"}
               {selectedLanguage === "RUS" &&
-                "Полипропиленовая канализация (PPR) трубы"}
+                "Полиэтиленовые трубы для питьевой воды и газа"}
             </Link>
           </div>
         </div>
@@ -307,10 +307,26 @@ const toggleOptions = () => {
             </div>
 
             <div className="hidden fix-sizing lg:grid grid-cols-2 gap-5">
-              <img className="rounded-xl" src="/assets/icons/PPR1.png" alt="pipe first placeholder" />
-              <img className="rounded-xl" src="/assets/icons/PPR2.png" alt="pipe second placeholder" />
-              <img className="rounded-xl" src="/assets/icons/PPR3.png" alt="pipe third placeholder" />
-              <img className="rounded-xl" src="/assets/icons/PPR4.png" alt="pipe fourth placeholder" />
+              <img
+                className="rounded-xl"
+                src="/assets/icons/PPR1.png"
+                alt="pipe first placeholder"
+              />
+              <img
+                className="rounded-xl"
+                src="/assets/icons/PPR2.png"
+                alt="pipe second placeholder"
+              />
+              <img
+                className="rounded-xl"
+                src="/assets/icons/PPR3.png"
+                alt="pipe third placeholder"
+              />
+              <img
+                className="rounded-xl"
+                src="/assets/icons/PPR4.png"
+                alt="pipe fourth placeholder"
+              />
             </div>
           </div>
           <div className="flex flex-col space-y-4 justify-center items-center pr-2 lg:items-start lg:pr-0">
@@ -328,11 +344,14 @@ const toggleOptions = () => {
             </div>
             <div className="custom-select">
               <div className="selected-option" onClick={toggleOptions}>
-                <span>
-                {selectedOption}
-                </span>
+                <span>{selectedOption}</span>
                 <span className="dropdown-icon">
-                  <img src="/assets/icons/arrow-up.svg" className={`${optionsVisible === true ? "rotate-0" : "rotate-180"}`} />
+                  <img
+                    src="/assets/icons/arrow-up.svg"
+                    className={`${
+                      optionsVisible === true ? "rotate-0" : "rotate-180"
+                    }`}
+                  />
                 </span>
               </div>
               {optionsVisible && (
@@ -403,19 +422,12 @@ const toggleOptions = () => {
             </div>
 
             <div className="flex flex-col space-y-4 justify-center items-center lg:items-start">
-             
               <table className="table-fixed">
                 <thead>
                   <tr>
-                    <th className="w-1/6 px-4 py-2">
-                      ID &#40;mm&#41;
-                    </th>
-                    <th className="w-1/2 px-10 py-2">
-                      S &#40;mm&#41;
-                      </th>
-                    <th className="w-1/4 px-4 py-2">
-                      L &#40;m&#41;
-                    </th>
+                    <th className="w-1/6 px-4 py-2">ID &#40;mm&#41;</th>
+                    <th className="w-1/2 px-10 py-2">S &#40;mm&#41;</th>
+                    <th className="w-1/4 px-4 py-2">L &#40;m&#41;</th>
                   </tr>
                 </thead>
                 <tbody>
