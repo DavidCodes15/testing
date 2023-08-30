@@ -7,8 +7,8 @@ import Carousel from "@/components/user/Carousel";
 import { useLanguage } from "@/utils/languageContext";
 const page = () => {
   const { selectedLanguage } = useLanguage();
-  const pipeFirst = "/assets/icons/placeholder1.png";
-  const pipeSecond = "/assets/icons/placeholder2.png";
+  const pipeFirst = "/assets/icons/cold.jpeg";
+  const pipeSecond = "/assets/icons/hot.png";
   const [selectedButton, setSelectedButton] = useState(1);
   const [product, setImageSource] = useState(pipeFirst);
   const [tableData, setTableData] = useState([

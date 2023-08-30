@@ -8,8 +8,8 @@ import { useLanguage } from "@/utils/languageContext";
 
 const page = () => {
   const { selectedLanguage } = useLanguage();
-  const pipeFirst = "/assets/icons/placeholder6.png";
-  const pipeSecond = "/assets/icons/placeholder2.png";
+  const pipeFirst = "/assets/icons/GPD.png";
+  const pipeSecond = "/assets/icons/GPFL.png";
   const [selectedButton, setSelectedButton] = useState(1);
   const [product, setImageSource] = useState(pipeFirst);
   const [tableData, setTableData] = useState([

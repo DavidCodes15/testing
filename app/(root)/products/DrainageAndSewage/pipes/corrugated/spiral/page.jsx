@@ -7,7 +7,7 @@ import "@/app/globals.css";
 import { useLanguage } from "@/utils/languageContext";
 const page = () => {
   const { selectedLanguage } = useLanguage();
-  const pipeFirst = "/assets/icons/placeholder4.png";
+  const pipeFirst = "/assets/icons/Spiral.png";
   const pipeSecond = "/assets/icons/placeholder3.png";
   const [selectedButton, setSelectedButton] = useState(1);
   const [product, setImageSource] = useState(pipeFirst);
@@ -43,7 +43,7 @@ const page = () => {
         { column1: 1400, column2: "6-12" },
         { column1: 1600, column2: "6-12" },
       ]);
-      setImageSource(pipeSecond);
+      setImageSource(pipeFirst);
     } else if (buttonId === 3) {
       setTableData([
         { column1: 600, column2: "6-12" },

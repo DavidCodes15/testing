@@ -7,7 +7,7 @@ import { useLanguage } from "@/utils/languageContext";
 
 const page = () => {
   const { selectedLanguage } = useLanguage();
-  const pipeFirst = "/assets/icons/placeholder7.png";
+  const pipeFirst = "/assets/icons/sewage.jpg";
   const [selectedButton, setSelectedButton] = useState(1);
   const [product, setImageSource] = useState(pipeFirst);
   const [tableData, setTableData] = useState([
@@ -130,7 +130,7 @@ const page = () => {
               <table className="table-fixed">
                 <thead>
                   <tr>
-                    <th className="w-1/6 px-3 py-2">ID &#40;mm&#41;</th>
+                    <th className="w-1/6 px-4 py-2">ID &#40;mm&#41;</th>
                     <th className="w-1/2 px-10 py-2">S &#40;mm&#41;</th>
                     <th className="w-1/4 px-4 py-2">L &#40;m&#41;</th>
                   </tr>
@@ -141,13 +141,13 @@ const page = () => {
                       key={index}
                       style={index % 2 === 0 ? { background: "#c6daf1" } : {}}
                     >
-                      <td className="px-8 py-2 text-center">
+                      <td className="px-10 py-2 text-center">
                         {rowData.column1}
                       </td>
                       <td className="px-8 py-2 text-center">
                         {rowData.column2}
                       </td>
-                      <td className="px-4 py-2 text-center">{rowData.column3}</td>
+                      <td className="px-8 py-2 text-center">{rowData.column3}</td>
                     </tr>
                   ))}
                 </tbody>

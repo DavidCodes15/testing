@@ -7,7 +7,7 @@ import { useLanguage } from "@/utils/languageContext";
 
 const page = () => {
   const { selectedLanguage } = useLanguage();
-  const pipeFirst = "/assets/icons/placeholder8.png";
+  const pipeFirst = "/assets/icons/PE100.png";
   const [selectedOption, setSelectedOption] = useState("SDR41-PN4");
   const [product, setImageSource] = useState(pipeFirst);
   const [toggled, setToggled] = useState(false);

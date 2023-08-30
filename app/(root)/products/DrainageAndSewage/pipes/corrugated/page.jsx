@@ -8,8 +8,8 @@ import { useLanguage } from "@/utils/languageContext";
 
 const page = () => {
   const { selectedLanguage } = useLanguage();
-  const pipeFirst = "/assets/icons/placeholder5.png";
-  const pipeSecond = "/assets/icons/placeholder4.png";
+  const pipeFirst = "/assets/icons/SN4.jpg";
+  const pipeSecond = "/assets/icons/SN8-SN12-SN16.jpg";
   const [selectedButton, setSelectedButton] = useState(1);
   const [product, setImageSource] = useState(pipeFirst);
   const [tableData, setTableData] = useState([
@@ -71,7 +71,7 @@ const page = () => {
         { column1: 800, column2: 904, column3: 6 },
         { column1: 1000, column2: 1140, column3: 6 },
       ]);
-      setImageSource(pipeFirst);
+      setImageSource(pipeSecond);
     } else if (buttonId === 4){
       setTableData([
         { column1: 100, column2: 118, column3: 6 },
