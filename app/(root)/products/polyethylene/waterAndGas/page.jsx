@@ -12,7 +12,6 @@ const page = () => {
   const [product, setImageSource] = useState(pipeFirst);
   const [toggled, setToggled] = useState(false);
   const [tableData, setTableData] = useState([
-    { column1: "mm", column2: "mm", column3: "mm" },
     { column1: 315, column2: 300, column3: 7.7 },
     { column1: 355, column2: 338, column3: 8.7 },
     { column1: 400, column2: 380, column3: 9.8 },
