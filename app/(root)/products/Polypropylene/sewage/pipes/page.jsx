@@ -69,7 +69,7 @@ const page = () => {
         </div>
       </section>
       <section className="container mx-auto mt-[100px] lg:mt-12">
-      <div className="flex flex-col lg:flex-row justify-center items-center space-x-0 px-4 lg:items-start lg:space-x-8">
+        <div className="flex flex-col lg:flex-row justify-center items-center space-x-0 px-4 lg:items-start lg:space-x-8">
           <div className="flex flex-col justify-center items-center space-y-4">
             <div>
               <img
@@ -80,16 +80,32 @@ const page = () => {
             </div>
 
             <div className="hidden fix-sizing lg:grid grid-cols-2 gap-5">
-              <img className="rounded-xl" src="/assets/icons/PPR1.png" alt="pipe first placeholder" />
-              <img className="rounded-xl" src="/assets/icons/PPR2.png" alt="pipe second placeholder" />
-              <img className="rounded-xl" src="/assets/icons/PPR3.png" alt="pipe third placeholder" />
-              <img className="rounded-xl" src="/assets/icons/PPR4.png" alt="pipe fourth placeholder" />
+              <img
+                className="rounded-xl"
+                src="/assets/icons/PPR1.png"
+                alt="pipe first placeholder"
+              />
+              <img
+                className="rounded-xl"
+                src="/assets/icons/PPR2.png"
+                alt="pipe second placeholder"
+              />
+              <img
+                className="rounded-xl"
+                src="/assets/icons/PPR3.png"
+                alt="pipe third placeholder"
+              />
+              <img
+                className="rounded-xl"
+                src="/assets/icons/PPR4.png"
+                alt="pipe fourth placeholder"
+              />
             </div>
           </div>
           <div className="flex flex-col space-y-4 justify-center items-center pr-2 lg:items-start lg:pr-0">
             <div className="hidden lg:flex max-w-[616px] flex-col justify-center items-start space-y-6">
               <h1 className="font-bold text-2xl">
-              პოლიპროპილენის საკანალიზაციო &#40;PPR&#41; მილები
+                პოლიპროპილენის საკანალიზაციო &#40;PPR&#41; მილები
               </h1>
               <p>
                 2017 წელს დამატებითი ინვესტიციის განხორციელებული შემდეგ ჩვენმა
@@ -100,27 +116,52 @@ const page = () => {
               </p>
             </div>
             <div className="flex flex-col space-y-4 justify-center items-center lg:items-start">
-                <table className="table-fixed">
-                  <thead>
-                    <tr>
-                      <th className="w-1/6 px-4 py-2">ID &#40;mm&#41;</th>
-                      <th className="w-1/2 px-10 py-2">S &#40;mm&#41;</th>
-                      <th className="w-1/4 px-4 py-2">L &#40;m&#41;</th>
+              <table className="table-fixed">
+                <thead>
+                  <tr>
+                    <th className="w-1/6 px-3 py-2">ID &#40;mm&#41;</th>
+                    <th className="w-1/2 px-10 py-2">S &#40;mm&#41;</th>
+                    <th className="w-1/4 px-4 py-2">L &#40;m&#41;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {tableData.map((rowData, index) => (
+                    <tr
+                      key={index}
+                      style={index % 2 === 0 ? { background: "#c6daf1" } : {}}
+                    >
+                      <td className="px-8 py-2 text-center">
+                        {rowData.column1}
+                      </td>
+                      <td className="px-8 py-2 text-center">
+                        {rowData.column2}
+                      </td>
+                      {/* <td className="px-4 py-2 text-center">{rowData.column3}</td> */}
+                      <td className="px-10 py-2 text-left">
+                        {String(rowData.column3).includes("-") ? (
+                          <div className="flex">
+                            {String(rowData.column3)
+                              .split("-")
+                              .map((value, i) => (
+                                <span
+                                  key={i}
+                                  className="whitespace-nowrap" // Add this class for inline display
+                                >
+                                  {value}
+                                  {i === 0 && <span className="mx-1">-</span>}
+                                </span>
+                              ))}
+                          </div>
+                        ) : (
+                          rowData.column3
+                        )}
+                      </td>
                     </tr>
-                  </thead>
-                  <tbody>
-                    {tableData.map((rowData, index) => (
-                         <tr key={index} style={index % 2 === 0 ? { background: "#c6daf1" } : {}}>
-                         <td className="px-8 py-2 text-center">{rowData.column1}</td>
-                         <td className="px-8 py-2 text-center">{rowData.column2}</td>
-                         <td className="px-10 py-2 text-center">{rowData.column3}</td>
-                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
-          </div>
-
         </div>
       </section>
       <section>
