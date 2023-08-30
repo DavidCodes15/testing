@@ -191,8 +191,8 @@ const page = () => {
                   <tbody>
                     {tableData.map((rowData, index) => (
                          <tr key={index} style={index % 2 === 0 ? { background: "#c6daf1" } : {}}>
-                         <td className="px-8 py-2 text-center">{rowData.column1}</td>
-                         <td className="px-8 py-2 text-center">{rowData.column2}</td>
+                         <td className="px-16 py-2 text-center">{rowData.column1}</td>
+                         <td className="px-16 py-2 text-center">{rowData.column2}</td>
                        </tr>
                     ))}
                   </tbody>
