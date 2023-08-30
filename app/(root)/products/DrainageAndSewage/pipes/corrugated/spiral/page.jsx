@@ -49,11 +49,9 @@ const page = () => {
         { column1: 600, column2: "6-12" },
         { column1: 700, column2: "6-12" },
         { column1: 800, column2: "6-12" },
-        { column1: 900, column2: "6-12" },
         { column1: 1000, column2: "6-12" },
         { column1: 1200, column2: "6-12" },
         { column1: 1400, column2: "6-12" },
-        { column1: 1500, column2: "6-12" },
         { column1: 1600, column2: "6-12" },
       ]);
       setImageSource(pipeFirst);
@@ -62,11 +60,9 @@ const page = () => {
         { column1: 600, column2: "6-12" },
         { column1: 700, column2: "6-12" },
         { column1: 800, column2: "6-12" },
-        { column1: 900, column2: "6-12" },
         { column1: 1000, column2: "6-12" },
         { column1: 1200, column2: "6-12" },
         { column1: 1400, column2: "6-12" },
-        { column1: 1500, column2: "6-12" },
         { column1: 1600, column2: "6-12" },
       ]);
     }
