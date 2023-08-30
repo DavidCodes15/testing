@@ -185,7 +185,7 @@ const page = () => {
                   <thead>
                     <tr>
                       <th className="w-1/2 px-10 lg:px-16 py-2">ID &#40;mm&#41;</th>
-                      <th className="w-1/2 px-10 lg:px-16 py-2">Length</th>
+                      <th className="w-1/2 px-10 lg:px-16 py-2">Length &#40;m&#41;</th>
                     </tr>
                   </thead>
                   <tbody>

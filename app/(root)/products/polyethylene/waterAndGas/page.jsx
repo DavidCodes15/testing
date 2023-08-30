@@ -414,7 +414,7 @@ const toggleOptions = () => {
                       S &#40;mm&#41;
                       </th>
                     <th className="w-1/4 px-4 py-2">
-                      L &#40;mm&#41;
+                      L &#40;m&#41;
                     </th>
                   </tr>
                 </thead>
