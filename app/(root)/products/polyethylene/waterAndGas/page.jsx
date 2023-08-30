@@ -414,9 +414,7 @@ const toggleOptions = () => {
             </div>
 
             <div className="flex flex-col space-y-4 justify-center items-center lg:items-start">
-              <div>
-                <h3>პოლიეთილენისს სასმელი წყლის და გაზის მილები</h3>
-              </div>
+             
               <table className="table-fixed">
                 <thead>
                   <tr>
