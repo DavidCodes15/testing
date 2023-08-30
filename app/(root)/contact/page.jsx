@@ -177,19 +177,19 @@ const contactpage = () => {
                   <span>
                     <img src="/assets/icons/Group.png" alt="inbox" />
                   </span>
-                  <span>Georgianpipe@gmail.com</span>
+                  <span>info@geopipe.ge</span>
                 </div>
                 <div className="flex justify-start items-center space-x-4">
                   <span>
                     <img src="/assets/icons/phone.png" alt="telephone" />
                   </span>
-                  <span>+1 &#40;555&#41; 000-0000</span>
+                  <span>+995 551 03 03 03</span>
                 </div>
                 <div className="flex justify-start items-center space-x-4">
                   <span>
                     <img src="/assets/icons/location.png" alt="location" />
                   </span>
-                  <span>12 ქიზიყის, თბილისი, საქართველო</span>
+                  <span>ქ. თბილისი, ქიზიყის ქ. N42</span>
                 </div>
               </div>
               <div>

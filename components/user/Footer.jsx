@@ -1,7 +1,9 @@
 "use client";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
+import { useLanguage } from "@/utils/languageContext";
 const Footer = () => {
+  const {selectedLanguage} = useLanguage();
   const {data: session} = useSession();
   return (
     <>
@@ -71,11 +73,15 @@ const Footer = () => {
               </span>
               <span className="flex space-x-4 items-center">
                 <img src="/assets/icons/Group.png" alt="company email"/>
-                <span>info@.geopipe.ge</span>
+                <span>info@geopipe.ge</span>
               </span>
               <span className="flex space-x-4 items-center">
                 <img src="/assets/icons/location.png" alt="company location"/>
-                <span>N42 Kiziki, 0182 Tbilisi, Georgia</span>
+                <span>
+                  {selectedLanguage === "GEO" && "ქ.თბილისი, ქიზიყის ქ. N42"}
+                  {selectedLanguage === "ENG" && "N42 Kiziki, 0182 Tbilisi, Georgia"}
+                  {selectedLanguage === "RUS" && "N42 Кизики, 0182 Тбилиси, Грузия"}
+                </span>
               </span>
             </li>
           </ul>
@@ -84,7 +90,7 @@ const Footer = () => {
         <div className="border-t-[1px] border-gray border-solid flex justify-center items-center space-x-6 py-4">
           <hr className="bg-gray h-[2px]"/>
           <span>©</span>
-          <span className="text-md">georgianpipe.com</span>
+          <span className="text-md">geopipe.ge</span>
           <span className="text-md">ყველა უფლება დაცულია</span>
         </div>
       </div>
