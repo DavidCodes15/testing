@@ -13,8 +13,6 @@ const page = () => {
   const [selectedButton, setSelectedButton] = useState(1);
   const [product, setImageSource] = useState(pipeFirst);
   const [tableData, setTableData] = useState([
-    { column1: 25, column2: 19, column3: "6-12" },
-    { column1: 32, column2: 25, column3: "6-12" },
     { column1: 40, column2: 32, column3: "6-12" },
     { column1: 50, column2: 40, column3: "6-12" },
     { column1: 63, column2: 52, column3: "6-12" },
@@ -26,8 +24,6 @@ const page = () => {
     setSelectedButton(buttonId);
     if (buttonId === 1) {
       setTableData([
-        { column1: 25, column2: 19, column3: "6-12" },
-        { column1: 32, column2: 25, column3: "6-12" },
         { column1: 40, column2: 32, column3: "6-12" },
         { column1: 50, column2: 40, column3: "6-12" },
         { column1: 63, column2: 52, column3: "6-12" },
@@ -38,14 +34,12 @@ const page = () => {
       setImageSource(pipeFirst);
     } else if (buttonId === 2) {
       setTableData([
-        { column1: 45, column2: 19, column3: "6-12" },
-        { column1: 22, column2: 25, column3: "6-12" },
-        { column1: 30, column2: 32, column3: "6-12" },
-        { column1: 60, column2: 40, column3: "6-12" },
-        { column1: 53, column2: 52, column3: "6-12" },
-        { column1: 85, column2: 61, column3: "6-12" },
-        { column1: 100, column2: 75, column3: "6-12" },
-        { column1: 90, column2: 94, column3: "6-12" },
+        { column1: 40, column2: 32, column3: 50 },
+        { column1: 50, column2: 40, column3: 50 },
+        { column1: 63, column2: 52, column3: 50 },
+        { column1: 75, column2: 61, column3: 50 },
+        { column1: 90, column2: 75, column3: 50 },
+        { column1: 110, column2: 94, column3: 50 },
       ]);
       setImageSource(pipeSecond);
     }
