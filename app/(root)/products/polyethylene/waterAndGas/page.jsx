@@ -34,7 +34,6 @@ const toggleOptions = () => {
     setOptionsVisible(false);
     if (selectedValue === "SDR41-PN4") {
       setTableData([
-        { column1: "mm", column2: "mm", column3: "mm" },
         { column1: 315, column2: 300, column3: 7.7 },
         { column1: 355, column2: 338, column3: 8.7 },
         { column1: 400, column2: 380, column3: 9.8 },
@@ -45,7 +44,6 @@ const toggleOptions = () => {
       ]);
     } else if (selectedValue === "SDR33-PN5") {
       setTableData([
-        { column1: "mm", column2: "mm", column3: "mm" },
         { column1: 315, column2: 295.6, column3: 9.7 },
         { column1: 355, column2: 333.2, column3: 10.9 },
         { column1: 400, column2: 375.4, column3: 12.3 },
@@ -56,7 +54,6 @@ const toggleOptions = () => {
       ]);
     } else if (selectedValue === "SDR27-PN6") {
       setTableData([
-        { column1: "mm", column2: "mm", column3: "mm" },
         { column1: 50, column2: 46, column3: 2 },
         { column1: 63, column2: 58, column3: 2.5 },
         { column1: 75, column2: 69.2, column3: 2.9 },
@@ -80,7 +77,6 @@ const toggleOptions = () => {
       ]);
     } else if (selectedValue === "SDR21-PN8") {
       setTableData([
-        { column1: "mm", column2: "mm", column3: "mm" },
         { column1: 40, column2: 36, column3: 2 },
         { column1: 50, column2: 45.2, column3: 2.4 },
         { column1: 63, column2: 57, column3: 3 },
@@ -105,7 +101,6 @@ const toggleOptions = () => {
       ]);
     } else if (selectedValue === "SDR17.6-PN9.5") {
       setTableData([
-        { column1: "mm", column2: "mm", column3: "mm" },
         { column1: 32, column2: 28.2, column3: 1.9 },
         { column1: 40, column2: 35.4, column3: 2.3 },
         { column1: 50, column2: 44.2, column3: 2.9 },
@@ -129,7 +124,6 @@ const toggleOptions = () => {
       ]);
     } else if (selectedValue === "SDR17-PN10") {
       setTableData([
-        { column1: "mm", column2: "mm", column3: "mm" },
         { column1: 32, column2: 28, column3: 2 },
         { column1: 40, column2: 35.2, column3: 2.4 },
         { column1: 50, column2: 44, column3: 3 },
@@ -155,7 +149,6 @@ const toggleOptions = () => {
       ]);
     } else if (selectedValue === "SDR13.6-PN12.5"){
       setTableData([
-        { column1: "mm", column2: "mm", column3: "mm" },
         { column1: 25, column2: 21, column3: 2 },
         { column1: 32, column2: 27.2, column3: 2.4 },
         { column1: 40, column2: 34, column3: 3 },
@@ -182,7 +175,6 @@ const toggleOptions = () => {
       ]);
     } else if(selectedValue === "SDR11-PN16"){
       setTableData([
-        { column1: "mm", column2: "mm", column3: "mm" },
         { column1: 20, column2: 16, column3: 2 },
         { column1: 25, column2: 20.4, column3: 2.3 },
         { column1: 32, column2: 26, column3: 3 },
@@ -210,7 +202,6 @@ const toggleOptions = () => {
       ]);
     } else if (selectedValue === "SDR9-PN20"){
       setTableData([
-        { column1: "mm", column2: "mm", column3: "mm" },
         { column1: 20, column2: 15.4, column3: 2.3 },
         { column1: 25, column2: 19, column3: 3 },
         { column1: 32, column2: 24.8, column3: 3.6 },
@@ -238,7 +229,6 @@ const toggleOptions = () => {
       ]);
     } else if (selectedValue === "SDR7.4-PN25"){
       setTableData([
-        { column1: "mm", column2: "mm", column3: "mm" },
         { column1: 20, column2: 14, column3: 3 },
         { column1: 25, column2: 18, column3: 3.5 },
         { column1: 32, column2: 23.2, column3: 4.4 },
@@ -421,7 +411,7 @@ const toggleOptions = () => {
                     <th className="w-1/4 px-8 lg:px-12 py-2">
                       ID &#40;mm&#41;
                     </th>
-                    <th className="w-1/4 px-8 lg:px-12 py-2">S</th>
+                    <th className="w-1/4 px-8 lg:px-12 py-2">S &#40;mm&#41;</th>
                     <th className="w-1/2 px-10 lg:px-16 py-2">
                       L &#40;mm&#41;
                     </th>
