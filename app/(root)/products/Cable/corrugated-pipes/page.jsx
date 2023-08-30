@@ -125,7 +125,7 @@ const page = () => {
             <div className="flex justify-center items-center space-x-4">
               <Button
                 id={1}
-                label="SN2"
+                label="GPD"
                 selected={selectedButton === 1}
                 onClick={handleButtonClick}
                 className={`custom-button ${
@@ -134,7 +134,7 @@ const page = () => {
               />
               <Button
                 id={2}
-                label="SN4"
+                label="GPFL"
                 selected={selectedButton === 2}
                 onClick={handleButtonClick}
                 className={`custom-button ${
