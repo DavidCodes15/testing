@@ -138,7 +138,7 @@ const page = () => {
           <div className="text-[#1A3DA7]">
             <Link href="/products/Polypropylene/hotAndCold">
               {selectedLanguage === "GEO" &&
-                "პოლიპროპილენის ცივი და წხელი წყლის (PPR) მილები"}
+                "პოლიპროპილენის ცივი და ცხელი წყლის (PPR) მილები"}
               {selectedLanguage === "ENG" &&
                 "Polypropylene cold and hot water (PPR) pipes"}
               {selectedLanguage === "RUS" &&

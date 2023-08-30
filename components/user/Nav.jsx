@@ -227,7 +227,7 @@ const Nav = () => {
                               <span className="max-w-[250px]">
                                 <Link className={`cursor-pointer`} href="/products/Polypropylene/hotAndCold">
                                   {selectedLanguage === "GEO" &&
-                                    "პოლიპროპილენის ცივი და წხელი წყლის (PPR) მილები"}
+                                    "პოლიპროპილენის ცივი და ცხელი წყლის (PPR) მილები"}
                                   {selectedLanguage === "ENG" &&
                                     "Polypropylene cold and hot water (PPR) pipes"}
                                   {selectedLanguage === "RUS" &&
