@@ -38,7 +38,7 @@ const page = () => {
         { column1: 600, column2: "6-12" },
         { column1: 700, column2: "6-12" },
         { column1: 800, column2: "6-12" },
-        { column1: 100, column2: "6-12" },
+        { column1: 1000, column2: "6-12" },
         { column1: 1200, column2: "6-12" },
         { column1: 1400, column2: "6-12" },
         { column1: 1600, column2: "6-12" },
@@ -57,6 +57,18 @@ const page = () => {
         { column1: 1600, column2: "6-12" },
       ]);
       setImageSource(pipeFirst);
+    } else if (buttonId === 4){
+      setTableData([
+        { column1: 600, column2: "6-12" },
+        { column1: 700, column2: "6-12" },
+        { column1: 800, column2: "6-12" },
+        { column1: 900, column2: "6-12" },
+        { column1: 1000, column2: "6-12" },
+        { column1: 1200, column2: "6-12" },
+        { column1: 1400, column2: "6-12" },
+        { column1: 1500, column2: "6-12" },
+        { column1: 1600, column2: "6-12" },
+      ]);
     }
   };
   return (
@@ -137,7 +149,7 @@ const page = () => {
             <div className="flex justify-center items-center space-x-4">
               <Button
                 id={1}
-                label="SN2"
+                label="SN4"
                 selected={selectedButton === 1}
                 onClick={handleButtonClick}
                 className={`custom-button ${
@@ -146,7 +158,7 @@ const page = () => {
               />
               <Button
                 id={2}
-                label="SN4"
+                label="SN8"
                 selected={selectedButton === 2}
                 onClick={handleButtonClick}
                 className={`custom-button ${
@@ -160,6 +172,15 @@ const page = () => {
                 onClick={handleButtonClick}
                 className={`custom-button ${
                   selectedButton === 3 ? "selected" : ""
+                }`}
+              />
+              <Button
+                id={4}
+                label="SN16"
+                selected={selectedButton === 4}
+                onClick={handleButtonClick}
+                className={`custom-button ${
+                  selectedButton === 4 ? "selected" : ""
                 }`}
               />
             </div>

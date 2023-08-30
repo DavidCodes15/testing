@@ -72,6 +72,20 @@ const page = () => {
         { column1: 100, column2: 1140, column3: 6 },
       ]);
       setImageSource(pipeFirst);
+    } else if (buttonId === 4){
+      setTableData([
+        { column1: 100, column2: 118, column3: 6 },
+        { column1: 125, column2: 139, column3: 6 },
+        { column1: 150, column2: 174, column3: 6 },
+        { column1: 200, column2: 233, column3: 6 },
+        { column1: 250, column2: 291, column3: 6 },
+        { column1: 300, column2: 353, column3: 6 },
+        { column1: 400, column2: 468, column3: 6 },
+        { column1: 500, column2: 580, column3: 6 },
+        { column1: 600, column2: 700, column3: 6 },
+        { column1: 800, column2: 904, column3: 6 },
+        { column1: 100, column2: 1140, column3: 6 },
+      ]);
     }
   };
   return (
@@ -175,6 +189,15 @@ const page = () => {
                 onClick={handleButtonClick}
                 className={`custom-button ${
                   selectedButton === 3 ? "selected" : ""
+                }`}
+              />
+              <Button
+                id={4}
+                label="SN16"
+                selected={selectedButton === 4}
+                onClick={handleButtonClick}
+                className={`custom-button ${
+                  selectedButton === 4 ? "selected" : ""
                 }`}
               />
             </div>

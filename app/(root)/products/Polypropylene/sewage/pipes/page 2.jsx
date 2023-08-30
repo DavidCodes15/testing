@@ -8,7 +8,7 @@ import { useLanguage } from "@/utils/languageContext";
 const page = () => {
   const { selectedLanguage } = useLanguage();
   const pipeFirst = "/assets/icons/placeholder7.png";
-  const [selectedButton, setSelectedButton] = useState(1);
+  const [selectedOption, setSelectedOption] = useState("SDR41-PN4");
   const [product, setImageSource] = useState(pipeFirst);
   const [tableData, setTableData] = useState([
     { column1: 50, column2: 1.8, column3: 1000 },
@@ -37,6 +37,98 @@ const page = () => {
     { column1: 75, column2: 2.2, column3: 3000 },
     { column1: 75, column2: 2.2, column3: 3000 },
   ]);
+  const handleOptionChange = (event) => {
+    const selectedValue = event.target.value;
+    setSelectedOption(selectedValue);
+    if(selectedValue === "SDR41-PN4"){
+      setTableData([
+        { column1: 50, column2: 1.8, column3: 1000 },
+    { column1: 50, column2: 1.8, column3: 2000 },
+    { column1: 50, column2: 2.2, column3: 1000 },
+    { column1: 50, column2: 2.2, column3: 2000 },
+    { column1: 50, column2: 1.8, column3: 3000 },
+    { column1: 50, column2: 1.8, column3: 1000 },
+    { column1: 50, column2: 2.2, column3: 2000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+      ]);
+    } else if (selectedValue === "OtherOption1"){
+      setTableData([
+        { column1: 50, column2: 1.8, column3: 1000 },
+    { column1: 120, column2: 2.8, column3: 2300 },
+    { column1: 50, column2: 2.2, column3: 1000 },
+    { column1: 50, column2: 2.2, column3: 2000 },
+    { column1: 50, column2: 1.8, column3: 3000 },
+    { column1: 50, column2: 1.8, column3: 1000 },
+    { column1: 50, column2: 2.2, column3: 2000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+      ]);
+
+    } else if (selectedValue === "OtherOption2"){
+      setTableData([
+        { column1: 50, column2: 1.8, column3: 1000 },
+    { column1: 40, column2: 7.8, column3: 2000 },
+    { column1: 50, column2: 2.2, column3: 1000 },
+    { column1: 50, column2: 2.2, column3: 2000 },
+    { column1: 50, column2: 1.8, column3: 3000 },
+    { column1: 50, column2: 1.8, column3: 1000 },
+    { column1: 50, column2: 2.2, column3: 2000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+    { column1: 75, column2: 2.2, column3: 3000 },
+      ]);
+    }
+    // You can add logic here to update the tableData or other content based on the selected option.
+  };
+
   return (
     <>
       <section
@@ -110,6 +202,16 @@ const page = () => {
                 PN25-ჩათვლით ყველა ატმოსფეროს.
               </p>
             </div>
+            <div className="flex justify-center items-center">
+                <select
+                value={selectedOption}
+                onChange={handleOptionChange}
+                >
+                  <option value="SDR41-PN4">SDR41-PN4</option>
+          <option value="OtherOption1">Other Option 1</option>
+          <option value="OtherOption2">Other Option 2</option>
+                </select>
+            </div>
             <div className="flex flex-col space-y-4 justify-center items-center lg:items-start">
                 <div>
                   <h3>
@@ -119,9 +221,9 @@ const page = () => {
                 <table className="table-fixed">
                   <thead>
                     <tr>
-                      <th className="w-1/4 px-8 lg:px-12 py-2">ID &#40;mm&#41;</th>
-                      <th className="w-1/4 px-8 lg:px-12 py-2">S</th>
-                      <th className="w-1/2 px-10 lg:px-16 py-2">L &#40;mm&#41;</th>
+                      <th className="w-1/4 px-8 lg:px-12 py-2">O/D</th>
+                      <th className="w-1/4 px-8 lg:px-12 py-2">I/D</th>
+                      <th className="w-1/2 px-10 lg:px-16 py-2">S</th>
                     </tr>
                   </thead>
                   <tbody>

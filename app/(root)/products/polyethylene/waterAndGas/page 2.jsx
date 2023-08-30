@@ -8,7 +8,7 @@ import { useLanguage } from "@/utils/languageContext";
 const page = () => {
   const { selectedLanguage } = useLanguage();
   const pipeFirst = "/assets/icons/placeholder8.png";
-  const [selectedButton, setSelectedButton] = useState(1);
+  const [selectedOption, setSelectedOption] = useState("SDR41-PN4");
   const [product, setImageSource] = useState(pipeFirst);
   const [tableData, setTableData] = useState([
     { column1: 50, column2: 1.8, column3: 1000 },
@@ -37,9 +37,98 @@ const page = () => {
     { column1: 75, column2: 2.2, column3: 3000 },
     { column1: 75, column2: 2.2, column3: 3000 },
   ]);
+  const handleOptionChange = (event) => {
+    const selectedValue = event.target.value;
+    setSelectedOption(selectedValue);
+    if(selectedValue === "SDR41-PN4"){
+      setTableData([
+        { column1: 50, column2: 1.8, column3: 1000 },
+        { column1: 50, column2: 1.8, column3: 2000 },
+        { column1: 50, column2: 2.2, column3: 1000 },
+        { column1: 50, column2: 2.2, column3: 2000 },
+        { column1: 50, column2: 1.8, column3: 3000 },
+        { column1: 50, column2: 1.8, column3: 1000 },
+        { column1: 50, column2: 2.2, column3: 2000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+      ]);
+    } else if (selectedValue === "OtherOption1"){
+      setTableData([
+        { column1: 120, column2: 121.8, column3: 2000 },
+        { column1: 50, column2: 1.8, column3: 2000 },
+        { column1: 50, column2: 2.2, column3: 1000 },
+        { column1: 50, column2: 2.2, column3: 2000 },
+        { column1: 50, column2: 1.8, column3: 3000 },
+        { column1: 50, column2: 1.8, column3: 1000 },
+        { column1: 50, column2: 2.2, column3: 2000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+      ]);
+    } else if (selectedOption === "OtherOption2"){
+      setTableData([
+        { column1: 120, column2: 121.8, column3: 2000 },
+        { column1: 5120, column2: 1.8, column3: 2000 },
+        { column1: 512, column2: 2.2, column3: 1000 },
+        { column1: 50, column2: 2.2, column3: 2000 },
+        { column1: 50, column2: 1.8, column3: 3000 },
+        { column1: 50, column2: 1.8, column3: 1000 },
+        { column1: 50, column2: 2.2, column3: 2000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+        { column1: 75, column2: 2.2, column3: 3000 },
+      ]);
+    }
+  }
   return (
-   <>
-   <section
+    <>
+      <section
         className="hidden lg:block container px-5 mt-[100px]"
         id="header"
       >
@@ -80,7 +169,7 @@ const page = () => {
         </div>
       </section>
       <section className="container mx-auto mt-[100px] lg:mt-12">
-      <div className="flex flex-col lg:flex-row justify-center items-center space-x-0 px-4 lg:items-start lg:space-x-8">
+        <div className="flex flex-col lg:flex-row justify-center items-center space-x-0 px-4 lg:items-start lg:space-x-8">
           <div className="flex flex-col justify-center items-center space-y-4">
             <div>
               <img
@@ -100,50 +189,67 @@ const page = () => {
           <div className="flex flex-col space-y-4 justify-center items-center pr-2 lg:items-start lg:pr-0">
             <div className="hidden lg:flex max-w-[616px] flex-col justify-center items-start space-y-6">
               <h1 className="font-bold text-2xl">
-              პოლიეთილენის სასმელი წყლის და გაზის მილები
+                პოლიეთილენის სასმელი წყლის და გაზის მილები
               </h1>
               <p>
                 2017 წელს დამატებითი ინვესტიციის განხორციელებული შემდეგ ჩვენმა
                 კომპანიამ, ასევე მაღალხარისხიანი დანადგარების მონტაჟის შემდეგ,
                 დაიწყო სასმელი და გაზიფიგაციისთვის საჭირო პოლიეთილენის მილების
                 წარმოება. მილების მოიცავს 20მმ - 500მმ ჩათვლით და PN6-დან
-                PN25-ჩათვლით ყველა ატმოსფეროს.
+                PN25-ჩათვლით ყველა ატმოსფერasd
               </p>
             </div>
+            <div className="flex justify-center items-center">
+              <select value={selectedOption} onChange={handleOptionChange}>
+                <option value="SDR41-PN4">SDR41-PN4</option>
+                <option value="OtherOption1">Other Option 1</option>
+                <option value="OtherOption2">Other Option 2</option>
+              </select>
+            </div>
             <div className="flex flex-col space-y-4 justify-center items-center lg:items-start">
-                <div>
-                  <h3>
-                  პოლიეთილენისს სასმელი წყლის და გაზის მილები
-                  </h3>
-                </div>
-                <table className="table-fixed">
-                  <thead>
-                    <tr>
-                      <th className="w-1/4 px-8 lg:px-12 py-2">ID &#40;mm&#41;</th>
-                      <th className="w-1/4 px-8 lg:px-12 py-2">S</th>
-                      <th className="w-1/2 px-10 lg:px-16 py-2">L &#40;mm&#41;</th>
+              <div>
+                <h3>პოლიეთილენისს სასმელი წყლის და გაზის მილები</h3>
+              </div>
+              <table className="table-fixed">
+                <thead>
+                  <tr>
+                    <th className="w-1/4 px-8 lg:px-12 py-2">
+                      ID &#40;mm&#41;
+                    </th>
+                    <th className="w-1/4 px-8 lg:px-12 py-2">S</th>
+                    <th className="w-1/2 px-10 lg:px-16 py-2">
+                      L &#40;mm&#41;
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {tableData.map((rowData, index) => (
+                    <tr
+                      key={index}
+                      style={index % 2 === 0 ? { background: "#c6daf1" } : {}}
+                    >
+                      <td className="px-8 py-2 text-center">
+                        {rowData.column1}
+                      </td>
+                      <td className="px-8 py-2 text-center">
+                        {rowData.column2}
+                      </td>
+                      <td className="px-10 py-2 text-center">
+                        {rowData.column3}
+                      </td>
                     </tr>
-                  </thead>
-                  <tbody>
-                    {tableData.map((rowData, index) => (
-                         <tr key={index} style={index % 2 === 0 ? { background: "#c6daf1" } : {}}>
-                         <td className="px-8 py-2 text-center">{rowData.column1}</td>
-                         <td className="px-8 py-2 text-center">{rowData.column2}</td>
-                         <td className="px-10 py-2 text-center">{rowData.column3}</td>
-                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
-          </div>
-
         </div>
       </section>
       <section>
         <Carousel />
       </section>
-   </>
-  )
-}
+    </>
+  );
+};
 
-export default page
+export default page;

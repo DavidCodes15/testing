@@ -270,3 +270,45 @@ li:hover .product-dropdown {
   padding: 0.5rem 1rem;
   width: 100%;
 }
+.custom-select {
+  position: relative;
+  width: 200px; /* Adjust to your preference */
+  font-family: Arial, sans-serif; /* Set desired font */
+}
+
+.selected-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px; 
+  background-color: white;
+  border: 1px solid #1A3DA7;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.dropdown-icon {
+  font-size: 12px;
+}
+
+.options-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.option {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: #1A3DA7;
+  color: white;
+}
