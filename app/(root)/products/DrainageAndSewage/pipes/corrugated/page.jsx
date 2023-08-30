@@ -69,7 +69,7 @@ const page = () => {
         { column1: 500, column2: 580, column3: 6 },
         { column1: 600, column2: 700, column3: 6 },
         { column1: 800, column2: 904, column3: 6 },
-        { column1: 100, column2: 1140, column3: 6 },
+        { column1: 1000, column2: 1140, column3: 6 },
       ]);
       setImageSource(pipeFirst);
     } else if (buttonId === 4){
@@ -84,7 +84,7 @@ const page = () => {
         { column1: 500, column2: 580, column3: 6 },
         { column1: 600, column2: 700, column3: 6 },
         { column1: 800, column2: 904, column3: 6 },
-        { column1: 100, column2: 1140, column3: 6 },
+        { column1: 1000, column2: 1140, column3: 6 },
       ]);
     }
   };
