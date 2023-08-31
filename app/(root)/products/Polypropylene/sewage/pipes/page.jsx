@@ -4,7 +4,6 @@ import Carousel from "@/components/user/Carousel";
 import Link from "next/link";
 import "@/app/globals.css";
 import { useLanguage } from "@/utils/languageContext";
-
 const page = () => {
   const { selectedLanguage } = useLanguage();
   const pipeFirst = "/assets/icons/sewage.jpg";

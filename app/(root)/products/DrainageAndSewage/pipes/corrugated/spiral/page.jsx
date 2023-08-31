@@ -134,14 +134,14 @@ const page = () => {
               სანიაღვრე და საკანალიზაციო სპირალური გოფრირებული მილები
               </h1>
               <p>
-                {selectedLanguage === "GEO" `„ქართული მილი“ აწარმოებს გოფრირებულ მილებს საკანალიზაციო და სანიაღვრე
+                {selectedLanguage === "GEO" && `„ქართული მილი“ აწარმოებს გოფრირებულ მილებს საკანალიზაციო და სანიაღვრე
 სისტემებისთვის, დიამეტრით 100 მმ-დან 1600 მმ-მდე, სხვადასხვა სიმტკიცის
 კლასებში: SN4, SN8, SN12 და SN16. ჩვენი გოფრირებული მილები სრულად შეესაბამება EN
 13476-3:2018 სტანდარტებს.`}
-                {selectedLanguage === "ENG" `Georgian Pipe produces corrugated pipes for sewage and drainage systems, ranging in diameter from
+                {selectedLanguage === "ENG" && `Georgian Pipe produces corrugated pipes for sewage and drainage systems, ranging in diameter from
 100mm to 1600mm. These pipes are categorized into various strength classes: SN4, SN8, SN12, and
 SN16. Our Corrugated pipes fully comply with the requirements of EN 13476-3:2018.`}
-                {selectedLanguage === "RUS" `«Джорджиан Пайп» производит гофрированные трубы для канализационных и дренажных
+                {selectedLanguage === "RUS" && `«Джорджиан Пайп» производит гофрированные трубы для канализационных и дренажных
 систем диаметром от 100 мм до 1600 мм. Эти трубы подразделяются на различные классы
 прочности: SN4, SN8, SN12 и SN16. Наши гофрированные трубы полностью соответствуют
 требованиям EN 13476-3:2018.`}
