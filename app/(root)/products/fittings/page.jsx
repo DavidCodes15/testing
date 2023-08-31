@@ -8,7 +8,7 @@ const fittingsPage = () => {
   const [fittings, setFittings] = useState([]);
   const [id, setId] = useState("main");
   const [currentPage, setCurrentPage] = useState(1);
-  const perPage = 8;
+  const perPage = 20;
   const [totalCount, setTotalCount] = useState(0);
   const [activeButton, setActiveButton] = useState(null); 
   const totalPages = Math.ceil(totalCount / perPage);

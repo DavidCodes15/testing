@@ -3,7 +3,7 @@ import fittings from "@/models/fittings";
 
 export const POST = async (req, {params}) => {
     const id = params.id;
-   const perPage = 8;
+   const perPage = 20;
    const {page} = await req.json();
    const skip = (page - 1) * perPage;
     try{
