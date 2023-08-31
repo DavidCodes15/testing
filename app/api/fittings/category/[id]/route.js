@@ -8,7 +8,7 @@ export const POST = async (req, {params}) => {
    const skip = (page - 1) * perPage;
     try{
         await connectToDB();
-        const fetchedFittings = await fittings.find({fittingId: id}).skip(skip).limit(8);
+        const fetchedFittings = await fittings.find({fittingId: id}).skip(skip).limit(20);
         return new Response(JSON.stringify(fetchedFittings), {status: 200});
     } catch (error){
         return new Response("failed to fetch fittings by id", {status: 500});
