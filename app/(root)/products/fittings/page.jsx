@@ -6,11 +6,11 @@ import "@/app/globals.css";
 const fittingsPage = () => {
   const { selectedLanguage } = useLanguage();
   const [fittings, setFittings] = useState([]);
-  const [id, setId] = useState("main");
+  const [id, setId] = useState("გოფრირებული მილებისთვის");
   const [currentPage, setCurrentPage] = useState(1);
   const perPage = 20;
   const [totalCount, setTotalCount] = useState(0);
-  const [activeButton, setActiveButton] = useState(null); 
+  const [activeButton, setActiveButton] = useState("გოფრირებული მილებისთვის"); 
   const totalPages = Math.ceil(totalCount / perPage);
   const Ids = [
     "გოფრირებული მილებისთვის",
@@ -93,9 +93,9 @@ const fittingsPage = () => {
     //     console.log(error);
     // }
     if (activeCategory === id) {
-      setId("main");
+      setId("გოფრირებული მილებისთვის");
       setActiveCategory(null);
-      setActiveButton(null);
+      setActiveButton("გოფრირებული მილებისთვის");
     } else {
       setId(id);
       setActiveCategory(id);
