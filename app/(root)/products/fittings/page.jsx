@@ -148,7 +148,7 @@ const fittingsPage = () => {
         </div>
       </section>
       <section className="container mx-auto mt-12">
-        <div className="flex flex-col space-y-6 justfy-center items-start">
+        <div className="flex flex-col space-y-6 justfy-center items-center">
           <div className="hidden lg:flex justify-center items-center space-x-6">
             {Ids.map((id, index) => (
               <button
@@ -184,7 +184,7 @@ const fittingsPage = () => {
                 className="flex flex-col space-y-4 justify-center items-center border-[#ADD1FC] border-solid border-[1px] rounded-xl px-4 py-4"
               >
                 <img
-                  className="w-[410px] h-[220px] rounded-xl"
+                  className="w-[258px] h-[176px] rounded-xl"
                   src={fitting.imageUrl}
                   alt={fitting.imageAlt}
                 />
