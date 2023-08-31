@@ -20,7 +20,9 @@
   width: 100%;
   height: 1080px;
 }
-
+.align-top {
+  vertical-align: top;
+}
 
 .pagination{
     position: absolute;

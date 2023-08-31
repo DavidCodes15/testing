@@ -184,11 +184,92 @@ const fittingsPage = () => {
                 className="flex flex-col space-y-4 justify-center items-center border-[#ADD1FC] border-solid border-[1px] rounded-xl px-4 py-4"
               >
                 <img
-                  className="w-[275px] h-[210px] rounded-xl"
+                  className="w-[410px] h-[220px] rounded-xl"
                   src={fitting.imageUrl}
                   alt={fitting.imageAlt}
                 />
-                <span>{fitting.fittingName}</span>
+                {selectedLanguage === "GEO" && (
+      <span>
+        {fitting.fittingName.split(' ').map((word, i) => (
+          <span key={i}>
+          {i > 0 ? ' ' : ''}
+          {word.match(/\d+/) ? (
+            <span>
+              {word.match(/\d+/)}
+              <img
+                className="w-[20px] h-[20px] inline align-top"
+                src="/assets/icons/degree.svg"
+                alt="Degree Circle"
+              />
+              {word.replace(/\d+/, '')}
+            </span>
+          ) : (
+            word
+          )}
+        </span>
+        ))}
+      </span>
+    )}
+    {selectedLanguage === "ENG" && (
+      <span>
+        {fitting.fittingNameEng.split(' ').map((word, i) => (
+          <span key={i}>
+          {i > 0 ? ' ' : ''}
+          {word.match(/\d+/) ? (
+            <span>
+              {word.match(/\d+/)}
+              <img
+                className="w-[20px] h-[20px] inline align-top"
+                src="/assets/icons/degree.svg"
+                alt="Degree Circle"
+              />
+              {word.replace(/\d+/, '')}
+            </span>
+          ) : (
+            word
+          )}
+        </span>
+        ))}
+      </span>
+    )}
+    {selectedLanguage === "RUS" && (
+      <span>
+        {fitting.fittingNameRus.split(' ').map((word, i) => (
+           <span key={i}>
+           {i > 0 ? ' ' : ''}
+           {word.match(/\d+/) ? (
+             <span>
+               {word.match(/\d+/)}
+               <img
+                 className="w-[20px] h-[20px] inline align-top"
+                 src="/assets/icons/degree.svg"
+                 alt="Degree Circle"
+               />
+               {word.replace(/\d+/, '')}
+             </span>
+           ) : (
+             word
+           )}
+         </span>
+          // <span key={i}>
+          //   {i > 0 ? ' ' : ''}
+          //   {word.match(/\d+/) ? (
+          //     <span>
+          //       {word.replace(/\d+/, '')}
+          //       <img
+          //         className="w-[10px] h-[10px] inline"
+          //         src="assets/icons/degree.svg"
+          //         alt="Degree Circle"
+          //       />
+          //       {word.match(/\d+/)}
+          //     </span>
+          //   ) : (
+          //     word
+          //   )}
+          // </span>
+        ))}
+      </span>
+    )}
               </div>
             ))}
           </div>
