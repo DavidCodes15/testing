@@ -297,7 +297,7 @@ const fittingsPage = () => {
                     item === currentPage
                       ? "bg-[#1A3DA7] text-white"
                       : item === "..."
-                      ? "text-white" // Only set the text color for "..."
+                      ? "text-black" // Only set the text color for "..."
                       : "bg-[#C6CACC] text-white"
                   } px-4 py-2 rounded`}
                   style={
