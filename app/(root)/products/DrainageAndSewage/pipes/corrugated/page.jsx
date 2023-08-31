@@ -72,7 +72,7 @@ const page = () => {
         { column1: 1000, column2: 1140, column3: 6 },
       ]);
       setImageSource(pipeSecond);
-    } else if (buttonId === 4){
+    } else if (buttonId === 4) {
       setTableData([
         { column1: 100, column2: 118, column3: 6 },
         { column1: 125, column2: 139, column3: 6 },
@@ -132,7 +132,7 @@ const page = () => {
         </div>
       </section>
       <section className="container mx-auto mt-[100px] lg:mt-12">
-      <div className="flex flex-col lg:flex-row justify-center items-center space-x-0 px-4 lg:items-start lg:space-x-32">
+        <div className="flex flex-col lg:flex-row justify-center items-center space-x-0 px-4 lg:items-start lg:space-x-32">
           <div className="flex flex-col justify-center items-center space-y-4">
             <div>
               <img
@@ -143,23 +143,49 @@ const page = () => {
             </div>
 
             <div className="hidden fix-sizing lg:grid grid-cols-2 gap-5">
-              <img className="rounded-xl" src="/assets/icons/PPR1.png" alt="pipe first placeholder" />
-              <img className="rounded-xl" src="/assets/icons/PPR2.png" alt="pipe second placeholder" />
-              <img className="rounded-xl" src="/assets/icons/PPR3.png" alt="pipe third placeholder" />
-              <img className="rounded-xl" src="/assets/icons/PPR4.png" alt="pipe fourth placeholder" />
+              <img
+                className="rounded-xl"
+                src="/assets/icons/PPR1.png"
+                alt="pipe first placeholder"
+              />
+              <img
+                className="rounded-xl"
+                src="/assets/icons/PPR2.png"
+                alt="pipe second placeholder"
+              />
+              <img
+                className="rounded-xl"
+                src="/assets/icons/PPR3.png"
+                alt="pipe third placeholder"
+              />
+              <img
+                className="rounded-xl"
+                src="/assets/icons/PPR4.png"
+                alt="pipe fourth placeholder"
+              />
             </div>
           </div>
           <div className="flex flex-col space-y-4 justify-center items-center pr-2 lg:items-start lg:pr-0">
             <div className="hidden lg:flex max-w-[616px] flex-col justify-center items-start space-y-6">
               <h1 className="font-bold text-2xl">
-              სანიაღვრე და საკანალიზაციო გოფრირებული მილები
+                სანიაღვრე და საკანალიზაციო გოფრირებული მილები
               </h1>
               <p>
-                2017 წელს დამატებითი ინვესტიციის განხორციელებული შემდეგ ჩვენმა
-                კომპანიამ, ასევე მაღალხარისხიანი დანადგარების მონტაჟის შემდეგ,
-                დაიწყო სასმელი და გაზიფიგაციისთვის საჭირო პოლიეთილენის მილების
-                წარმოება. მილების მოიცავს 20მმ - 500მმ ჩათვლით და PN6-დან
-                PN25-ჩათვლით ყველა ატმოსფეროს.
+                {selectedLanguage === "GEO" &&
+                  ` „ქართული მილი“ აწარმოებს გოფრირებულ მილებს საკანალიზაციო და სანიაღვრე სისტემებისთვის, დიამეტრით 100 მმ-დან 1600 მმ-მდე, სხვადასხვა სიმტკიცის კლასებში: SN4, SN8, SN12 და SN16. ჩვენი გოფრირებული მილები სრულად შეესაბამება EN 13476-3:2018 სტანდარტებს.
+                 `}
+                {selectedLanguage === "ENG" &&
+                  `
+                 Georgian Pipe produces corrugated pipes for sewage and drainage systems, ranging in diameter from
+100mm to 1600mm. These pipes are categorized into various strength classes: SN4, SN8, SN12, and
+SN16. Our Corrugated pipes fully comply with the requirements of EN 13476-3:2018.
+                 `}
+                 {selectedLanguage === "RUS" && `
+                 «Джорджиан Пайп» производит гофрированные трубы для канализационных и дренажных
+                 систем диаметром от 100 мм до 1600 мм. Эти трубы подразделяются на различные классы
+                 прочности: SN4, SN8, SN12 и SN16. Наши гофрированные трубы полностью соответствуют
+                 требованиям EN 13476-3:2018.
+                 `}
               </p>
             </div>
 
@@ -202,27 +228,35 @@ const page = () => {
               />
             </div>
             <div className="flex flex-col space-y-4 justify-center items-center lg:items-start">
-                <table className="table-fixed">
-                  <thead>
-                    <tr>
-                      <th className="w-1/6 px-3  py-2">ID &#40;mm&#41;</th>
-                      <th className="w-1/2 px-10 py-2">OD &#40;mm&#41;</th>
-                      <th className="w-1/4 px-4 py-2">L &#40;m&#41;</th>
+              <table className="table-fixed">
+                <thead>
+                  <tr>
+                    <th className="w-1/6 px-3  py-2">ID &#40;mm&#41;</th>
+                    <th className="w-1/2 px-10 py-2">OD &#40;mm&#41;</th>
+                    <th className="w-1/4 px-4 py-2">L &#40;m&#41;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {tableData.map((rowData, index) => (
+                    <tr
+                      key={index}
+                      style={index % 2 === 0 ? { background: "#c6daf1" } : {}}
+                    >
+                      <td className="px-8 py-2 text-center">
+                        {rowData.column1}
+                      </td>
+                      <td className="px-8 py-2 text-center">
+                        {rowData.column2}
+                      </td>
+                      <td className="px-10 py-2 text-center">
+                        {rowData.column3}
+                      </td>
                     </tr>
-                  </thead>
-                  <tbody>
-                    {tableData.map((rowData, index) => (
-                         <tr key={index} style={index % 2 === 0 ? { background: "#c6daf1" } : {}}>
-                         <td className="px-8 py-2 text-center">{rowData.column1}</td>
-                         <td className="px-8 py-2 text-center">{rowData.column2}</td>
-                         <td className="px-10 py-2 text-center">{rowData.column3}</td>
-                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
-          </div>
-
         </div>
       </section>
       <section>
