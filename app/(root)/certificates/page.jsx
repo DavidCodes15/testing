@@ -57,7 +57,7 @@ const certificatesPage = () => {
                 სერთიფიკატები
             </h1>
             {texts.map((text, index) => (
-              <p key={index} className="max-w-[687px] text-lg text-center">
+              <p key={index} className="max-w-[687px] text-lg text-left">
                 {text.firstCertText}
               </p>
             ))}
@@ -94,7 +94,7 @@ const certificatesPage = () => {
     </section>
     <section className="container mx-auto flex justify-center items-center px-4">
           {texts.map((text, index) => (
-            <p key={index} className="max-w-[1000px] flex justify-center items-center text-center">
+            <p key={index} className="max-w-[1000px] flex justify-center items-center text-left">
               {text.secondCertText}
             </p>
           ))}

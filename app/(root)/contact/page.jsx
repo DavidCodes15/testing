@@ -171,7 +171,7 @@ const contactpage = () => {
             <div className="w-full lg:w-1/2">
               <div className="hidden lg:flex flex-col space-y-6">
                 <div>
-                  <h2 className=" text-xl">დაგვიკავშირდით</h2>
+                  <h2 className="font-bold text-xl">დაგვიკავშირდით</h2>
                 </div>
                 <div className="flex justify-start items-center space-x-4">
                   <span>

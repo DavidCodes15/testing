@@ -8,8 +8,8 @@ import { useLanguage } from "@/utils/languageContext";
 
 const page = () => {
   const { selectedLanguage } = useLanguage();
-  const pipeFirst = "/assets/icons/GPD.png";
-  const pipeSecond = "/assets/icons/GPFL.png";
+  const pipeSecond = "/assets/icons/GPD.png";
+  const pipeFirst = "/assets/icons/GPFL.png";
   const [selectedButton, setSelectedButton] = useState(1);
   const [product, setImageSource] = useState(pipeFirst);
   const [tableData, setTableData] = useState([
@@ -85,7 +85,7 @@ const page = () => {
         </div>
       </section>
       <section className="container mx-auto mt-[100px] lg:mt-12">
-      <div className="flex flex-col lg:flex-row justify-center items-center space-x-0 px-4 lg:items-start lg:space-x-8">
+      <div className="flex flex-col lg:flex-row justify-center items-center space-x-0 px-4 lg:items-start lg:space-x-24">
           <div className="flex flex-col justify-center items-center space-y-4">
             <div>
               <img
@@ -119,7 +119,7 @@ const page = () => {
             <div className="flex justify-center items-center space-x-4">
               <Button
                 id={1}
-                label="GPD"
+                label="GPFL"
                 selected={selectedButton === 1}
                 onClick={handleButtonClick}
                 className={`custom-button ${
@@ -128,7 +128,7 @@ const page = () => {
               />
               <Button
                 id={2}
-                label="GPFL"
+                label="GPD"
                 selected={selectedButton === 2}
                 onClick={handleButtonClick}
                 className={`custom-button ${
