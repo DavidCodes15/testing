@@ -300,7 +300,7 @@ const contactpage = () => {
               </div>
             </div>
             <div className="hidden lg:flex w-1/2">
-              <img src="/assets/icons/contact.png" alt="contact image" />
+              <img className="rounded-xl" src="/assets/icons/კონტაქტი.jpg" alt="contact image" />
             </div>
           </div>
         </div>
