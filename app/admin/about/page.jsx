@@ -7,8 +7,10 @@ const aboutPage = () => {
   const [fetched, setFetched] = useState(false);
   const [texts, setTexts] = useState([]);
   const [adding, setAdding] = useState(false);
+  const [language, setLanguage] = useState();
   const [deleting, setDeleting] = useState(false);
   useEffect(() => {
+    setLanguage("GEO");
     const fetchTexts = async () => {
       try {
         const res = await fetch("/api/about");
@@ -111,23 +113,23 @@ const aboutPage = () => {
         <>
                 <div className="flex justify-between mt-[100px]">
         <div className="flex space-x-4">
-          <button onClick={() => setSelectedLanguage("GEO")}>GEO</button>
-          <button onClick={() => setSelectedLanguage("ENG")}>ENG</button>
-          <button onClick={() => setSelectedLanguage("RUS")}>RUS</button>
+          <button onClick={() => setLanguage("GEO")}>GEO</button>
+          <button onClick={() => setLanguage("ENG")}>ENG</button>
+          <button onClick={() => setLanguage("RUS")}>RUS</button>
         </div>
       </div>
       <section>
         <form onSubmit={handleSubmit} className="container mx-auto flex flex-col justify-center items-center space-y-8 mt-24 lg:mt-0">
           <div className="flex flex-col justify-center items-center space-y-4">
             <h1 className="font-bold text-2xl">
-              {selectedLanguage === "GEO" && "ჩვენს შესახებ"}
-              {selectedLanguage === "ENG" && "About Us"}
-              {selectedLanguage === "RUS" && "о нас"}
+              {language === "GEO" && "ჩვენს შესახებ"}
+              {language === "ENG" && "About Us"}
+              {language === "RUS" && "о нас"}
             </h1>
             <p className="w-[760px] text-center">
               <span
                 className={`${
-                  selectedLanguage === "GEO" ? "visible" : "hidden"
+                  language === "GEO" ? "visible" : "hidden"
                 } w-[100%] text-black`}
               >
                 <textarea
@@ -141,7 +143,7 @@ const aboutPage = () => {
               </span>
               <span
                 className={`${
-                  selectedLanguage === "ENG" ? "visible" : "hidden"
+                  language === "ENG" ? "visible" : "hidden"
                 } w-[100%]`}
               >
                 <textarea
@@ -155,7 +157,7 @@ const aboutPage = () => {
               </span>
               <span
                 className={`${
-                  selectedLanguage === "RUS" ? "visible" : "hidden"
+                  language === "RUS" ? "visible" : "hidden"
                 } w-[100%]`}
               >
                 <textarea
@@ -176,21 +178,21 @@ const aboutPage = () => {
                 <textarea
                 id="first"
                 name="first"
-                className={`${selectedLanguage === "GEO" ? "visible" : "hidden"} w-full bg-transparent`}
+                className={`${language === "GEO" ? "visible" : "hidden"} w-full bg-transparent`}
                 rows={5}
                 placeholder="ჩვენს მიერ დამონტაჟდა მაღალხარისხიანი დანადგარები, რომლებიც უშვებს 100მმ - 1600მმ დიამეტრის ჩათვლით SN4, SN8 და SN12 გოფრირებულ მილებს."
                 />
                 <textarea
                 id="firstEng"
                 name="firstEng" 
-                className={`${selectedLanguage === "ENG" ? "visible" : "hidden"} w-full bg-transparent`}
+                className={`${language === "ENG" ? "visible" : "hidden"} w-full bg-transparent`}
                 rows={5}
                 placeholder="ENG მიერ დამონტაჟდა მაღალხარისხიანი დანადგარები, რომლებიც უშვებს 100მმ - 1600მმ დიამეტრის ჩათვლით SN4, SN8 და SN12 გოფრირებულ მილებს."
                 />
                 <textarea 
                 id="firstRus"
                 name="firstRus"
-                className={`${selectedLanguage === "RUS" ? "visible" : "hidden"} w-full bg-transparent`}
+                className={`${language === "RUS" ? "visible" : "hidden"} w-full bg-transparent`}
                 rows={5}
                 placeholder="RUS მიერ დამონტაჟდა მაღალხარისხიანი დანადგარები, რომლებიც უშვებს 100მმ - 1600მმ დიამეტრის ჩათვლით SN4, SN8 და SN12 გოფრირებულ მილებს."
                 />
@@ -203,21 +205,21 @@ const aboutPage = () => {
                 <textarea
                 id="second"
                 name="second"
-                className={`${selectedLanguage === "GEO" ? "visible" : "hidden"} w-full bg-transparent`}
+                className={`${language === "GEO" ? "visible" : "hidden"} w-full bg-transparent`}
                 rows={5}
                 placeholder="2017 წელს დამატებითი ინვესტიციის განხორციელებული შემდეგ ჩვენმა კომპანიამ, ასევე მაღალხარისხიანი დანადგარების მონტაჟის შემდეგ, დაიწყო სასმელი და გაზიფიგაციისთვის საჭირო პოლიეთილენის მილების წარმოება. მილების მოიცავს 20მმ - 500მმ ჩათვლით და PN6-დან PN25-ჩათვლით ყველა ატმოსფეროს."
                 />
                  <textarea
                  id="secondEng"
                  name="secondEng"
-                className={`${selectedLanguage === "ENG" ? "visible" : "hidden"} w-full bg-transparent`}
+                className={`${language === "ENG" ? "visible" : "hidden"} w-full bg-transparent`}
                 rows={5}
                 placeholder="ENG წელს დამატებითი ინვესტიციის განხორციელებული შემდეგ ჩვენმა კომპანიამ, ასევე მაღალხარისხიანი დანადგარების მონტაჟის შემდეგ, დაიწყო სასმელი და გაზიფიგაციისთვის საჭირო პოლიეთილენის მილების წარმოება. მილების მოიცავს 20მმ - 500მმ ჩათვლით და PN6-დან PN25-ჩათვლით ყველა ატმოსფეროს."
                 />
                  <textarea
                  id="secondRus"
                  name="secondRus"
-                className={`${selectedLanguage === "RUS" ? "visible" : "hidden"} w-full bg-transparent`}
+                className={`${language === "RUS" ? "visible" : "hidden"} w-full bg-transparent`}
                 rows={5}
                 placeholder="RUS წელს დამატებითი ინვესტიციის განხორციელებული შემდეგ ჩვენმა კომპანიამ, ასევე მაღალხარისხიანი დანადგარების მონტაჟის შემდეგ, დაიწყო სასმელი და გაზიფიგაციისთვის საჭირო პოლიეთილენის მილების წარმოება. მილების მოიცავს 20მმ - 500მმ ჩათვლით და PN6-დან PN25-ჩათვლით ყველა ატმოსფეროს."
                 />
@@ -230,21 +232,21 @@ const aboutPage = () => {
                 <textarea 
                 id="third"
                 name="third"
-                className={`${selectedLanguage === "GEO" ? "visible" : "hidden"} w-full bg-transparent`}
+                className={`${language === "GEO" ? "visible" : "hidden"} w-full bg-transparent`}
                 rows={5}
                 placeholder="წარმოებული პროდუქციის ხარისხსის მაღალი სტანდარტის უზრუნველსაყოფად, ტექნოლოგიურ პროცესს მთლიანად ხელმძღვანელობს თურქეთიდან მოწვეული მაღალკვალიფიციური სპეციალისტები, რომლებსაც ამ სფეროში აქვთ 30 წლიანი გამოცდილება."
                 />
                 <textarea 
                 id="thirdEng"
                 name="thirdEng"
-                className={`${selectedLanguage === "ENG" ? "visible" : "hidden"} w-full bg-transparent`}
+                className={`${language === "ENG" ? "visible" : "hidden"} w-full bg-transparent`}
                 rows={5}
                 placeholder="ENGENG პროდუქციის ხარისხსის მაღალი სტანდარტის უზრუნველსაყოფად, ტექნოლოგიურ პროცესს მთლიანად ხელმძღვანელობს თურქეთიდან მოწვეული მაღალკვალიფიციური სპეციალისტები, რომლებსაც ამ სფეროში აქვთ 30 წლიანი გამოცდილება."
                 />
                 <textarea 
                 id="thirdRus"
                 name="thirdRus"
-                className={`${selectedLanguage === "RUS" ? "visible" : "hidden"} w-full bg-transparent`}
+                className={`${language === "RUS" ? "visible" : "hidden"} w-full bg-transparent`}
                 rows={5}
                 placeholder="RUSRUS პროდუქციის ხარისხსის მაღალი სტანდარტის უზრუნველსაყოფად, ტექნოლოგიურ პროცესს მთლიანად ხელმძღვანელობს თურქეთიდან მოწვეული მაღალკვალიფიციური სპეციალისტები, რომლებსაც ამ სფეროში აქვთ 30 წლიანი გამოცდილება."
                 />
