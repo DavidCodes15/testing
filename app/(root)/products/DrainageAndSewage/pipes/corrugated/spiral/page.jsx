@@ -111,7 +111,7 @@ const page = () => {
         </div>
       </section>
       <section className="container mx-auto mt-[100px] lg:mt-12">
-        <div className="flex flex-col lg:flex-row justify-center items-center space-x-0 px-4 lg:items-start lg:space-x-8">
+        <div className="flex flex-col lg:flex-row justify-center items-center space-x-0 px-4 lg:items-start lg:space-x-32">
           <div className="flex flex-col justify-center items-center space-y-4">
             <div>
               <img
