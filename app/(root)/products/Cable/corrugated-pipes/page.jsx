@@ -85,7 +85,7 @@ const page = () => {
         </div>
       </section>
       <section className="container mx-auto mt-[100px] lg:mt-12">
-      <div className="flex flex-col lg:flex-row justify-center items-center space-x-0 px-4 lg:items-start lg:space-x-32">
+        <div className="flex flex-col lg:flex-row justify-center items-center space-x-0 px-4 lg:items-start lg:space-x-32">
           <div className="flex flex-col justify-center items-center space-y-4">
             <div>
               <img
@@ -96,23 +96,41 @@ const page = () => {
             </div>
 
             <div className="hidden fix-sizing lg:grid grid-cols-2 gap-5">
-              <img className="rounded-xl" src="/assets/icons/PPR1.png" alt="pipe first placeholder" />
-              <img className="rounded-xl" src="/assets/icons/PPR2.png" alt="pipe second placeholder" />
-              <img className="rounded-xl" src="/assets/icons/PPR3.png" alt="pipe third placeholder" />
-              <img className="rounded-xl" src="/assets/icons/PPR4.png" alt="pipe fourth placeholder" />
+              <img
+                className="rounded-xl"
+                src="/assets/icons/PPR1.png"
+                alt="pipe first placeholder"
+              />
+              <img
+                className="rounded-xl"
+                src="/assets/icons/PPR2.png"
+                alt="pipe second placeholder"
+              />
+              <img
+                className="rounded-xl"
+                src="/assets/icons/PPR3.png"
+                alt="pipe third placeholder"
+              />
+              <img
+                className="rounded-xl"
+                src="/assets/icons/PPR4.png"
+                alt="pipe fourth placeholder"
+              />
             </div>
           </div>
           <div className="flex flex-col space-y-4 justify-center items-center pr-2 lg:items-start lg:pr-0">
             <div className="hidden lg:flex max-w-[616px] flex-col justify-center items-start space-y-6">
               <h1 className="font-bold text-2xl">
-              საკაბელო გოფრირებული მილები
+                საკაბელო გოფრირებული მილები
               </h1>
               <p>
-                2017 წელს დამატებითი ინვესტიციის განხორციელებული შემდეგ ჩვენმა
-                კომპანიამ, ასევე მაღალხარისხიანი დანადგარების მონტაჟის შემდეგ,
-                დაიწყო სასმელი და გაზიფიგაციისთვის საჭირო პოლიეთილენის მილების
-                წარმოება. მილების მოიცავს 20მმ - 500მმ ჩათვლით და PN6-დან
-                PN25-ჩათვლით ყველა ატმოსფეროს.
+                {selectedLanguage === "GEO" &&
+                  `საკაბელო გოფრირებული მილები
+2017 წელს “ქართულმა მილმა“ წამოიწყო საკაბელო გოფრირებული მილების წარმოება, დიამეტრით 40 მმ-დან 110 მმ-მდე. ჩვენი საკაბელი გოფრირებული მილები სრულად აკმაყოფილებს EN 61386-1:2008 და EN 61386-24:2010 მოთხოვნებს.`}
+                {selectedLanguage === "ENG" &&
+                  `In 2017 “Georgian Pipe’ initiated the production of cable corrugated pipes, ranging in diameter from 40 mm to 110 mm. Our pipes for cable laying applications, meet the requirements of EN 61386-1:2008 and EN 61386-24:2010.`}
+                {selectedLanguage === "RUS" &&
+                  `В 2017 году компания «Джорджиан Пайп» начала производство гофрированных труб для прокладки кабелея с диаметром от 40 мм до 110 мм. Наши трубы для прокладки кабеля соответствуют требованиям EN 61386-1:2008 и EN 61386-24:2010.`}
               </p>
             </div>
 
@@ -137,27 +155,35 @@ const page = () => {
               />
             </div>
             <div className="flex flex-col space-y-4 justify-center items-center lg:items-start">
-                <table className="table-fixed">
-                  <thead>
-                    <tr>
-                      <th className="w-1/4 px-8 lg:px-16 py-2">O/D</th>
-                      <th className="w-1/4 px-8 lg:px-16 py-2">I/D</th>
-                      <th className="w-1/2 px-10 lg:px-16 py-2">Length</th>
+              <table className="table-fixed">
+                <thead>
+                  <tr>
+                    <th className="w-1/4 px-8 lg:px-16 py-2">O/D</th>
+                    <th className="w-1/4 px-8 lg:px-16 py-2">I/D</th>
+                    <th className="w-1/2 px-10 lg:px-16 py-2">Length</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {tableData.map((rowData, index) => (
+                    <tr
+                      key={index}
+                      style={index % 2 === 0 ? { background: "#c6daf1" } : {}}
+                    >
+                      <td className="px-8 py-2 text-center">
+                        {rowData.column1}
+                      </td>
+                      <td className="px-8 py-2 text-center">
+                        {rowData.column2}
+                      </td>
+                      <td className="px-10 py-2 text-center">
+                        {rowData.column3}
+                      </td>
                     </tr>
-                  </thead>
-                  <tbody>
-                    {tableData.map((rowData, index) => (
-                         <tr key={index} style={index % 2 === 0 ? { background: "#c6daf1" } : {}}>
-                         <td className="px-8 py-2 text-center">{rowData.column1}</td>
-                         <td className="px-8 py-2 text-center">{rowData.column2}</td>
-                         <td className="px-10 py-2 text-center">{rowData.column3}</td>
-                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
-          </div>
-
         </div>
       </section>
       <section>
