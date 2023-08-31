@@ -86,7 +86,15 @@ line-height: 2.25rem; /* 36px */
 .main{
   margin-top: 85px;
 }
+@media (min-width: 1025px){
+  .fix-space{
+    margin-left: 9rem;
+  }
+}
 @media (max-width: 1024px){
+  .fix-space{
+    margin-left: 6rem;
+  }
   #navigation li{
     font-size: 12px;
   }

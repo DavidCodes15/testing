@@ -85,7 +85,7 @@ const page = () => {
         </div>
       </section>
       <section className="container mx-auto mt-[100px] lg:mt-12">
-      <div className="flex flex-col lg:flex-row justify-center items-center space-x-0 px-4 lg:items-start lg:space-x-24">
+      <div className="flex flex-col lg:flex-row justify-center items-center space-x-0 px-4 lg:items-start lg:space-x-32">
           <div className="flex flex-col justify-center items-center space-y-4">
             <div>
               <img
@@ -137,11 +137,6 @@ const page = () => {
               />
             </div>
             <div className="flex flex-col space-y-4 justify-center items-center lg:items-start">
-                <div>
-                  <h3>
-                  საკაბელო გოფრირებული მილები
-                  </h3>
-                </div>
                 <table className="table-fixed">
                   <thead>
                     <tr>
