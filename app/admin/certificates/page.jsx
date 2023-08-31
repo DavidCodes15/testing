@@ -6,7 +6,7 @@ import "@/app/globals.css";
 import Link from "next/link";
 
 
-const page = () => {
+const certificatesPage = () => {
     const { data: session } = useSession();
     const [fetched, setFetched] = useState(false);
     const [certs, setCerts] = useState([]);
@@ -255,4 +255,4 @@ const page = () => {
   )
 }
 
-export default page
+export default certificatesPage
