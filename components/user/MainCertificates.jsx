@@ -2,11 +2,12 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import "@/public/styles/mainCert.css";
-
+import { useLanguage } from "@/utils/languageContext";
 const MainCertificates = () => {
   const [certs, setCerts] = useState([]);
   const [texts, setTexts] = useState([]);
   const [added, setAdded] = useState(false);
+  const {selectedLanguage} = useLanguage();
   useEffect(() => {
     const fetchCerts = async () => {
       try {
@@ -31,7 +32,11 @@ const MainCertificates = () => {
       <div className="container mx-auto px-4 py-10">
         <div className="flex flex-col space-y-12">
           <div className="flex items-center justify-center mx-[0px] bg-[#ECF5FF] lg:mx-44 lg:justify-start">
-            <h2 className="font-bold text-xl lg:text-2xl">სერთიფიკატები</h2>
+            <h2 className="font-bold text-xl lg:text-2xl">
+            {selectedLanguage === "GEO" && "სერთიფიკატები"}
+            {selectedLanguage === "ENG" && "Certificates"}
+            {selectedLanguage === "RUS" && "Сертификаты"}
+            </h2>
           </div>
           <div className="flex flex-col items-center lg:items-start justify-center lg:flex-row lg:space-x-4">
             <div className="w-full lg:w-1/2 relative cert mb-5">
@@ -55,19 +60,25 @@ const MainCertificates = () => {
               <div>
                 {texts.map((text, index) => (
                   <p key={index} className="text-base">
-                    {text.firstCertText}
+                    {selectedLanguage === "GEO" && `${text.firstCertText}`}
+                    {selectedLanguage === "ENG" && `${text.firstEngCertText}`}
+                    {selectedLanguage === "RUS" && `${text.firstRusCertText}`}
                   </p>
                 ))}
               </div>
               <div className="hidden lg:flex flex-col space-y-14 items-start">
                 {texts.map((text, index) => (
                   <p key={index} className="text-base">
-                    {text.firstCertText}
+                    {selectedLanguage === "GEO" && `${text.secondCertText}`}
+                    {selectedLanguage === "ENG" && `${text.secondEngCertText}`}
+                    {selectedLanguage === "RUS" && `${text.secondRusCertText}`}
                   </p>
                 ))}
                 <Link href="/certificates">
                   <button className="bg-[#1A3DA7] text-white text-base  rounded-xl px-4 py-4">
-                    მეტის ნახვა
+                    {selectedLanguage === "GEO" && "მეტის ნახვა"}
+                    {selectedLanguage === "ENG" && "See More"}
+                    {selectedLanguage === "RUS" && "Узнать больше"}
                   </button>
                 </Link>
               </div>

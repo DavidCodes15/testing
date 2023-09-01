@@ -2,11 +2,12 @@
 import { useEffect, useState, useRef } from "react";
 import "@/public/styles/certCarousel.css";
 import Link from "next/link";
-
+import { useLanguage } from "@/utils/languageContext";
 const Carousel = () => {
     const [products, setProducts] = useState([]);
     const carouselRef = useRef(null);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const {selectedLanguage} = useLanguage();
     useEffect(() => {
         const fetchProducts = async () => {
           const response = await fetch("/api/products");
@@ -41,7 +42,11 @@ const Carousel = () => {
        <div key={index} className="carousel-item flex flex-col justify-center items-center">
             <Link href={product.productLink}>
             <img src={product.imageUrl} alt={product.imageAlt} className="rounded w-[232px] h-[232px] lg:w-[332px] lg:h-[332px]" />
-            <span>{product.productName}</span>
+            <span>
+              {selectedLanguage === "GEO" && `${product.productName}`}
+              {selectedLanguage === "ENG" && `${product.productNameEng}`}
+              {selectedLanguage === "RUS" && `${product.productNameRus}`}
+            </span>
             </Link>
         </div>
         

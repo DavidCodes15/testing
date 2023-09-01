@@ -21,7 +21,11 @@ const Footer = () => {
             <img src="/assets/icons/phone.png" alt="company phone number"/>
           </div>
           <div className="w-full flex justify-between items-center bg-[#ECF5FF] rounded-full py-2 px-2">
-          <span className="text-sm">12 ქიზიყის ქუჩა, თბილისი, საქართველო</span>
+        <span className="text-sm">
+          {selectedLanguage === "GEO" && "12 ქიზიყის ქუჩა, თბილისი, საქართველო"}
+          {selectedLanguage === "ENG" && "12 Kiziki Street, Tbilisi, Georgia"}
+          {selectedLanguage === "RUS" && "Улица Кизики 12, Тбилиси, Грузия"}
+        </span>
             <img src="/assets/icons/location.png" alt="company location"/>
           </div>
       </div>
@@ -34,25 +38,33 @@ const Footer = () => {
           <ul className="flex flex-col justify-center items-start space-y-4">
             <li className="font-bold">
               <Link href="/about">
-              ჩვენს შესახებ
+              {selectedLanguage === "GEO" && "ჩვენს შესახებ"}
+              {selectedLanguage === "ENG" && "About"}
+              {selectedLanguage === "RUS" && "ჩვენს შესახებ"}
               </Link>
           
             </li>
             <li>
               <Link href="/">
-              პროდუქცია
+              {selectedLanguage === "GEO" && "პროდუქცტია"}
+              {selectedLanguage === "ENG" && "Products"}
+              {selectedLanguage === "RUS" && "Продукты"}
               </Link>
              
               </li>
             <li>
               <Link href="/certificates">
-              სერტიფიკატები
+              {selectedLanguage === "GEO" && "სერთიფიკატები"}
+            {selectedLanguage === "ENG" && "Certificates"}
+            {selectedLanguage === "RUS" && "Сертификаты"}
               </Link>
              
               </li>
             <li>
               <Link href="/blogs">
-              ბლოგი
+              {selectedLanguage === "GEO" && "ბლოგი"}
+                      {selectedLanguage === "ENG" && "Blog"}
+                      {selectedLanguage === "RUS" && "блог"}
               </Link>
              
 
@@ -62,9 +74,11 @@ const Footer = () => {
           <ul className="flex flex-col justify-center items-start space-y-6">
             <li className="font-bold">
               <Link href="/contact">
-              დაგვიკავშირდით
+              {selectedLanguage === "GEO" && "დაგვიკავშირდით"}
+              {selectedLanguage === "ENG" && "Contact Us"}
+              {selectedLanguage === "RUS" && "Связаться с нами"}
               </Link>
-                
+              
             </li>
             <li className="flex flex-col space-y-4 justify-center items-start">
               <span className="flex space-x-4 items-center">
@@ -91,7 +105,11 @@ const Footer = () => {
           <hr className="bg-gray h-[2px]"/>
           <span>©</span>
           <span className="text-md">geopipe.ge</span>
-          <span className="text-md">ყველა უფლება დაცულია</span>
+          <span className="text-md">
+            {selectedLanguage === "GEO" && "ყველა უფლება დაცულია"}
+            {selectedLanguage === "ENG" && "All rights reserved"}
+            {selectedLanguage === "RUS" && "все права защищены"}
+          </span>
         </div>
       </div>
   </footer>

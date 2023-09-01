@@ -2,11 +2,13 @@
 import React, { useState, useEffect } from "react";
 import "@/app/globals.css";
 import MobilePagination from "./MobilePagination";
+import { useLanguage } from "@/utils/languageContext";
 const ImageSlider = () => {
   const [heros, setHeros] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [preloadedImages, setPreloadedImages] = useState([]);
+  const {selectedLanguage} = useLanguage();
   useEffect(() => {
     const fetchHero = async () => {
       const response = await fetch("/api/heroImages");
@@ -100,28 +102,36 @@ const ImageSlider = () => {
                 onClick={() => handlePaginationClick(0)}
                 onMouseEnter={() => handlePaginationHover(0)}
               >
-                გოფრირებული მილები
+               {selectedLanguage === "GEO" && "გოფრირებული მილები"}
+               {selectedLanguage === "ENG" && "Corrugated Pipes"}
+               {selectedLanguage === "RUS" && "გოფრირებული მილები"}
               </span>
               <span
                 className={`dot ${activeIndex === 1 ? "active" : ""}`}
                 onClick={() => handlePaginationClick(1)}
                 onMouseEnter={() => handlePaginationHover(1)}
               >
-                პოლიეთილენის მილები
+                {selectedLanguage === "GEO" && "პოლიეთილენის მილები"}
+                {selectedLanguage === "ENG" && "Polyethylene Pipes"}
+                {selectedLanguage === "RUS" && "პოლიეთილენის მილები"}
               </span>
               <span
                 className={`dot ${activeIndex === 2 ? "active" : ""}`}
                 onClick={() => handlePaginationClick(2)}
                 onMouseEnter={() => handlePaginationHover(2)}
               >
-                პოლიპროპილენის მილები
+                {selectedLanguage === "GEO" && "პოლიპროპილენის მილები"}
+                {selectedLanguage === "ENG" && "PPRC Pipes"}
+                {selectedLanguage === "RUS" && "პოლიპროპილენის მილები"}
               </span>
               <span
                 className={`dot ${activeIndex === 3 ? "active" : ""}`}
                 onClick={() => handlePaginationClick(3)}
                 onMouseEnter={() => handlePaginationHover(3)}
               >
-                ფიტინგები
+                {selectedLanguage === "GEO" && "ფიტინგები"}
+                {selectedLanguage === "ENG" && "Fittings"}
+                {selectedLanguage === "RUS" && "ფიტინგები"}
               </span>
             </div>
           </div>
