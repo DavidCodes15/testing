@@ -282,8 +282,8 @@ li:hover .product-dropdown {
 }
 .custom-select {
   position: relative;
-  width: 200px; /* Adjust to your preference */
-  font-family: Arial, sans-serif; /* Set desired font */
+  width: 200px;
+  font-family: Arial, sans-serif;
 }
 
 .selected-option {
