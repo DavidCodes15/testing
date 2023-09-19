@@ -73,7 +73,7 @@ const page = () => {
                 "პოლიპროპილენის საკანალიზაციო (PPR) მილები"}
               {selectedLanguage === "ENG" && "Polypropylene sewage (PPR) pipes"}
               {selectedLanguage === "RUS" &&
-                "Полипропиленовая канализация (PPR) трубы"}
+                "Полипропиленовые (ППР) канализационные трубы"}
             </Link>
           </div>
         </div>
@@ -115,17 +115,25 @@ const page = () => {
           <div className="flex flex-col space-y-4 justify-center items-center pr-2 lg:items-start lg:pr-0">
             <div className="hidden lg:flex max-w-[616px] flex-col justify-center items-start space-y-6">
               <h1 className="font-bold text-2xl">
-                პოლიპროპილენის საკანალიზაციო &#40;PPR&#41; მილები
+                {selectedLanguage === "GEO" &&
+                  "პოლიპროპილენის საკანალიზაციო (PPR) მილები"}
+                {selectedLanguage === "ENG" &&
+                  "Polypropylene sewage (PPR) pipes"}
+                {selectedLanguage === "RUS" &&
+                  "Полипропиленовые (ППР) канализационные трубы"}
               </h1>
               <p>
-                {selectedLanguage === "GEO" && `ჩვენს მიერ წარმოებული „PPR“ საკანალიზაციო მილები მდგრადია 60 ºC-მდე
+                {selectedLanguage === "GEO" &&
+                  `ჩვენს მიერ წარმოებული „PPR“ საკანალიზაციო მილები მდგრადია 60 ºC-მდე
 ტემპერატურის მიმართ და განკუთვნილია გრძელვადიანი გამოყენებისთვის მისი
 უმაღლესი ხარისხიდან გამომდინარე. დიამეტრის დიაპაზონი არის 50 მმ-დან 160 მმ-მდე
 და სიგრძე 100 მმ-დან 3000 მმ-მდე.`}
-                {selectedLanguage === "ENG" && `Our &quot;PPR&quot; sewage pipes are resistant to temperatures up to 60 ºC and are designed for long-term use
+                {selectedLanguage === "ENG" &&
+                  `Our &quot;PPR&quot; sewage pipes are resistant to temperatures up to 60 ºC and are designed for long-term use
 due to its superior quality. The diameter range is from 50 mm to 160 mm and the length from 100 mm
 to 3000 mm.`}
-                {selectedLanguage === "RUS" && `Наши канализационные трубы «ППР» устойчивы к температуре до 60 ºC и рассчитаны на
+                {selectedLanguage === "RUS" &&
+                  `Наши канализационные трубы «ППР» устойчивы к температуре до 60 ºC и рассчитаны на
 длительную эксплуатацию благодаря своему превосходному качеству. Диапазон диаметров от 50
 мм до 160 мм и длины от 100 мм до 3000 мм.`}
               </p>
@@ -151,7 +159,9 @@ to 3000 mm.`}
                       <td className="px-8 py-2 text-center">
                         {rowData.column2}
                       </td>
-                      <td className="px-8 py-2 text-center">{rowData.column3}</td>
+                      <td className="px-8 py-2 text-center">
+                        {rowData.column3}
+                      </td>
                     </tr>
                   ))}
                 </tbody>

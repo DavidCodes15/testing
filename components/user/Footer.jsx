@@ -24,7 +24,7 @@ const Footer = () => {
         <span className="text-sm">
           {selectedLanguage === "GEO" && "12 ქიზიყის ქუჩა, თბილისი, საქართველო"}
           {selectedLanguage === "ENG" && "12 Kiziki Street, Tbilisi, Georgia"}
-          {selectedLanguage === "RUS" && "Улица Кизики 12, Тбилиси, Грузия"}
+          {selectedLanguage === "RUS" && "0182, Грузия, Тбилиси, Ул. Кизики N42"}
         </span>
             <img src="/assets/icons/location.png" alt="company location"/>
           </div>
@@ -94,7 +94,7 @@ const Footer = () => {
                 <span>
                   {selectedLanguage === "GEO" && "ქ.თბილისი, ქიზიყის ქ. N42"}
                   {selectedLanguage === "ENG" && "N42 Kiziki, 0182 Tbilisi, Georgia"}
-                  {selectedLanguage === "RUS" && "N42 Кизики, 0182 Тбилиси, Грузия"}
+                  {selectedLanguage === "RUS" && "0182, Грузия, Тбилиси, Ул. Кизики N42"}
                 </span>
               </span>
             </li>

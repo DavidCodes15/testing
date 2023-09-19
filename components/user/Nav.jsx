@@ -11,7 +11,8 @@ const Nav = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const [isArrowRotated, setIsArrowRotated] = useState(false);
   const [accordion, setAccordion] = useState(false);
-  const [isProductDropdownVisible, setIsProductDropdownVisible] = useState(true);
+  const [isProductDropdownVisible, setIsProductDropdownVisible] =
+    useState(true);
   const [isClicked, setIsClicked] = useState(0);
 
   const items = [
@@ -21,21 +22,21 @@ const Nav = () => {
   ];
   const closeMenu = () => {
     setIsMenuVisible(false);
-    document.body.classList.remove('no-scroll');
-    const menuElement = document.querySelector('.menu-content');
-  if (menuElement) {
-    menuElement.style.top = '0';
-  }
+    document.body.classList.remove("no-scroll");
+    const menuElement = document.querySelector(".menu-content");
+    if (menuElement) {
+      menuElement.style.top = "0";
+    }
   };
   const handleMenu = () => {
     setIsMenuVisible(true);
-    document.body.classList.add('no-scroll');
+    document.body.classList.add("no-scroll");
     const currentScrollPosition = window.scrollY;
 
-    const menuElement = document.querySelector('.menu-content');
-  if (menuElement) {
-    menuElement.style.top = `${currentScrollPosition}px`;
-  }
+    const menuElement = document.querySelector(".menu-content");
+    if (menuElement) {
+      menuElement.style.top = `${currentScrollPosition}px`;
+    }
   };
   const handleItemClick = (item) => {
     // setSelectedItem(item);
@@ -49,8 +50,7 @@ const Nav = () => {
   const handleLinkClick = (index) => {
     setIsClicked(index);
   };
-  
-  
+
   const handleAccordion = () => {
     if (accordion === false) {
       setAccordion(true);
@@ -73,29 +73,19 @@ const Nav = () => {
                   <Link href="/admin/hero">მთავარი</Link>
                 </li>
                 <li>
-                  <Link href="/admin/production">
-                  პროდუქცია
-                  </Link>
+                  <Link href="/admin/production">პროდუქცია</Link>
                 </li>
                 <li>
-                  <Link href="/admin/blogs">
-                    ბლოგი
-                  </Link>
+                  <Link href="/admin/blogs">ბლოგი</Link>
                 </li>
                 <li>
-                  <Link href="/admin/certificates">
-                    სერთიფიკატები
-                  </Link>
+                  <Link href="/admin/certificates">სერთიფიკატები</Link>
                 </li>
                 <li>
-                  <Link href="/admin/about">
-                    ჩვენს შესახებ
-                  </Link>
+                  <Link href="/admin/about">ჩვენს შესახებ</Link>
                 </li>
                 <li>
-                  <Link href="/admin/fittings">
-                    ფიტინგები
-                  </Link>
+                  <Link href="/admin/fittings">ფიტინგები</Link>
                 </li>
               </ul>
             </nav>
@@ -105,7 +95,10 @@ const Nav = () => {
         <>
           <div className="bg-[#ECF5FF] fixed top-0 w-full z-10">
             <header className=" container mx-auto py-0 px-0 lg:py-6 lg:px-10">
-              <nav id="navigation" className="hidden lg:flex justify-between items-center relative">
+              <nav
+                id="navigation"
+                className="hidden lg:flex justify-between items-center relative"
+              >
                 <ul className="text-[16px] fix-resolution flex justify-around space-x-12 items-center">
                   <li>
                     <Link href="/">
@@ -127,7 +120,7 @@ const Nav = () => {
                     <Link href="/about">
                       {selectedLanguage === "GEO" && "ჩვენს შესახებ"}
                       {selectedLanguage === "ENG" && "About Us"}
-                      {selectedLanguage === "RUS" && "о нас"}
+                      {selectedLanguage === "RUS" && "О нас"}
                     </Link>
                   </li>
                   <li
@@ -137,7 +130,7 @@ const Nav = () => {
                     <span className="cursor-pointer">
                       {selectedLanguage === "GEO" && "პროდუქცია"}
                       {selectedLanguage === "ENG" && "Products"}
-                      {selectedLanguage === "RUS" && "производство"}
+                      {selectedLanguage === "RUS" && "Продукция"}
                     </span>
                     {isProductDropdownVisible ? (
                       <div className="product-dropdown">
@@ -151,7 +144,10 @@ const Nav = () => {
                                 />
                               </span>
                               <span className="max-w-[300px]">
-                                <Link className={`cursor-pointer`} href="/products/DrainageAndSewage/pipes/corrugated">
+                                <Link
+                                  className={`cursor-pointer`}
+                                  href="/products/DrainageAndSewage/pipes/corrugated"
+                                >
                                   {selectedLanguage === "GEO" &&
                                     "სანიაღვრე და საკანალიზაციო გოფრირებული მილები"}
                                   {selectedLanguage === "ENG" &&
@@ -169,7 +165,10 @@ const Nav = () => {
                                 />
                               </span>
                               <span className="max-w-[300px]">
-                                <Link className={`cursor-pointer`} href="/products/DrainageAndSewage/pipes/corrugated/spiral">
+                                <Link
+                                  className={`cursor-pointer`}
+                                  href="/products/DrainageAndSewage/pipes/corrugated/spiral"
+                                >
                                   {selectedLanguage === "GEO" &&
                                     "სანიაღვრე და საკანალიზაციო სპირალური გოფრირებული მილები"}
                                   {selectedLanguage === "ENG" &&
@@ -187,7 +186,10 @@ const Nav = () => {
                                 />
                               </span>
                               <span className="max-w-[300px]">
-                                <Link className={`cursor-pointer`} href="/products/polyethylene/waterAndGas">
+                                <Link
+                                  className={`cursor-pointer`}
+                                  href="/products/polyethylene/waterAndGas"
+                                >
                                   {selectedLanguage === "GEO" &&
                                     "პოლიეთილენის სასმელი წყლის და გაზის მილები"}
                                   {selectedLanguage === "ENG" &&
@@ -207,13 +209,16 @@ const Nav = () => {
                                 />
                               </span>
                               <span className="max-w-[250px]">
-                                <Link className={`cursor-pointer`} href="/products/Polypropylene/sewage/pipes">
-                                  {selectedLanguage === "GEO" &&
-                                    "პოლიპროპილენის საკანალიზაციო (PPR) მილები"}
-                                  {selectedLanguage === "ENG" &&
-                                    "Polypropylene sewage (PPR) pipes"}
-                                  {selectedLanguage === "RUS" &&
-                                    "Полипропиленовая канализация (PPR) трубы"}
+                                <Link
+                                  className={`cursor-pointer`}
+                                  href="/products/Polypropylene/sewage/pipes"
+                                >
+                        {selectedLanguage === "GEO" &&
+                          "პოლიპროპილენის საკანალიზაციო (PPR) მილები"}
+                        {selectedLanguage === "ENG" &&
+                          "Polypropylene sewage (PPR) pipes"}
+                        {selectedLanguage === "RUS" &&
+                          "Полипропиленовые (ППР) канализационные трубы"}
                                 </Link>
                               </span>
                             </span>
@@ -225,13 +230,16 @@ const Nav = () => {
                                 />
                               </span>
                               <span className="max-w-[250px]">
-                                <Link className={`cursor-pointer`} href="/products/Polypropylene/hotAndCold">
+                                <Link
+                                  className={`cursor-pointer`}
+                                  href="/products/Polypropylene/hotAndCold"
+                                >
                                   {selectedLanguage === "GEO" &&
                                     "პოლიპროპილენის ცივი და ცხელი წყლის (PPR) მილები"}
                                   {selectedLanguage === "ENG" &&
                                     "Polypropylene cold and hot water (PPR) pipes"}
                                   {selectedLanguage === "RUS" &&
-                                    "Полипропиленовая холодная и горячая вода (PPR) трубы"}
+                                    "Полипропиленовые (ППР) трубы Для холодной и горячей воды"}
                                 </Link>
                               </span>
                             </span>
@@ -244,7 +252,10 @@ const Nav = () => {
                                 />
                               </span>
                               <span className="max-w-[250px]">
-                                <Link className={`cursor-pointer`} href="/products/Cable/corrugated-pipes">
+                                <Link
+                                  className={`cursor-pointer`}
+                                  href="/products/Cable/corrugated-pipes"
+                                >
                                   {selectedLanguage === "GEO" &&
                                     "საკაბელო გოფრირებული მილები"}
                                   {selectedLanguage === "ENG" &&
@@ -263,7 +274,10 @@ const Nav = () => {
                               />
                             </span>
                             <span>
-                              <Link className={`cursor-pointer`} href="/products/fittings">
+                              <Link
+                                className={`cursor-pointer`}
+                                href="/products/fittings"
+                              >
                                 {selectedLanguage === "GEO" && "ფიტინგები"}
                                 {selectedLanguage === "ENG" && "Fittings"}
                                 {selectedLanguage === "RUS" && "арматура"}
@@ -278,7 +292,7 @@ const Nav = () => {
                     <Link className={`cursor-pointer`} href="/certificates">
                       {selectedLanguage === "GEO" && "სერთიფიკატები"}
                       {selectedLanguage === "ENG" && "Certificates"}
-                      {selectedLanguage === "RUS" && "сертификаты"}
+                      {selectedLanguage === "RUS" && "Сертификаты"}
                     </Link>
                   </li>
                   <li className="cursor-pointer">
@@ -287,15 +301,15 @@ const Nav = () => {
             {selectedItem.name === "ENG" && "blog"}
             {selectedItem.name === "RUS" && "блог"} */}
                       {selectedLanguage === "GEO" && "ბლოგი"}
-                      {selectedLanguage === "ENG" && "Blog"}
-                      {selectedLanguage === "RUS" && "блог"}
+                      {selectedLanguage === "ENG" && "Blogs"}
+                      {selectedLanguage === "RUS" && "Блоги"}
                     </Link>
                   </li>
                   <li className="cursor-pointer">
                     <Link href="/contact">
                       {selectedLanguage === "GEO" && "კონტაქტი"}
                       {selectedLanguage === "ENG" && "Contact"}
-                      {selectedLanguage === "RUS" && "Контакт"}
+                      {selectedLanguage === "RUS" && "Контакты"}
                     </Link>
                   </li>
                 </ul>
@@ -380,21 +394,32 @@ const Nav = () => {
           >
             <ul className="flex flex-col justify-center items-start space-y-4 py-4 px-2 text-[20px]">
               <li className="px-6 border-b-[0.5px] border-solid border-[#ABABAB] py-4 w-[90%]">
-                <Link  onClick={() => handleLinkClick(0)} className={`${isClicked === 0 ? "text-black font-bold" : ""}`} href="/">
+                <Link
+                  onClick={() => handleLinkClick(0)}
+                  className={`${isClicked === 0 ? "text-black font-bold" : ""}`}
+                  href="/"
+                >
                   {selectedLanguage === "GEO" && "მთავარი"}
                   {selectedLanguage === "ENG" && "Home"}
                   {selectedLanguage === "RUS" && "Главная"}
                 </Link>
               </li>
-              <li  onClick={() => handleLinkClick(1)} className={`px-6 border-b-[0.5px] border-solid border-[#ABABAB] py-4 w-[90%] ${isClicked === 1 ? "text-black font-bold" : ""}`}>
+              <li
+                onClick={() => handleLinkClick(1)}
+                className={`px-6 border-b-[0.5px] border-solid border-[#ABABAB] py-4 w-[90%] ${
+                  isClicked === 1 ? "text-black font-bold" : ""
+                }`}
+              >
                 <Link href="/about">
                   {selectedLanguage === "GEO" && "ჩვენს შესახებ"}
                   {selectedLanguage === "ENG" && "About Us"}
-                  {selectedLanguage === "RUS" && "о нас"}
+                  {selectedLanguage === "RUS" && "О нас"}
                 </Link>
               </li>
-              
-              <li className={`has-submenu px-6 border-b-[0.5px] border-solid border-[#ABABAB] py-4 w-[90%] flex flex-col space-y-6 justify-center items-start`}>
+
+              <li
+                className={`has-submenu px-6 border-b-[0.5px] border-solid border-[#ABABAB] py-4 w-[90%] flex flex-col space-y-6 justify-center items-start`}
+              >
                 <span className="w-[100%] flex justify-between items-center">
                   <span className="submenu-trigger">
                     {selectedLanguage === "GEO" && "პროდუქცია"}
@@ -414,8 +439,16 @@ const Nav = () => {
                 </span>
                 {accordion === true ? (
                   <span className="flex flex-col justify-center item-start space-y-4">
-                    <span  onClick={() => handleLinkClick(3)} className={`${isClicked === 3 ? "text-black font-bold" : ""}`}>
-                      <Link className="fix-accordion-text" href="/products/DrainageAndSewage/pipes/corrugated">
+                    <span
+                      onClick={() => handleLinkClick(3)}
+                      className={`${
+                        isClicked === 3 ? "text-black font-bold" : ""
+                      }`}
+                    >
+                      <Link
+                        className="fix-accordion-text"
+                        href="/products/DrainageAndSewage/pipes/corrugated"
+                      >
                         {selectedLanguage === "GEO" &&
                           "სანიაღვრე და საკანალიზაციო გოფრირებული მილები"}
                         {selectedLanguage === "ENG" &&
@@ -424,8 +457,16 @@ const Nav = () => {
                           "Дренажные и канализационные гофрированные трубы"}
                       </Link>
                     </span>
-                    <span  onClick={() => handleLinkClick(4)} className={`${isClicked === 4 ? "text-black font-bold" : ""}`}>
-                      <Link className="fix-accordion-text" href="/products/DrainageAndSewage/pipes/corrugated/spiral">
+                    <span
+                      onClick={() => handleLinkClick(4)}
+                      className={`${
+                        isClicked === 4 ? "text-black font-bold" : ""
+                      }`}
+                    >
+                      <Link
+                        className="fix-accordion-text"
+                        href="/products/DrainageAndSewage/pipes/corrugated/spiral"
+                      >
                         {selectedLanguage === "GEO" &&
                           "სანიაღვრე და საკანალიზაციო სპირალური გოფრირებული მილები"}
                         {selectedLanguage === "ENG" &&
@@ -434,8 +475,16 @@ const Nav = () => {
                           "Дренажные и канализационные спирально-гофрированные трубы"}
                       </Link>
                     </span>
-                    <span  onClick={() => handleLinkClick(5)} className={`${isClicked === 5 ? "text-black font-bold" : ""}`}>
-                      <Link className="fix-accordion-text" href="/products/polyethylene/waterAndGas">
+                    <span
+                      onClick={() => handleLinkClick(5)}
+                      className={`${
+                        isClicked === 5 ? "text-black font-bold" : ""
+                      }`}
+                    >
+                      <Link
+                        className="fix-accordion-text"
+                        href="/products/polyethylene/waterAndGas"
+                      >
                         {selectedLanguage === "GEO" &&
                           "პოლიეთილენის სასმელი წყლის და გაზის მილები"}
                         {selectedLanguage === "ENG" &&
@@ -444,28 +493,52 @@ const Nav = () => {
                           "Полиэтиленовые трубы для питьевой воды и газа"}
                       </Link>
                     </span>
-                    <span  onClick={() => handleLinkClick(6)} className={`${isClicked === 6 ? "text-black font-bold" : ""}`}>
-                      <Link className="fix-accordion-text" href="/products/Polypropylene/sewage/pipes">
+                    <span
+                      onClick={() => handleLinkClick(6)}
+                      className={`${
+                        isClicked === 6 ? "text-black font-bold" : ""
+                      }`}
+                    >
+                      <Link
+                        className="fix-accordion-text"
+                        href="/products/Polypropylene/sewage/pipes"
+                      >
                         {selectedLanguage === "GEO" &&
                           "პოლიპროპილენის საკანალიზაციო (PPR) მილები"}
                         {selectedLanguage === "ENG" &&
                           "Polypropylene sewage (PPR) pipes"}
                         {selectedLanguage === "RUS" &&
-                          "Полипропиленовая канализация (PPR) трубы"}
+                          "Полипропиленовые (ППР) канализационные трубы"}
                       </Link>
                     </span>
-                    <span  onClick={() => handleLinkClick(7)} className={`${isClicked === 7 ? "text-black font-bold" : ""}`}>
-                      <Link className="fix-accordion-text" href="/products/Polypropylene/hotAndCold">
+                    <span
+                      onClick={() => handleLinkClick(7)}
+                      className={`${
+                        isClicked === 7 ? "text-black font-bold" : ""
+                      }`}
+                    >
+                      <Link
+                        className="fix-accordion-text"
+                        href="/products/Polypropylene/hotAndCold"
+                      >
                         {selectedLanguage === "GEO" &&
                           "პოლიპროპილენის ცივი და ცხელი წყლის (PPR) მილები"}
                         {selectedLanguage === "ENG" &&
                           "Polypropylene cold and hot water (PPR) pipes"}
                         {selectedLanguage === "RUS" &&
-                          "Полипропиленовая холодная и горячая вода (PPR) трубы"}
+                          "Полипропиленовые (ППР) трубы Для холодной и горячей воды"}
                       </Link>
                     </span>
-                    <span  onClick={() => handleLinkClick(8)} className={`${isClicked === 8 ? "text-black font-bold" : ""}`}>
-                      <Link className="fix-accordion-text" href="/products/Cable/corrugated-pipes">
+                    <span
+                      onClick={() => handleLinkClick(8)}
+                      className={`${
+                        isClicked === 8 ? "text-black font-bold" : ""
+                      }`}
+                    >
+                      <Link
+                        className="fix-accordion-text"
+                        href="/products/Cable/corrugated-pipes"
+                      >
                         {selectedLanguage === "GEO" &&
                           "საკაბელო გოფრირებული მილები"}
                         {selectedLanguage === "ENG" && "Cable corrugated pipes"}
@@ -473,32 +546,58 @@ const Nav = () => {
                           "Кабельные гофрированные трубы"}
                       </Link>
                     </span>
-                    <span  onClick={() => handleLinkClick(9)}  className={`${isClicked === 9 ? "text-black font-bold" : ""}`}>
-                      <Link className="fix-accordion-text" href="/products/fittings">
+                    <span
+                      onClick={() => handleLinkClick(9)}
+                      className={`${
+                        isClicked === 9 ? "text-black font-bold" : ""
+                      }`}
+                    >
+                      <Link
+                        className="fix-accordion-text"
+                        href="/products/fittings"
+                      >
                         {selectedLanguage === "GEO" && "ფიტინგები"}
                         {selectedLanguage === "ENG" && "Fittings"}
-                        {selectedLanguage === "RUS" && "арматура"}
+                        {selectedLanguage === "RUS" && "Фитинги"}
                       </Link>
                     </span>
                   </span>
                 ) : null}
               </li>
               <li className="px-6 border-b-[0.5px] border-solid border-[#ABABAB] py-4 w-[90%]">
-                <Link  onClick={() => handleLinkClick(10)} className={`${isClicked === 10 ? "text-black font-bold" : ""}`} href="/certificates">
+                <Link
+                  onClick={() => handleLinkClick(10)}
+                  className={`${
+                    isClicked === 10 ? "text-black font-bold" : ""
+                  }`}
+                  href="/certificates"
+                >
                   {selectedLanguage === "GEO" && "სერთიფიკატები"}
                   {selectedLanguage === "ENG" && "certificates"}
                   {selectedLanguage === "RUS" && "сертификаты"}
                 </Link>
               </li>
               <li className="px-6 border-b-[0.5px] border-solid border-[#ABABAB] py-4 w-[90%]">
-                <Link  onClick={() => handleLinkClick(11)} className={`${isClicked === 11 ? "text-black font-bold" : ""}`} href="/blogs">
-                  {selectedLanguage === "GEO" && "ბლოგი"}
-                  {selectedLanguage === "ENG" && "blog"}
-                  {selectedLanguage === "RUS" && "блог"}
+                <Link
+                  onClick={() => handleLinkClick(11)}
+                  className={`${
+                    isClicked === 11 ? "text-black font-bold" : ""
+                  }`}
+                  href="/blogs"
+                >
+                      {selectedLanguage === "GEO" && "ბლოგი"}
+                      {selectedLanguage === "ENG" && "Blogs"}
+                      {selectedLanguage === "RUS" && "Блоги"}
                 </Link>
               </li>
               <li className="px-6 border-b-[0.5px] border-solid border-[#ABABAB] py-4 w-[90%]">
-                <Link  onClick={() => handleLinkClick(12)} className={`${isClicked === 12 ? "text-black font-bold" : ""}`} href="/contact">
+                <Link
+                  onClick={() => handleLinkClick(12)}
+                  className={`${
+                    isClicked === 12 ? "text-black font-bold" : ""
+                  }`}
+                  href="/contact"
+                >
                   {selectedLanguage === "GEO" && "კონტაქტი"}
                   {selectedLanguage === "ENG" && "contact"}
                   {selectedLanguage === "RUS" && "Контакт"}

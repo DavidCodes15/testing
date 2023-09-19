@@ -282,7 +282,9 @@ const fittingsPage = () => {
               onClick={handlePrevPage}
               className={`px-4 py-2 rounded ${currentPage === 1 ? "bg-[#C6CACC] text-white" : "bg-[#1A3DA7] text-white"}`}
             >
-              წინა
+                       {selectedLanguage === "GEO" && "წინა"}
+          {selectedLanguage === "ENG" && "previous"}
+          {selectedLanguage === "RUS" && "предыдущий"}
             </button>
             <div className="flex justify-center items-end space-x-2 lg:hidden">
               {mobilePageNumbers.map((item, index) => (
@@ -330,7 +332,9 @@ const fittingsPage = () => {
               onClick={handleNextPage}
               className={`px-4 py-2 rounded ${currentPage === Math.ceil(totalCount / perPage) ? "bg-[#C6CACC] text-white" : "bg-[#1A3DA7] text-white"}`}
             >
-              შემდეგ
+          {selectedLanguage === "GEO" && "შემდეგ"}
+          {selectedLanguage === "ENG" && "Next"}
+          {selectedLanguage === "RUS" && "Следующий"}
             </button>
           </div>
       </section>

@@ -55,31 +55,38 @@ const blogsPage = () => {
   );
   return (
     <>
-    <section className="hidden lg:block container px-5 mt-[100px]" id="header">
-      <div className="flex justify-start items-center space-x-4">
-        <div className="flex justify-center items-center space-x-2">
-        <span>
-        <Link href="/">
-              {selectedLanguage === "GEO" && "მთავარი"}
-              {selectedLanguage === "ENG" && "Home"}
-              {selectedLanguage === "RUS" && "Главная"}
+      <section
+        className="hidden lg:block container px-5 mt-[100px]"
+        id="header"
+      >
+        <div className="flex justify-start items-center space-x-4">
+          <div className="flex justify-center items-center space-x-2">
+            <span>
+              <Link href="/">
+                {selectedLanguage === "GEO" && "მთავარი"}
+                {selectedLanguage === "ENG" && "Home"}
+                {selectedLanguage === "RUS" && "Главная"}
+              </Link>
+            </span>
+            <span>
+              <img src="/assets/icons/Vector.png" />
+            </span>
+          </div>
+          <div>
+            <Link href="/blogs" className="text-[#1A3DA7]">
+              {selectedLanguage === "GEO" && "ბლოგი"}
+              {selectedLanguage === "ENG" && "Blogs"}
+              {selectedLanguage === "RUS" && "Блоги"}
             </Link>
-        </span>
-        <span>
-          <img src="/assets/icons/Vector.png" />
-        </span>
+          </div>
         </div>
-        <div>
-        <Link href="/blogs" className="text-[#1A3DA7]">
-            {selectedLanguage === "GEO" && "ბლოგი"}
-            {selectedLanguage === "ENG" && "blog"}
-            {selectedLanguage === "RUS" && "блог"}
-          </Link>
-        </div>
-      </div>
-    </section>
+      </section>
       <div className="mt-[100px] lg:mt-10 flex justify-center items-center">
-        <h1 className="font-bold fix-blog-text">სამშენებლო და სარემონტო ბლოგები</h1>
+        <h1 className="font-bold fix-blog-text">
+          {selectedLanguage === "GEO" && "სამშენებლო და სარემონტო ბლოგები"}
+          {selectedLanguage === "ENG" && "Construction and renovation blogs"}
+          {selectedLanguage === "RUS" && "Блоги о строительстве и ремонте"}
+        </h1>
       </div>
       <section className="container mx-auto mt-[60px]">
         <div className="grid-fix">
@@ -98,27 +105,45 @@ const blogsPage = () => {
                   onClick={() => handleSpecificBlogPage(blog.blogTitle)}
                   className="border-white border-solid border-[1px] rounded-full bg-transparent hover:bg-[#1A3DA7] text-white text-lg px-4 py-2 absolute top-[50%] left-[30%]"
                 >
-                  ვრცლად
+                  {selectedLanguage === "GEO" && "ვრცლად"}
+                  {selectedLanguage === "ENG" && "In Detail"}
+                  {selectedLanguage === "RUS" && "В деталях"}
                 </button>
               </div>
 
               <div className="flex flex-col justify-end space-y-2 px-2">
                 <div>
-                  <h3 className="text-base">{blog.blogTitle}</h3>
+                  <h3 className="text-base">
+                  {selectedLanguage === "GEO" && `${blogs.blogTitle}`}
+                    {selectedLanguage === "ENG" && `${blogs.blogTitleEng}`}
+                    {selectedLanguage === "RUS" && `${blogs.blogTitleRus}`}
+                  </h3>
                 </div>
                 <div>
-                  <span className="text-base">{blog.blogTag}</span>
+                  <span className="text-base">
+                  {selectedLanguage === "GEO" && `${blogs.blogTag}`}
+                    {selectedLanguage === "ENG" && `${blogs.blogTagEng}`}
+                    {selectedLanguage === "RUS" && `${blogs.blogTagRus}`}
+                  </span>
                 </div>
                 <div className="flex justify-between mb-6">
                   <span className="text-base flex justify-center items-center space-x-2">
                     <span className="text-sm lg:text-base flex justify-center items-center space-x-2">
-                    <span>
-                      <img className="w-[15px] h-[15px]" src="/assets/icons/eye.png" alt="views"/>
-                    </span>
-                     <span>{blog.views} ნახვა</span>
+                      <span>
+                        <img
+                          className="w-[15px] h-[15px]"
+                          src="/assets/icons/eye.png"
+                          alt="views"
+                        />
+                      </span>
+                      <span>{blogs.views} {selectedLanguage === "GEO" && "ნახვა"} {selectedLanguage === "ENG" && "views"} {selectedLanguage === "RUS" && "просмотры"}</span>
                     </span>
                   </span>
-                  <span className="text-base">{blog.blogDate}</span>
+                  <span className="text-base">
+                  {selectedLanguage === "GEO" && `${blogs.blogDate}`}
+                    {selectedLanguage === "ENG" && `${blogs.blogDateEng}`}
+                    {selectedLanguage === "RUS" && `${blogs.blogDateRus}`}
+                  </span>
                 </div>
               </div>
             </div>
@@ -128,55 +153,67 @@ const blogsPage = () => {
           <button
             disabled={currentPage === 1}
             onClick={handlePrevPage}
-            className={`text-white px-4 py-2 rounded ${currentPage === 1 ? "bg-[#C6CACC]" : "bg-[#1A3DA7]"}`}
+            className={`text-white px-4 py-2 rounded ${
+              currentPage === 1 ? "bg-[#C6CACC]" : "bg-[#1A3DA7]"
+            }`}
           >
-            წინა
+          {selectedLanguage === "GEO" && "წინა"}
+          {selectedLanguage === "ENG" && "previous"}
+          {selectedLanguage === "RUS" && "предыдущий"}
           </button>
           <div className="flex justify-center items-end space-x-2 lg:hidden">
-          {mobilePageNumbers.map((item, index) => (
-            <button
-              key={index}
-              onClick={() => {
-                if (typeof item === "number") {
-                  setCurrentPage(item);
+            {mobilePageNumbers.map((item, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  if (typeof item === "number") {
+                    setCurrentPage(item);
+                  }
+                }}
+                className={`${
+                  item === currentPage
+                    ? "bg-[#1A3DA7] text-white"
+                    : item === "..."
+                    ? "text-gray-600" // Only set the text color for "..."
+                    : "bg-[#C6CACC] text-white"
+                } px-4 py-2 rounded`}
+                style={
+                  item === "..."
+                    ? { backgroundColor: "transparent", padding: 0 }
+                    : {}
                 }
-              }}
-              className={`${
-                item === currentPage
-                  ? "bg-[#1A3DA7] text-white"
-                  : item === "..."
-                  ? "text-gray-600" // Only set the text color for "..."
-                  : "bg-[#C6CACC] text-white"
-              } px-4 py-2 rounded`}
-              style={item === "..." ? { backgroundColor: "transparent", padding: 0 } : {}}
-            >
-              {item}
-            </button>
-          ))}
+              >
+                {item}
+              </button>
+            ))}
           </div>
           <div className="hidden lg:flex justify-center items-center space-x-4">
-
-         
-          {pageNumbers.map((pageNumber) => (
-            <button
-              key={pageNumber}
-              onClick={() => setCurrentPage(pageNumber)}
-              className={`${
-                currentPage === pageNumber
-                  ? "bg-[#1A3DA7] text-white"
-                  : "bg-[#C6CACC] text-white"
-              } px-4 py-2 rounded`}
-            >
-              {pageNumber}
-            </button>
-          ))}
+            {pageNumbers.map((pageNumber) => (
+              <button
+                key={pageNumber}
+                onClick={() => setCurrentPage(pageNumber)}
+                className={`${
+                  currentPage === pageNumber
+                    ? "bg-[#1A3DA7] text-white"
+                    : "bg-[#C6CACC] text-white"
+                } px-4 py-2 rounded`}
+              >
+                {pageNumber}
+              </button>
+            ))}
           </div>
           <button
             disabled={currentPage === Math.ceil(totalCount / perPage)}
             onClick={handleNextPage}
-            className={`px-4 py-2 rounded ${currentPage === Math.ceil(totalCount / perPage) ? "bg-[#C6CACC] text-white" : "bg-[#1A3DA7] text-white"}`}
+            className={`px-4 py-2 rounded ${
+              currentPage === Math.ceil(totalCount / perPage)
+                ? "bg-[#C6CACC] text-white"
+                : "bg-[#1A3DA7] text-white"
+            }`}
           >
-            შემდეგ
+          {selectedLanguage === "GEO" && "შემდეგ"}
+          {selectedLanguage === "ENG" && "Next"}
+          {selectedLanguage === "RUS" && "Следующий"}
           </button>
         </div>
       </section>

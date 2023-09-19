@@ -121,7 +121,9 @@ const page = () => {
           <div className="flex flex-col space-y-4 justify-center items-center pr-2 lg:items-start lg:pr-0">
             <div className="hidden lg:flex max-w-[616px] flex-col justify-center items-start space-y-6">
               <h1 className="font-bold text-2xl">
-                საკაბელო გოფრირებული მილები
+                {selectedLanguage === "GEO" && "საკაბელო გოფრირებული მილები"}
+                {selectedLanguage === "ENG" && "Cable corrugated pipes"}
+                {selectedLanguage === "RUS" && "Кабельные гофрированные трубы"}
               </h1>
               <p>
                 {selectedLanguage === "GEO" &&

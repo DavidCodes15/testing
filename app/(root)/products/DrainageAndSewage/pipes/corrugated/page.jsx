@@ -168,7 +168,12 @@ const page = () => {
           <div className="flex flex-col space-y-4 justify-center items-center pr-2 lg:items-start lg:pr-0">
             <div className="hidden lg:flex max-w-[616px] flex-col justify-center items-start space-y-6">
               <h1 className="font-bold text-2xl">
-                სანიაღვრე და საკანალიზაციო გოფრირებული მილები
+                {selectedLanguage === "GEO" &&
+                  "სანიაღვრე და საკანალიზაციო გოფრირებული მილები"}
+                {selectedLanguage === "ENG" &&
+                  "Drainage and sewage corrugated pipes"}
+                {selectedLanguage === "RUS" &&
+                  "Дренажные и канализационные гофрированные трубы"}
               </h1>
               <p>
                 {selectedLanguage === "GEO" &&
@@ -180,7 +185,8 @@ const page = () => {
 100mm to 1600mm. These pipes are categorized into various strength classes: SN4, SN8, SN12, and
 SN16. Our Corrugated pipes fully comply with the requirements of EN 13476-3:2018.
                  `}
-                 {selectedLanguage === "RUS" && `
+                {selectedLanguage === "RUS" &&
+                  `
                  «Джорджиан Пайп» производит гофрированные трубы для канализационных и дренажных
                  систем диаметром от 100 мм до 1600 мм. Эти трубы подразделяются на различные классы
                  прочности: SN4, SN8, SN12 и SN16. Наши гофрированные трубы полностью соответствуют

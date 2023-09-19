@@ -142,7 +142,7 @@ const page = () => {
               {selectedLanguage === "ENG" &&
                 "Polypropylene cold and hot water (PPR) pipes"}
               {selectedLanguage === "RUS" &&
-                "Полипропиленовая холодная и горячая вода (PPR) трубы"}
+                "Полипропиленовые (ППР) трубы Для холодной и горячей воды"}
             </Link>
           </div>
         </div>
@@ -187,17 +187,25 @@ const page = () => {
           <div className="flex flex-col space-y-4 justify-center items-center pr-2 lg:items-start lg:pr-0">
             <div className="hidden lg:flex max-w-[616px] flex-col justify-center items-start space-y-6">
               <h1 className="font-bold text-2xl">
-                პოლიპროპილენის &#40;PPR&#41; ცივი და ცხელი წყლის მილები
+                {selectedLanguage === "GEO" &&
+                  "პოლიპროპილენის ცივი და ცხელი წყლის (PPR) მილები"}
+                {selectedLanguage === "ENG" &&
+                  "Polypropylene cold and hot water (PPR) pipes"}
+                {selectedLanguage === "RUS" &&
+                  "Полипропиленовые (ППР) трубы Для холодной и горячей воды"}
               </h1>
               <p>
-                {selectedLanguage === "GEO" && `ჩვენი პოლიპროპილენის მილები სრულად შეესაბამება ISO 15874 სტანდარტებს და
+                {selectedLanguage === "GEO" &&
+                  `ჩვენი პოლიპროპილენის მილები სრულად შეესაბამება ISO 15874 სტანდარტებს და
 იდეალურად გამოიყენება ცივი და ცხელი წყლით მომარაგების სისტემებში. მათი
 გამოყენება შესაძლებელია ნებისმიერ შიდა გაყვანილობის წყლის სისტემაში და
 განკუთვნილია გრძელვადიანი გამოყენებისთვის.`}
-                {selectedLanguage === "ENG" && `Our PPRC and Composite PPR pipes fully comply with the ISO 15874 standards and is perfect solution for
+                {selectedLanguage === "ENG" &&
+                  `Our PPRC and Composite PPR pipes fully comply with the ISO 15874 standards and is perfect solution for
 indoor cold and hot water supply. They can be used in any indoor water systems and is designed for
 long-term use.`}
-                {selectedLanguage === "RUS" && `Наши трубы из PPRC и композитного PPR полностью соответствуют стандартам ISO 15874 и
+                {selectedLanguage === "RUS" &&
+                  `Наши трубы из PPRC и композитного PPR полностью соответствуют стандартам ISO 15874 и
 являются идеальным решением для внутреннего холодного и горячего водоснабжения. Они могут
 использоваться в любых внутренних системах водоснабжения и рассчитаны на длительное
 использование.`}

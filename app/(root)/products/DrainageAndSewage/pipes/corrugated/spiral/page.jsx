@@ -55,7 +55,7 @@ const page = () => {
         { column1: 1600, column2: "6-12" },
       ]);
       setImageSource(pipeFirst);
-    } else if (buttonId === 4){
+    } else if (buttonId === 4) {
       setTableData([
         { column1: 600, column2: "6-12" },
         { column1: 700, column2: "6-12" },
@@ -122,26 +122,50 @@ const page = () => {
             </div>
 
             <div className="hidden fix-sizing lg:grid grid-cols-2 gap-5">
-              <img className="rounded-xl" src="/assets/icons/PPR1.png" alt="pipe first placeholder" />
-              <img className="rounded-xl" src="/assets/icons/PPR2.png" alt="pipe second placeholder" />
-              <img className="rounded-xl" src="/assets/icons/PPR3.png" alt="pipe third placeholder" />
-              <img className="rounded-xl" src="/assets/icons/PPR4.png" alt="pipe fourth placeholder" />
+              <img
+                className="rounded-xl"
+                src="/assets/icons/PPR1.png"
+                alt="pipe first placeholder"
+              />
+              <img
+                className="rounded-xl"
+                src="/assets/icons/PPR2.png"
+                alt="pipe second placeholder"
+              />
+              <img
+                className="rounded-xl"
+                src="/assets/icons/PPR3.png"
+                alt="pipe third placeholder"
+              />
+              <img
+                className="rounded-xl"
+                src="/assets/icons/PPR4.png"
+                alt="pipe fourth placeholder"
+              />
             </div>
           </div>
           <div className="flex flex-col space-y-4 justify-center items-center pr-2 lg:items-start lg:pr-0">
             <div className="hidden lg:flex max-w-[616px] flex-col justify-center items-start space-y-6">
               <h1 className="font-bold text-2xl">
-              სანიაღვრე და საკანალიზაციო სპირალური გოფრირებული მილები
+                {selectedLanguage === "GEO" &&
+                  "სანიაღვრე და საკანალიზაციო სპირალური გოფრირებული მილები"}
+                {selectedLanguage === "ENG" &&
+                  "Drainage and sewage spiral corrugated pipes"}
+                {selectedLanguage === "RUS" &&
+                  "Дренажные и канализационные спирально-гофрированные трубы"}
               </h1>
               <p>
-                {selectedLanguage === "GEO" && `„ქართული მილი“ აწარმოებს გოფრირებულ მილებს საკანალიზაციო და სანიაღვრე
+                {selectedLanguage === "GEO" &&
+                  `„ქართული მილი“ აწარმოებს გოფრირებულ მილებს საკანალიზაციო და სანიაღვრე
 სისტემებისთვის, დიამეტრით 100 მმ-დან 1600 მმ-მდე, სხვადასხვა სიმტკიცის
 კლასებში: SN4, SN8, SN12 და SN16. ჩვენი გოფრირებული მილები სრულად შეესაბამება EN
 13476-3:2018 სტანდარტებს.`}
-                {selectedLanguage === "ENG" && `Georgian Pipe produces corrugated pipes for sewage and drainage systems, ranging in diameter from
+                {selectedLanguage === "ENG" &&
+                  `Georgian Pipe produces corrugated pipes for sewage and drainage systems, ranging in diameter from
 100mm to 1600mm. These pipes are categorized into various strength classes: SN4, SN8, SN12, and
 SN16. Our Corrugated pipes fully comply with the requirements of EN 13476-3:2018.`}
-                {selectedLanguage === "RUS" && `«Джорджиан Пайп» производит гофрированные трубы для канализационных и дренажных
+                {selectedLanguage === "RUS" &&
+                  `«Джорджиан Пайп» производит гофрированные трубы для канализационных и дренажных
 систем диаметром от 100 мм до 1600 мм. Эти трубы подразделяются на различные классы
 прочности: SN4, SN8, SN12 и SN16. Наши гофрированные трубы полностью соответствуют
 требованиям EN 13476-3:2018.`}
@@ -187,25 +211,31 @@ SN16. Our Corrugated pipes fully comply with the requirements of EN 13476-3:2018
               />
             </div>
             <div className="flex flex-col space-y-4 justify-center items-center lg:items-start">
-                <table className="table-fixed">
-                  <thead>
-                    <tr>
-                      <th className="w-1/2 px-4 py-2">ID &#40;mm&#41;</th>
-                      <th className="w-1/2 px-6  py-2">L &#40;m&#41;</th>
+              <table className="table-fixed">
+                <thead>
+                  <tr>
+                    <th className="w-1/2 px-4 py-2">ID &#40;mm&#41;</th>
+                    <th className="w-1/2 px-6  py-2">L &#40;m&#41;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {tableData.map((rowData, index) => (
+                    <tr
+                      key={index}
+                      style={index % 2 === 0 ? { background: "#c6daf1" } : {}}
+                    >
+                      <td className="px-16 py-2 text-center">
+                        {rowData.column1}
+                      </td>
+                      <td className="px-16 py-2 text-center">
+                        {rowData.column2}
+                      </td>
                     </tr>
-                  </thead>
-                  <tbody>
-                    {tableData.map((rowData, index) => (
-                         <tr key={index} style={index % 2 === 0 ? { background: "#c6daf1" } : {}}>
-                         <td className="px-16 py-2 text-center">{rowData.column1}</td>
-                         <td className="px-16 py-2 text-center">{rowData.column2}</td>
-                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
-          </div>
-
         </div>
       </section>
       <section>

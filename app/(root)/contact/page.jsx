@@ -3,12 +3,14 @@ import { useState } from "react";
 import DOMPurify from "dompurify";
 import "@/app/globals.css";
 import Popup from "@/components/user/Popup";
+import { useLanguage } from "@/utils/languageContext";
 const contactpage = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [isAdding, setIsAdding] = useState(false);
+  const {selectedLanguage} = useLanguage();
   const [isNameValidated, setIsNameValidated] = useState(true);
   const [isPhoneValidated, setIsPhoneValidated] = useState(true);
   const [isEmailValidated, setIsEmailValidated] = useState(true);
@@ -16,6 +18,24 @@ const contactpage = () => {
   const [isMessageContains, setIsMessageContains] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [wordCount, setWordCount] = useState(0);
+  const translations = {
+    GEO: {
+      placeholder: "ჩაწერეთ თქვენი შეტყობინება",
+      submit: "გააგზავნე",
+      submitted: "იგზავნება...",
+    },
+    ENG: {
+      placeholder: "Type your message",
+      submit: "Send",
+      submitted: "Sending...",
+    },
+    RUS: {
+      placeholder: "Введите сообщение",
+      submit: "Отправить",
+      submitted: "Отправка...",
+    }
+
+  }
   const handleNameChange = (event) => {
     const rawName = event.target.value; // Get the original name
     if (/[\d<>]/.test(rawName)) {
@@ -154,24 +174,38 @@ const contactpage = () => {
           className="hidden lg:flex justify-start items-start space-x-2"
         >
           <span className="flex justify-center items-center space-x-4">
-            <span>მთავარი</span>
+            <span>
+            {selectedLanguage === "GEO" && "მთავარი"}
+                  {selectedLanguage === "ENG" && "Home"}
+                  {selectedLanguage === "RUS" && "Главная"}
+            </span>
             <img src="/assets/icons/Vector.png" alt="navigation arrow" />
           </span>
-          <span className="text-[#1A3DA7]">კონტაქტი</span>
+          <span className="text-[#1A3DA7]">
+          {selectedLanguage === "GEO" && "კონტაქტი"}
+                  {selectedLanguage === "ENG" && "contact"}
+                  {selectedLanguage === "RUS" && "Контакт"}
+          </span>
         </div>
       </section>
       <section className="container mx-auto mt-12">
         <div className="flex flex-col space-y-12 justify-center items-center">
           <div>
             <h1 className="font-bold text-xl fix-bg lg:text-3xl">
-              როგორ შევიძინოთ
+              {selectedLanguage === "GEO" && "როგორ შევიძინოთ"}
+              {selectedLanguage === "ENG" && "How to buy"}
+              {selectedLanguage === "RUS" && "Как мы можем купить"}
             </h1>
           </div>
           <div className="flex justify-center items-center space-x-0 flex-col lg:space-x-6 lg:flex-row">
             <div className="w-full lg:w-1/2">
               <div className="hidden lg:flex flex-col space-y-6">
                 <div>
-                  <h2 className="font-bold text-xl">დაგვიკავშირდით</h2>
+                  <h2 className="font-bold text-xl">
+                    {selectedLanguage === "GEO" && "დაგვიკავშირდით"}
+                  {selectedLanguage === "ENG" && "Contact Us"}
+                  {selectedLanguage === "RUS" && "Связаться с нами"}
+                  </h2>
                 </div>
                 <div className="flex justify-start items-center space-x-4">
                   <span>
@@ -189,7 +223,11 @@ const contactpage = () => {
                   <span>
                     <img src="/assets/icons/location.png" alt="location" />
                   </span>
-                  <span>ქ. თბილისი, ქიზიყის ქ. N42</span>
+                  <span>
+                  {selectedLanguage === "GEO" && "ქ.თბილისი, ქიზიყის ქ. N42"}
+                  {selectedLanguage === "ENG" && "N42 Kiziki, 0182 Tbilisi, Georgia"}
+                  {selectedLanguage === "RUS" && "0182, Грузия, Тбилиси, Ул. Кизики N42"}
+                  </span>
                 </div>
               </div>
               <div>
@@ -199,7 +237,9 @@ const contactpage = () => {
                 className="flex flex-col mt-12 space-y-4 fix-contact-size"
               >
                 <label htmlFor="name" className="text-lg">
-                  სახელი
+                {selectedLanguage === "GEO" && "სახელი"}
+                  {selectedLanguage === "ENG" && "Name"}
+                  {selectedLanguage === "RUS" && "Имя"}
                 </label>
                 <input
                   onChange={handleNameChange}
@@ -216,7 +256,9 @@ const contactpage = () => {
                   <span className="text-red-500"> * არასწორი სახელია * </span>
                 ) : null}
                 <label htmlFor="phone" className="text-lg mt-10">
-                  ტელეფონის ნომერი
+                  {selectedLanguage === "GEO" && "ტელეფონის ნომერი"}
+                  {selectedLanguage === "ENG" && "Phone number"}
+                  {selectedLanguage === "RUS" && "Номер телефона"}
                 </label>
                 <input
                   onChange={handlePhoneChange}
@@ -236,7 +278,9 @@ const contactpage = () => {
                   </span>
                 ) : null}
                 <label htmlFor="email" className="text-lg">
-                  Email
+                  {selectedLanguage === "GEO" && "ელ. ფოსტა"}
+                  {selectedLanguage === "ENG" && "Email"}
+                  {selectedLanguage === "RUS" && "Эл. почта"}
                 </label>
                 <input
                   onChange={handleEmailChange}
@@ -256,7 +300,9 @@ const contactpage = () => {
                   </span>
                 ) : null}
                 <label htmlFor="message" className="text-lg mt-10">
-                  გამოგვიგზავნეთ შეკვეთის დეტალები
+                  {selectedLanguage === "GEO" && "გამოგვიგზავნეთ შეკვეთის დეტალები"}
+                  {selectedLanguage === "ENG" && "Send us order details"}
+                  {selectedLanguage === "RUS" && "Отправьте нам детали заказа"}
                 </label>
                 <textarea
                   onChange={handleMessageChange}
@@ -267,7 +313,7 @@ const contactpage = () => {
                   cols={70}
                   required
                   className="px-4 py-2 border-[1px] border-[#1A3DA7] rounded-xl"
-                  placeholder="Type your message..."
+                  placeholder={translations[selectedLanguage].placeholder}
                 />
                 <span className="text-sm">{wordCount} / 150 words</span>
                 {!isMessageValidated && (
@@ -285,7 +331,7 @@ const contactpage = () => {
                 <input
                   type="submit"
                   name="submit"
-                  value={isAdding ? "იგზავნება..." : "გააგზავნე"}
+                  value={isAdding ? translations[selectedLanguage].submitted : translations[selectedLanguage].submit }
                   disabled={
                     !isNameValidated ||
                     !isPhoneValidated ||
