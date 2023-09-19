@@ -44,7 +44,7 @@ const AboutPage = () => {
         <Link href="/about" className="text-[#1A3DA7]">
         {selectedLanguage === "GEO" && "ჩვენს შესახებ"}
         {selectedLanguage === "ENG" && "About Us"}
-        {selectedLanguage === "RUS" && "о нас"}
+        {selectedLanguage === "RUS" && "О Нас"}
           </Link>
         </div>
       </div>
@@ -55,7 +55,7 @@ const AboutPage = () => {
               <h1 className="font-bold text-2xl">
               {selectedLanguage === "GEO" && "ჩვენს შესახებ"}
                   {selectedLanguage === "ENG" && "About Us"}
-                  {selectedLanguage === "RUS" && "о нас"}
+                  {selectedLanguage === "RUS" && "О Нас"}
               </h1>
               <p className="max-w-[760px] text-left">
                   {selectedLanguage === "GEO" && texts[0].generalText}

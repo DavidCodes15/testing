@@ -39,8 +39,8 @@ const Footer = () => {
             <li className="font-bold">
               <Link href="/about">
               {selectedLanguage === "GEO" && "ჩვენს შესახებ"}
-              {selectedLanguage === "ENG" && "About"}
-              {selectedLanguage === "RUS" && "ჩვენს შესახებ"}
+              {selectedLanguage === "ENG" && "About Us"}
+              {selectedLanguage === "RUS" && "О Нас"}
               </Link>
           
             </li>

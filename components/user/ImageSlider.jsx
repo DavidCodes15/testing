@@ -104,7 +104,7 @@ const ImageSlider = () => {
               >
                {selectedLanguage === "GEO" && "გოფრირებული მილები"}
                {selectedLanguage === "ENG" && "Corrugated Pipes"}
-               {selectedLanguage === "RUS" && "გოფრირებული მილები"}
+               {selectedLanguage === "RUS" && "Гофрированные трубы"}
               </span>
               <span
                 className={`dot ${activeIndex === 1 ? "active" : ""}`}
@@ -113,7 +113,7 @@ const ImageSlider = () => {
               >
                 {selectedLanguage === "GEO" && "პოლიეთილენის მილები"}
                 {selectedLanguage === "ENG" && "Polyethylene Pipes"}
-                {selectedLanguage === "RUS" && "პოლიეთილენის მილები"}
+                {selectedLanguage === "RUS" && "Полиэтиленовые трубы"}
               </span>
               <span
                 className={`dot ${activeIndex === 2 ? "active" : ""}`}
@@ -122,7 +122,7 @@ const ImageSlider = () => {
               >
                 {selectedLanguage === "GEO" && "პოლიპროპილენის მილები"}
                 {selectedLanguage === "ENG" && "PPRC Pipes"}
-                {selectedLanguage === "RUS" && "პოლიპროპილენის მილები"}
+                {selectedLanguage === "RUS" && "Полипропиленовые трубы"}
               </span>
               <span
                 className={`dot ${activeIndex === 3 ? "active" : ""}`}
@@ -131,7 +131,7 @@ const ImageSlider = () => {
               >
                 {selectedLanguage === "GEO" && "ფიტინგები"}
                 {selectedLanguage === "ENG" && "Fittings"}
-                {selectedLanguage === "RUS" && "ფიტინგები"}
+                {selectedLanguage === "RUS" && "Фиттинги"}
               </span>
             </div>
           </div>

@@ -49,7 +49,7 @@ const MainBlogComponent = () => {
                 <button className="bg-[#1A3DA7] text-white text-base  rounded-xl px-4 py-4">
                 {selectedLanguage === "GEO" && "მეტის ნახვა"}
                   {selectedLanguage === "ENG" && "View More"}
-                  {selectedLanguage === "RUS" && "Посмотреть больше"}
+                  {selectedLanguage === "RUS" && "просмотры"}
                 </button>
               </Link>
             </div>
@@ -88,7 +88,7 @@ const MainBlogComponent = () => {
                       </div>
                       <div className="flex space-x-4 items-center bg-[#ECF5FF] px-2 py-2 rounded-full">
                       <img className="w-[15px] h-[15px]" src="/assets/icons/eye.png" alt="views"/>
-                          <span>{blogs[0].views}  {selectedLanguage === "GEO" && "ნახვა"} {selectedLanguage === "ENG" && "views"} {selectedLanguage === "RUS" && "Взгляды"}</span>
+                          <span>{blogs[0].views}  {selectedLanguage === "GEO" && "ნახვა"} {selectedLanguage === "ENG" && "views"} {selectedLanguage === "RUS" && "просмотры"}</span>
                       </div>
                       
                   </div>

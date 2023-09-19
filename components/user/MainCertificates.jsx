@@ -78,7 +78,7 @@ const MainCertificates = () => {
                   <button className="bg-[#1A3DA7] text-white text-base  rounded-xl px-4 py-4">
                     {selectedLanguage === "GEO" && "მეტის ნახვა"}
                     {selectedLanguage === "ENG" && "See More"}
-                    {selectedLanguage === "RUS" && "Узнать больше"}
+                    {selectedLanguage === "RUS" && "Подробное"}
                   </button>
                 </Link>
               </div>

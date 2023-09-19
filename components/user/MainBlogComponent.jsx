@@ -85,7 +85,7 @@ const MainBlogComponent = () => {
                       <div className="flex space-x-4 items-center bg-[#ECF5FF] px-2 py-2 rounded-full">
                       <img className="w-[15px] h-[15px]" src="/assets/icons/eye.png" alt="views"/>
                        
-                          <span>{blogs[0].views}  {selectedLanguage === "GEO" && "ნახვა"} {selectedLanguage === "ENG" && "views"} {selectedLanguage === "RUS" && "Взгляды"}</span>
+                          <span>{blogs[0].views}  {selectedLanguage === "GEO" && "ნახვა"} {selectedLanguage === "ENG" && "views"} {selectedLanguage === "RUS" && "просмотры"}</span>
                       </div>
                       
                   </div>
@@ -115,7 +115,7 @@ const MainBlogComponent = () => {
                       </div>
                       <div className="flex space-x-4 items-center bg-[#ECF5FF] px-2 py-2 rounded-full">
                       <img className="w-[15px] h-[15px]" src="/assets/icons/eye.png" alt="views"/>
-                          <span>{blogs[1].views} {selectedLanguage === "GEO" && "ნახვა"} {selectedLanguage === "ENG" && "views"} {selectedLanguage === "RUS" && "Взгляды"}</span>
+                          <span>{blogs[1].views} {selectedLanguage === "GEO" && "ნახვა"} {selectedLanguage === "ENG" && "views"} {selectedLanguage === "RUS" && "просмотры"}</span>
                       </div>
                       
                   </div>
