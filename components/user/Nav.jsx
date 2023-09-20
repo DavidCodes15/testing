@@ -278,9 +278,9 @@ const Nav = () => {
                                 className={`cursor-pointer`}
                                 href="/products/fittings"
                               >
-                                {selectedLanguage === "GEO" && "ფიტინგები"}
-                                {selectedLanguage === "ENG" && "Fittings"}
-                                {selectedLanguage === "RUS" && "арматура"}
+                        {selectedLanguage === "GEO" && "ფიტინგები"}
+                        {selectedLanguage === "ENG" && "Fittings"}
+                        {selectedLanguage === "RUS" && "Фитинги"}
                               </Link>
                             </span>
                           </li>
